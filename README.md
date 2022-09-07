@@ -1,2 +1,5 @@
-# hidalgo
-Hidalgo, ecosistema de criptomonedas con recompensa por crear software libre
+## Proyecto Hidalgo 
+Hidalgo
+Ecosistema de criptomonedas con recompensa por crear software libre
+
+@-@
