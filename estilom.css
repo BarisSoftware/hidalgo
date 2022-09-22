@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -52,7 +53,7 @@ header ul li a{
     padding: 6px 15px;
     color:#ecebf0;
     border-radius: 15px;
-    font-family:'Bodoni MT', Bodoni 72, Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
+    font-family: 'Quicksand', sans-serif;
     letter-spacing: 2px;
     font-size: 18px;
 }
@@ -91,7 +92,7 @@ header ul li a:hover:before{
 
 #contenido p{
     margin-top: 0px;
-    font-family: 'Bodoni MT', Bodoni 72, Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 20px;
 }
 

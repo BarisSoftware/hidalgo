@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 }
 
 body{
-    background: rgb(202, 200, 198);
+    background: rgb(235, 229, 224);
 }
 
 header{
@@ -18,15 +19,10 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.568),
-        rgba(0,0,0,0.568)
-    )
 }
 
 header .logo{
-    color: #ecebf0;
+    color: #000000;
     font-weight: 750;
     text-decoration: none;
     font-size: 2em;
@@ -44,61 +40,62 @@ header ul{
 header ul li{
     list-style-type: none;
     margin-left: 20px;
-    color:#ecebf0;
+    color:#000000;
 }
 
 header ul li a{
     text-decoration: none;
     padding: 6px 15px;
-    color:#ecebf0;
+    color:#000000;
     border-radius: 15px;
-    font-family:'Bodoni MT', Bodoni 72, Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
+    font-family: 'Quicksand', sans-serif;
     letter-spacing: 2px;
     font-size: 18px;
+    font-weight: 500;
 }
 
 header ul li a:hover{
-    background: #ecebf0;
-    color: #8477ae;
+    background: #000000;
+    color: #ffffff;
 }
 
 header ul li a:hover:before{
-    color: #8477ae;
+    color: #ffffff;
 }
 
-#contenido .container2{
+.container_c{
+    width: 100%;
+    margin: auto;
     display: flex;
-    justify-content: space-evenly;
-    padding: 200px 100px;
-}
-
-#contenido .txt{
-    width: 50%;
-    max-width: 600px;
-    text-align: initial;
-    padding-left: 30px;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-wrap: center;
+    padding-top: 110px;
+    
 }
 
-#contenido h1{
-    margin-top: 0px;
-    font-family: 'Consolas', monaco, monospace;
-    font-size: 30px;
-    letter-spacing: 2px;
+.c{
+    width: 400px;
+    margin: 30px;
+    padding: 50px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.568);
+    background-color: #ffe7bb;
 }
 
-#contenido p{
-    margin-top: 0px;
-    font-family: 'Bodoni MT', Bodoni 72, Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
+.cover{
+    width: 100%;
+    display: inline-block;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.c h1{
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 20px;
+    letter-spacing: 3px;
+}
+
+.c p{
     font-size: 20px;
-}
-
-#contenido .img-cont{
-    background-image: url("imagenes/vision.png");
-    background-size: cover;
-    background-position: center center;
-    height: 300px;
-    width: 400px; 
+    font-weight: 120;
 }
