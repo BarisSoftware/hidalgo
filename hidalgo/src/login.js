@@ -2,10 +2,9 @@ import './login.css';
 
 function InputField(props){
     return(
-    <div class = "inputField">
+    <div className = {props.className}>
         <label name = {props.name}>
-            {props.tittle}
-            <br/>
+            <p className='label'>{props.tittle}</p>
             <input type={props.type} placeholder={props.placeh} value={props.value}/>
         </label>
     </div>);
@@ -15,15 +14,15 @@ function Login(props) {
     return(
     <div id='login'>
         <form action={props.action} method="GET">
-            <InputField name = "name" tittle = "Nombre:" type = "text" placeh = "Tu Nombre"/>
-            <InputField name = "lastname" tittle = "Apellido:" type = "text" placeh = "Tu Apellido"/>
+            <InputField className="inputField" name = "name" tittle = "Nombre:" type = "text" placeh = "Tu Nombre"/>
+            <InputField  className="inputField" name = "lastname" tittle = "Apellido:" type = "text" placeh = "Tu Apellido"/>
             <br/>
-            <InputField name = "pass" tittle = "Contraseña:" type = "password"/>
-            <InputField name = "passconfirmation" tittle = "Confirma Contraseña:" type = "password"/>
+            <InputField  className="inputField" name = "pass" tittle = "Contraseña:" type = "password"/>
+            <InputField  className="inputField" name = "passconfirmation" tittle = "Confirma Contraseña:" type = "password"/>
             <br/>
-            <InputField name = "tecnologias" tittle = "Tecnologías conocidas" type = "text" placeh = "ReactJS, NodeJS"/>
+            <InputField className="inputField" name = "tecnologias" tittle = "Tecnologías conocidas" type = "text" placeh = "ReactJS, NodeJS"/>
             <br/>
-            <InputField name = "submit" type = "submit" value = "Enviar"/>
+            <InputField className="inputField submit" name = "submit" type = "submit" value = "Enviar" className = "submit"/>
         </form>
     </div>);
 }
