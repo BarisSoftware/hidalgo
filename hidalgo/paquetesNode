@@ -1,0 +1,8 @@
+react-scripts
+axio
+express-validator
+express
+sqlite3
+body-parser
+helmet
+express-rate-limit

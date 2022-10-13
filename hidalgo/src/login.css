@@ -1,0 +1,52 @@
+#login{
+    /*width: 80%;
+    height: 60%;
+    margin: 20% 10%;*/
+    border: solid 1px black;
+}
+
+.inputField{
+    margin: 2%;
+    padding: 0.4em;
+    outline: none;
+    border: solid 1px red;
+    display: inline-block;
+    width: 40%;
+    font-size: 1.5em;
+}
+
+input{
+    margin: 5px;
+    width: 80%;
+    font-size: 0.8em;
+    outline: none;
+    border: none;
+    display: block;
+}
+p.label{
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+.submit{
+    margin: 40% inherit;
+    padding: 0.4em;
+    outline: none;
+    border: none;
+    display: inline-block;
+    width: 20%;
+    height: 30%;
+    font-size: 1.5em;
+}
+
+#root{
+    
+    width: 100%;
+    height: 100%;
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+}
