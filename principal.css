@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@500&family=Open+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(246, 247, 255);
+    overflow: visible;
+}
+
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 50px 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    color: #000000;
+    font-weight: 750;
+    text-decoration: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    font-family: 'Popins', sans-serif;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style-type: none;
+}
+
+header ul li a{
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    color: #ffff;
+}
+.normal{
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #000000;
+}
+
+.cta{
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #00c4cc;
+}
+
+.aboutus{
+    display: grid ;
+    grid-template-columns: 1fr .5fr .5fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 150px;
+    grid-gap: 30px;
+    margin-right: 15px;
+}
+
+.kanoa{
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    position: absolute;
+    transform: translate(115%, 0%)
+}
+
+.cont1{
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    background-image: url ("Kanoa.png")
+}
+
+.cont2{
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+}
+
+.cont3{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.cont4{
+    grid-column: 3 / 3;
+    grid-row: 2 / 3;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.aboutus h3{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1.3em;
+}
+
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-size:16px;
+    text-align: justify;
+}
+
+.aboutus h1{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 65px;
+    font-weight: 500;
+}
+
+.cont3 ul li{
+    display: flex;
+    justify-content: center;        
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.sec2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.somos{
+    width: 725px;
+    height: 100px;
+}
+
+
+.somos p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.somos h1{
+    font-family: 'IBM Plex Sans Devanagari', sans-serif;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 200;
+}
