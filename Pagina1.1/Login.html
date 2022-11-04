@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <header>
+            <div class="header">
+                <a href="#" class="logo">Baris <br>Software Development</a>
+                <ul>
+                    <li class="normal"><a href="cproyecto.html">CREAR PROYECTO</a></li>
+                    <li class="normal"><a href="transacciones.html">TRANSACCIONES </a></li>
+                    <li class="normal"><a href="sc.html">Source Code</a></li>
+                    <li class="cta"><a href="Aboutus.html">HOME</a></li>                
+                </ul>
+            </div>
+        </header>
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +19,15 @@
     </head>
     <body>
         <div class="formulario">
-            <h1>Login </h1>
-            <form method="post">
-                <div class="email">
-                    <input type="email" required>
-                    <label>Correo Electrónico</label>
-                </div>
-                <div class="password">
-                    <input type="password" required>
-                    <label>Contraseña</label>
-                </div>
+            <h1>Login</h1>
+            <form class="login" method="post">
+                <input type="email" required placeholder="Email">
+                <input type="password" required placeholder="Contraseña">
                 <input type="submit" value="Ingresar">
                 <div class="registrarse">
-                    ¿No estas registrado?<a href="#">Crea una cuenta</a>
+                    ¿No estas registrado? <a href="Registro.html">Crea una cuenta</a>
                 </div>
             </form>
         </div>
-    
     </body>
+</html>
