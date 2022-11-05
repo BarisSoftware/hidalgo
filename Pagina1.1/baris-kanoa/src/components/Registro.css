@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@500&family=Open+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes rotate {
+    100% {
+      background-position: 12% 10%;
+    }
+  }
+
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 50px 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    color: #ffffff;
+    font-weight: 750;
+    text-decoration: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    font-family: 'Popins', sans-serif;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style-type: none;
+}
+
+header ul li a{
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    color: #ffff;
+}
+
+.normal{
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #000000;
+}
+
+.cta{
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #00c4cc;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 100px 24px;
+    background-image: url("imagenes/fondor.svg");
+    background-repeat: no-repeat;
+    background-size: 300vh;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    animation: rotate 10s infinite alternate linear;
+}
+
+.formulario{
+    Position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    background-color: white;
+    border-radius: 15px;
+    margin: 0 20px;
+    padding: 40px 30px 44px;
+    border-radius: 1.25rem;
+    background: #fff;
+    text-align: center;
+}
+
+.formulario h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0 0 20px;
+    letter-spacing: 2px;
+  }
+
+.registro{
+    width: 100%;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+  }
+
+.text input[type="email"]{
+    width: 100%;
+    height: 56px;
+    border: 2px solid #b2c9da;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0 16px;
+}
+.text input[type="text"]{
+    width: 100%;
+    height: 56px;
+    border: 2px solid #b2c9da;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0 16px;
+}
+.text input[type="password"]{
+    width: 100%;
+    height: 56px;
+    border: 2px solid #b2c9da;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0 16px;
+}
+
+.registro a {
+    color: #216ce7;
+    font-size: 1rem;
+    text-align: left;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 6px;
+  }
+
