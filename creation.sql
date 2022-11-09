@@ -1,3 +1,7 @@
+create user 'miriam'@'localhost' identified by 'qwerty';
+grant all privileges on * . * to 'miriam'@'localhost';
+flush privileges;
+
 drop database if exists kanoa;
 
 create database kanoa;
