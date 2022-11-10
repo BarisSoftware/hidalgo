@@ -1,4 +1,4 @@
-create user 'miriam'@'localhost' identified by 'qwerty';
+#create user 'miriam'@'localhost' identified by 'qwerty';
 grant all privileges on * . * to 'miriam'@'localhost';
 flush privileges;
 
