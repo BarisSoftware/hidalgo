@@ -1,13 +1,16 @@
 const mysql = require('mysql');
 
 module.exports = {
-    connection: mysql.createConnection(
-        {
-            host: 'localhost',
-            user: 'miriam',
-            password: 'qwerty',
-            database: 'kanoa'
-        }),
+    connection : null,
+    initiate: () => {
+        this.connection = mysql.createConnection(
+            {
+                host: 'localhost',
+                user: 'node-connector',
+                password: 'n0m3l0123',
+                database: 'kanoa'
+            })
+    },
     connect: () => {
         this.connection.connect((error) => {
             if (error) {
@@ -35,9 +38,24 @@ module.exports = {
             console.log(`MySQL operation: ${result}`);
             return result;
         });
-    }
+    },
+    query: (query) => {
+    connection = mysql.createConnection({
+                    host: 'localhost',
+                    user: 'node-connector',
+                    password: 'n0m3l0123',
+                    database: 'kanoa'
+                });
+    connection.connect((error) => {
+                    console.log('Fine connection desde query');
+                    let sql = mysql.format('INSERT INTO Usuario(nombre, correo) VALUES("juan pablo" , "qwertyuiokjhgfd" );');
+                    connection.query(sql, (error, result) => {
+                    console.log(`MySQL operation: ${result}`);
+                    return result;
+                });
+            });
+        connection.end((error)=>{
+                console.log('Closed connection'); // OR throw error
+            })
+}
 };
-
-
-    
-

@@ -6,12 +6,12 @@ module.exports = {
     pass: '',
     publicKeys: [],
     tech: [],
-    User : (req) => {
-        this.name = req.body.name,
-        this.email = req.body.email,
-        this.pass = req.body.pass,
-        this.publicKeys = [] // Es necesaria crear una forma de recibir las llaves
-        this.tech = [] // Es necesaria crear una forma de recibir las tecnologias
+    User : (nombre, correo, pass, publicKeys = [], tech = []) => {
+        this.name = nombre,
+        this.email = correo,
+        this.pass = pass,
+        this.publicKeys = publicKeys // Es necesaria crear una forma de recibir las llaves
+        this.tech = tech // Es necesaria crear una forma de recibir las tecnologias
     },
     show : () => {
         let sho = this.name + ' ' + this.email;
@@ -23,13 +23,19 @@ module.exports = {
         database.close();
     },
     register : () => { // metodo para registrar al usuario
-        let query = `INSERT INTO Usuario(nombre, correo) VALUES(${this.name}, ${this.email})`
+        let query = `INSERT INTO Usuario(nombre, correo) VALUES(${this.name}, ${this.email});`
         try {
-            database.connect();
-            let res = database.execute(query);
-            database.close();  
-            return res;
-        } catch (error) {
+            /*database.initiate();
+            let status = database.connect();
+            if (status){
+                console.log('Trying: ' + query);
+                let res = database.execute(query);
+                if (res) database.close();  
+                return res;*/
+                let res = database.query(query);
+                return res;
+            }
+         catch (error) {
             throw error;
         }
     },
