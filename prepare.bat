@@ -1,7 +1,7 @@
 @ECHO OFF 
 echo Preparando entorno de desarrollo
-#echo Instalando NodeJS
-#winget install OpenJS.NodeJS.LTS
+echo Instalando NodeJS
+winget install OpenJS.NodeJS.LTS
 echo Instalando paquetes de NodeJS
 npm install multiformats
 npm install web3
