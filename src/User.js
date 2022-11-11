@@ -9,9 +9,13 @@ module.exports = {
     User : (req) => {
         this.name = req.body.name,
         this.email = req.body.email,
-        this.pass = req.pass,
+        this.pass = req.body.pass,
         this.publicKeys = [] // Es necesaria crear una forma de recibir las llaves
         this.tech = [] // Es necesaria crear una forma de recibir las tecnologias
+    },
+    show : () => {
+        let sho = this.name + ' ' + this.email;
+        return sho;
     },
     login : () => { // Modulo para autenticar al usuario
         database.connect();

@@ -4,7 +4,8 @@
   "description": "Sistema de criptomonedas con recompensas por crear software libre",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,11 @@
   },
   "homepage": "https://github.com/BarisSoftware/hidalgo#readme",
   "dependencies": {
-    "nodemon": "^2.0.20",
+    "multiformats": "^10.0.2",
+    "mysql": "^2.18.1",
     "web3": "^1.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }

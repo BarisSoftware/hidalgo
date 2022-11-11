@@ -21,6 +21,12 @@ app.post('/test', (req, res) =>{
     //res.redirect("https://github.com/");
 });
 
+app.get('/register', (req, res) => {
+    let user = require('./src/User');
+    user.User(req);
+    console.log(user.show());
+});
+
 const port = 3000;
 
 app.listen(port, ()=>{
