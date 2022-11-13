@@ -1,4 +1,5 @@
 const express = require('express');
+let DataBase = require('./src/DataBase');
 const bodyParser  = require('body-parser');
 const { register } = require('./src/User');
 const { connection, query } = require('./src/mysqlConnection');
@@ -45,33 +46,9 @@ app.get('/register', (req, res)=>{
 
 app.post('/regquest', (req, res) => {
     console.log(" ... Register Form Request");
-    const mysql = require('mysql');
-    let connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'node-connector',
-        password: 'n0m3l0123',
-        database: 'kanoa'
-    });
-
-    connection.connect((error)=>{
-        if(error) {console.log('Error: ' + error); return 0}
-        let query = `INSERT INTO Usuario(nombre, correo) VALUES('juanpablo', 'emial@ds.com');`
-        connection.query(query, (error) => {
-            if (error) console.log(error);
-        });
-
-        connection.end((error)=>{
-            if(error) console.log(error);
-        });
-
-    })
-    /*let user = require('./src/User');
-    user.User(req.body.nombre, req.body.correo, req.body.pass);
-    let st = user.register();
-    //let st = user.show();
-    console.log(st);
-    res.json({response: st});
-    */
+    let db = new DataBase();
+    let queryRes = db.query('SELECT * FROM Usuario');
+    res.json({"response" : queryRes})
 });
 
 const port = 3000;
