@@ -1,4 +1,5 @@
 let DataBase = require('./DataBase');
+const crypto = require('crypto');
 
 class User {
     name = '';
@@ -24,8 +25,13 @@ class User {
 
         database.close();
     };
+
     register = () => { // metodo para registrar al usuario
-        let query = `INSERT INTO Usuario(nombre, correo) VALUES('${this.name}', '${this.email}');`
+        const hasher256 = crypto.createHmac("sha256", this.email);
+        const hash = hasher256.update(this.pass).digest('hex');
+        //console.log('\n\nHASH TYPE: ' + typeof(hash) + '\n\n');
+        
+        let query = `INSERT INTO Usuario(nombre, correo, passHash) VALUES('${this.name}', '${this.email}', UNHEX('${hash}'));`;
         try {
             let db = new DataBase();
             console.log('Query: ' + query);

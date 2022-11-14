@@ -56,11 +56,14 @@ app.post('/regquest', (req, res) => {
     let succes = user.register();
 
     if (succes){
-        console.log(`Registrado: \n Nombre: ${nombre}\n Correo: ${correo}`);
+        console.log(`\tRegistrado: \n Nombre: ${nombre}\n Correo: ${correo}`);
         res.redirect('/login');
     } 
     else res.send('<html><h1>Error!</h1></html>')
+});
 
+app.get('/login', (req, res) => {
+    res.send('<html><h1>Good!</h1></html>');
 });
 
 const port = 3000;

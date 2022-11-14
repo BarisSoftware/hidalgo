@@ -17,5 +17,6 @@ npm install body-parser
 npm install helmet
 npm install fs
 npm install -g path
+npm install crypto
 echo Hecho
 echo Happy Coding
