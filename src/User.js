@@ -21,14 +21,11 @@ class User {
     };
 
     login = () => { // Modulo para autenticar al usuario
-        database.connect();
-
-        database.close();
+        //let auth = 
     };
 
     register = () => { // metodo para registrar al usuario
-        const hasher256 = crypto.createHmac("sha256", this.email);
-        const hash = hasher256.update(this.pass).digest('hex');
+        const hash = this.getPassHash();
         //console.log('\n\nHASH TYPE: ' + typeof(hash) + '\n\n');
         
         let query = `INSERT INTO Usuario(nombre, correo, passHash) VALUES('${this.name}', '${this.email}', UNHEX('${hash}'));`;
@@ -60,6 +57,16 @@ class User {
     delete = () => { //Modulo para eliminar al usuario
 
     };
+
+    auth = () => { //verificar que las credenciales sean correctas
+        
+    }
+
+    getPassHash = () => {
+        const hasher256 = crypto.createHmac("sha256", this.email);
+        const hash = hasher256.update(this.pass).digest('hex');
+        return hash;
+    }
 };
 
 module.exports = User;

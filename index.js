@@ -1,4 +1,5 @@
 const express = require('express');
+const esession = require('express-session');
 const bodyParser  = require('body-parser');
 const { register } = require('./src/User');
 const { connection, query } = require('./src/mysqlConnection');
@@ -12,6 +13,12 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({extended:true})); // Poner urlencoded a true permite procesar JSON
+app.use(esession({
+    secret: 'gluglunes',
+    resave: false,
+    saveUninitialized: true,
+    //cookie: {secure: true, httpOnly: true}
+}));
 
 app.get('/', (req, res) => {
     res.send('<a href="/register">Register</a><br><a href="/login">login</a>')
