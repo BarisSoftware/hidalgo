@@ -1,8 +1,11 @@
 const express = require('express');
-let DataBase = require('./src/DataBase');
 const bodyParser  = require('body-parser');
 const { register } = require('./src/User');
 const { connection, query } = require('./src/mysqlConnection');
+
+let DataBase = require('./src/DataBase');
+let User = require('./src/User');
+
 const app = express();
 
 app.use(express.static(__dirname + "/public"));
@@ -19,9 +22,8 @@ app.post('/test', (req, res) =>{
     res.json({
         tittle:"Form Response",
         status: "Ok", 
-        nombre: req.body.nombre,
+        pass: req.body.nombre,
     });
-    //res.redirect("https://github.com/");
 });
 
 app.get('/register', (req, res)=>{
@@ -46,9 +48,19 @@ app.get('/register', (req, res)=>{
 
 app.post('/regquest', (req, res) => {
     console.log(" ... Register Form Request");
-    let db = new DataBase();
-    let queryRes = db.query('SELECT * FROM Usuario');
-    res.json({"response" : queryRes})
+    let nombre = req.body.nombre;
+    let correo = req.body.correo;
+    let pass = req.body.pass;
+
+    let user = new User(nombre, correo, pass);
+    let succes = user.register();
+
+    if (succes){
+        console.log(`Registrado: \n Nombre: ${nombre}\n Correo: ${correo}`);
+        res.redirect('/login');
+    } 
+    else res.send('<html><h1>Error!</h1></html>')
+
 });
 
 const port = 3000;

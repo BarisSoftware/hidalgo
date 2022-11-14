@@ -19,7 +19,11 @@ idUsuario int primary key auto_increment not null,
 nombre varchar(45),
 correo varchar(45),
 passHash binary(33),
+# tech
+# publicKeys
 idPerfil int,
+fotoPerfil mediumblob,
+paisajePerfil mediumblob,
 foreign key (idPerfil) references Perfil_Usuario(idPerfil) on update cascade on delete cascade
 );
 
