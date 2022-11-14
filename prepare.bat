@@ -12,6 +12,7 @@ npm install sqlite3
 npm install nodemon
 npm install express
 npm install express-validator
+npm install express-session
 npm install react-scripts
 npm install body-parser
 npm install helmet

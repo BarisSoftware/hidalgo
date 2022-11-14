@@ -26,6 +26,7 @@
   "homepage": "https://github.com/BarisSoftware/hidalgo#readme",
   "dependencies": {
     "crypto": "^1.0.1",
+    "express-session": "^1.17.3",
     "multiformats": "^10.0.2",
     "mysql": "^2.18.1",
     "web3": "^1.8.0"

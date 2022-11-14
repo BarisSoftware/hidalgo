@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({extended:true})); // Poner urlencoded a true permite procesar JSON
 
 app.get('/', (req, res) => {
-    res.send('<a href="/register">Register</a>')
+    res.send('<a href="/register">Register</a><br><a href="/login">login</a>')
 });
 
 app.post('/test', (req, res) =>{
@@ -46,6 +46,27 @@ app.get('/register', (req, res)=>{
     </html>`);
 });
 
+app.get('/login', (req, res) => {
+    res.send(`<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+    </head>
+    <body>
+        <form action="POST">
+            <label for="correo">Correo: </label>
+            <input type="email" name="correo" id="correo">
+            <label for="pass">Pass: </label>
+            <input type="password" name="pass" id="pass">
+            <input type="submit" value="Enviar xd">
+        </form>
+    </body>
+    </html>`);
+});
+
 app.post('/regquest', (req, res) => {
     console.log(" ... Register Form Request");
     let nombre = req.body.nombre;
@@ -62,8 +83,19 @@ app.post('/regquest', (req, res) => {
     else res.send('<html><h1>Error!</h1></html>')
 });
 
-app.get('/login', (req, res) => {
-    res.send('<html><h1>Good!</h1></html>');
+app.post('/logquest', (req, res) => {
+    console.log(' ... Login Form Request');
+    let user = new User(
+        req.body.nombre,
+        req.body.correo,
+        req.body.pass
+    );
+    
+    let succes = user.login();
+
+    if(succes) {
+        console.log('Usuario Autenticadp');
+    }
 });
 
 const port = 3000;
