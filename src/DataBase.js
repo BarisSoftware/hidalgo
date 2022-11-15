@@ -30,6 +30,13 @@ class DataBase{
         });
     };
 
+    execute = (sqlQuery, toExecute) => {
+        this.connection.query(sqlQuery, (error, data) => {
+            console.log(data);
+            toExecute(error, data);
+        });
+    }
+
     end = () => {
         this.connection.end((error) => {
             if(error) console.log('Error en terminar conexion: ' + error);

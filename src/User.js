@@ -2,6 +2,7 @@ let DataBase = require('./DataBase');
 const crypto = require('crypto');
 
 class User {
+    id = undefined;
     name = '';
     email = '';
     pass = '';
@@ -21,7 +22,26 @@ class User {
     };
 
     login = () => { // Modulo para autenticar al usuario
-        //let auth = 
+        let valid = this.auth();
+        if (valid){
+            let query = `SELECT idUsuario WHERE correo = ${this.email}`;
+            console.log('Query: ' + query);
+            try{
+                let db = new DataBase();
+                db.execute(query, (error, data) => {
+                    if(error) console.log(error);
+                    this.id = data[0].idUsuario;
+                    console.log('Id: ' + data[0].idUsuario);
+                    db.end();
+                    return true
+                });
+                db.end();
+                return true;
+            } catch (error){
+                console.log(error);
+                return false;
+            }
+        }
     };
 
     register = () => { // metodo para registrar al usuario
@@ -58,8 +78,39 @@ class User {
 
     };
 
-    auth = () => { //verificar que las credenciales sean correctas
-        
+    auth = () => { //verificar que las credenciales sean correctas y colocar el id
+        let query = `SELECT HEX(passHash) FROM Usuario where correo = '${this.email}'`;
+        try{
+            let db = new DataBase();
+            console.log('Query: ' + query);
+
+            db.execute(query, (error, data) => {
+                if(error){
+                    console.log('Error Auth: ' + error);
+                    return false;
+                }
+
+                let hash = this.getPassHash();
+                let sus_passHash = data[0]['HEX(passHash)'];
+
+                console.log('HEX pass: ' + sus_passHash);
+
+                if(hash == sus_passHash){
+                    db.end();
+                    console.log('Good auth');
+                    return true;
+                }else{
+                    console.log('bad auth');
+                    return false;
+
+                }
+
+            });
+            db.end();
+        } catch (error) {
+            console.log(error);
+            return false;
+        }
     }
 
     getPassHash = () => {

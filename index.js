@@ -1,5 +1,5 @@
 const express = require('express');
-const esession = require('express-session');
+const express_session = require('express-session');
 const bodyParser  = require('body-parser');
 const { register } = require('./src/User');
 const { connection, query } = require('./src/mysqlConnection');
@@ -13,7 +13,8 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({extended:true})); // Poner urlencoded a true permite procesar JSON
-app.use(esession({
+
+app.use(express_session({
     secret: 'gluglunes',
     resave: false,
     saveUninitialized: true,
@@ -55,6 +56,7 @@ app.get('/register', (req, res)=>{
 
 app.get('/login', (req, res) => {
     res.send(`<!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -63,7 +65,7 @@ app.get('/login', (req, res) => {
         <title>Login</title>
     </head>
     <body>
-        <form action="POST">
+        <form action="/logquest" method="post">
             <label for="correo">Correo: </label>
             <input type="email" name="correo" id="correo">
             <label for="pass">Pass: </label>
@@ -101,7 +103,9 @@ app.post('/logquest', (req, res) => {
     let succes = user.login();
 
     if(succes) {
-        console.log('Usuario Autenticadp');
+        req.session.nombre = user.name;
+        req.session.correo = user.name;
+        console.log('Usuario Autenticado');
     }
 });
 
