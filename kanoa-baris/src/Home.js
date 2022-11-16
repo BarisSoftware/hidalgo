@@ -1,3 +1,4 @@
+import React from "react";
 import './App.css';
 import LogoKanoa from "./imagenes/LogoKanoa.png"
 import { HeaderHome } from "./HeaderHome"
@@ -6,11 +7,9 @@ function Home() {
   return (
 
     <div className="Home">
-
-
       <HeaderHome></HeaderHome>
 
-        <section><br></br><br></br><br></br>
+        <section>
           <div className='aboutus'>
             <div className='kanoa'>
               <h1>KANOA</h1>

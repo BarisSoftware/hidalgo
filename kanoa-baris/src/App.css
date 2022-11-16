@@ -12,7 +12,6 @@
 body{
     background-color: #f7fffe;
 }
-
 .header{
     position: absolute;
     top: 0;
@@ -31,7 +30,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-
 }
 
 header .logo{
@@ -138,7 +136,7 @@ p{
     font-weight: 500;
 }
 
-.cont3 ul li{
+.cont3 nav li{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,9 +157,8 @@ p{
     height: 100px;
 }
 
-
 .somos p{
-    font-family: 'Montserrat', sans-serif;;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     text-align: justify;
 }
@@ -188,7 +185,7 @@ p{
 .Proyectos{
     border: #000000;
     border-style: solid;
-    border-radius: 2rem;
+    border-radius: 2rem; 
     border-width: 8px;
     margin: 0 20px;
     padding: 40px 30px 44px;
