@@ -8,6 +8,7 @@ class User {
     pass = '';
     publicKeys = [];
     tech = [];
+    validated = false;
     constructor (nombre, correo, pass, publicKeys = [], tech = []) {
         this.name = nombre,
         this.email = correo,
@@ -17,11 +18,12 @@ class User {
     };
 
     show = () => {
-        let sho = this.name + ' ' + this.email;
+        let sho = ' ' + this.name + ' ' + this.email + ' '
+        + this.id  + ' ' + this.validated;
         return sho;
     };
 
-    login = () => { // Modulo para autenticar al usuario
+    /*login = () => { // Modulo para autenticar al usuario
         let valid = this.auth();
         if (valid){
             let query = `SELECT idUsuario WHERE correo = ${this.email}`;
@@ -42,7 +44,7 @@ class User {
                 return false;
             }
         }
-    };
+    };*/
 
     register = () => { // metodo para registrar al usuario
         const hash = this.getPassHash();
@@ -78,18 +80,17 @@ class User {
 
     };
 
-    auth = () => { //verificar que las credenciales sean correctas y colocar el id
+    updateID = (validated) => {
+        this.validated = validated;
+    }
+
+    /*auth = () => { //verificar que las credenciales sean correctas y colocar el id
         let query = `SELECT HEX(passHash) FROM Usuario where correo = '${this.email}'`;
         try{
             let db = new DataBase();
             console.log('Query: ' + query);
 
-            db.execute(query, (error, data) => {
-                if(error){
-                    console.log('Error Auth: ' + error);
-                    return false;
-                }
-
+            db.execute(query, (data) => {
                 let hash = this.getPassHash();
                 let sus_passHash = data[0]['HEX(passHash)'];
 
@@ -111,7 +112,7 @@ class User {
             console.log(error);
             return false;
         }
-    }
+    }*/
 
     getPassHash = () => {
         const hasher256 = crypto.createHmac("sha256", this.email);

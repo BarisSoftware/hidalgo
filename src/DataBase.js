@@ -32,8 +32,11 @@ class DataBase{
 
     execute = (sqlQuery, toExecute) => {
         this.connection.query(sqlQuery, (error, data) => {
+            if (error) {
+                console.log('Error execute' + error);
+            }
             console.log(data);
-            toExecute(error, data);
+            toExecute(data);
         });
     }
 

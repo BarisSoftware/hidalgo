@@ -99,13 +99,32 @@ app.post('/logquest', (req, res) => {
         req.body.correo,
         req.body.pass
     );
-    
-    let succes = user.login();
+        // login sin metodo en clase
+    let query = `SELECT idUsuario, HEX(passHash) FROM Usuario where correo = '${user.email}'`;
+    try{
+        let db = new DataBase();
+        console.log('Query: ' + query);
 
-    if(succes) {
-        req.session.nombre = user.name;
-        req.session.correo = user.name;
-        console.log('Usuario Autenticado');
+        db.execute(query, (data) => {
+            let hash = user.getPassHash().toLowerCase();
+            let sus_passHash = data[0]['HEX(passHash)'].toLowerCase();
+
+            console.log('HEX pass: ' + sus_passHash);
+            console.log('pass: ' + hash);
+
+            if(hash == sus_passHash){
+                console.log('Good auth');
+                user.validated = true;
+                user.id = data[0].idUsuario;    
+                res.json({'user': user.show()});
+            }else{
+                console.log('bad auth');
+                user.validated = false;
+            }
+        });
+        db.end();
+    } catch (error) {
+        console.log(error);
     }
 });
 
