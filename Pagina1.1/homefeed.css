@@ -14,8 +14,11 @@
     --sidebar-color: #FFF;
     --primary-color: #51cdd1;
     --primary-color-light: #e8fcff;
-    --toggle-color: #DDD;
-    --text-color: #707070;
+    --toggle-color: rgb(143, 143, 143);
+    --text-color: #303030;
+    --border-color: #181818;
+    --span-color: #b1b1b1;
+    --button-color: #ffb52e ;
 
     --tran-03: all 0.2s ease;
     --tran-03: all 0.3s ease;
@@ -37,10 +40,13 @@ body{
 body.dark{
     --body-color: #18191a;
     --sidebar-color: #242526;
-    --primary-color: #999999;
-    --primary-color-light: #363636;
+    --primary-color: #797979;
+    --primary-color-light: #5c5c5c;
     --toggle-color: #fff;
     --text-color: #ccc;
+    --border-color: #dadada;
+    --button-color: #be8927;
+    --span-color: #797979;  
 }
 
  .sidebar{
@@ -278,7 +284,7 @@ body.dark .mode .sun-moon i.moon{
 }
 
 body.dark .switch::before{
-    left: 20px;
+    left: 24px;
 }
 
 .home{
@@ -310,6 +316,7 @@ body.dark .home .text{
 /*Seccion de proyectos*/
 
 .sec2{
+    color: var(--text-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -317,7 +324,7 @@ body.dark .home .text{
 
 .somos{
     margin-top: 20px;
-    width: 70%;
+    width: 80%;
     height: 100px;
 }
 
@@ -341,21 +348,8 @@ body.dark .home .text{
     font-weight: 200;
 }
 
-.espacio{
-    height: 100px;
-    background: linear-gradient(
-        0deg,
-        rgba(80, 80, 80, 0.63),
-        rgba(151, 151, 151, 0.63)
-    )
-    ,url("imagenes/header.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-
 .Proyectos{
-    border: #000000;
+    border: var(--border-color);
     border-style: solid;
     border-radius: 2rem; 
     border-width: 8px;
@@ -368,8 +362,8 @@ body.dark .home .text{
 
 .pp2,
 .pp1{
-    width: 47%;
-    height: 150px;
+    width: 50%;
+    height: 180px;
 }
 
 .pp3_{
@@ -385,7 +379,7 @@ body.dark .home .text{
 .pp5,
 .pp6{
     width: 50%;
-    height: 80px;
+    height: 100px;
 }
 
 .Colabimg{
@@ -404,33 +398,44 @@ body.dark .home .text{
     height: 20px;
 }
 
+.donar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .donar img{
     width: 70px;
     height: 70px;
 }
 
-.donar{
+.btn-admin{
     display: flex;  
     margin-top: 15px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+input[type="button"]{
+    width: 250px;
+    height: 50px;
+    border: 2.5px solid;
+    background: var(--button-color);
+    border-radius: 25px;
+    font-size: 18px;
+    color: var(--text-color);
+    cursor: pointer;
+    outline: none;
 }
 
 .donar-span{
-    border: #8d8d8d;
-    background-color: #b1b1b1;
+    background-color: var(--span-color);
 }
 .espacio2{
     width: 100%;
     height: 80px;
 }
 
-.sec2 .somos .icon_{
-    width: 100px;
-    border-radius: 6px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
+.proyectos_{
+    text-align: left;
+    font-size: 50px;
 }
