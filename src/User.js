@@ -54,7 +54,7 @@ class User {
         try {
             let db = new DataBase();
             console.log('Query: ' + query);
-            db.query(query);
+            db.fquery(query);
             db.end();
             return true;
         }

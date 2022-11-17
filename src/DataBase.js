@@ -22,7 +22,7 @@ class DataBase{
         });
     };
 
-    query = (sqlQuery) => {
+    fquery = (sqlQuery) => {
         let queryResponse = 0;
         this.connection.query(sqlQuery, (error, data) => {
             if(error) console.log('Error en query: ' + error);
@@ -30,7 +30,7 @@ class DataBase{
         });
     };
 
-    execute = (sqlQuery, toExecute) => {
+    /*execute = (sqlQuery, toExecute) => {
         this.connection.query(sqlQuery, (error, data) => {
             if (error) {
                 console.log('Error execute' + error);
@@ -38,7 +38,18 @@ class DataBase{
             console.log(data);
             toExecute(data);
         });
+    }*/
+
+    execute = (sqlQuery, callback) => {
+        this.connection.query(sqlQuery, (error, data)=>{
+            if(error) console.log('Execute Error: ' + error);
+            console.log('Data: + \n');
+            console.log(data);
+            return callback(data);
+        })
     }
+
+    
 
     end = () => {
         this.connection.end((error) => {
