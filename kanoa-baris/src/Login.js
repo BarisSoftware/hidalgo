@@ -5,9 +5,10 @@ import { HeaderLogin } from "./HeaderLogin"
 
 function Login (){
     return(
-    <div className="Login">
+    <body className="body">
 
         <div className="formulario">
+            
 
             <h1>Login</h1>
             <form className="login" method="post">
@@ -19,7 +20,7 @@ function Login (){
                 </div>
             </form>
         </div>
-    </div>
+    </body>
 
     );
 }

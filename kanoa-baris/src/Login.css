@@ -36,17 +36,17 @@ header .logo{
     font-family: 'Popins', sans-serif;
 }
 
-header nav{
+header ul{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-header nav li{
+header ul li{
     list-style-type: none;
 }
 
-header nav li a{
+header ul li a{
     text-decoration: none;
     font-family: 'Quicksand', sans-serif;
     color: rgb(0, 0, 0);
@@ -71,14 +71,14 @@ header nav li a{
     background-color: #00c4cc;
 }
 
-body{
+.body{
     display: grid;
     place-items: center;
-    margin: 0;
-    padding: 100px 24px;
-    /* background-image: url("imagenes/fondo2.svg"); */
+    padding: 440px 24px;
+    background-image: url("imagenes/fondo2.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
     font-family: 'Poppins', sans-serif;
     color: #000;
     animation: rotate 6s infinite alternate linear;

@@ -1,6 +1,11 @@
 import React from "react";
 import './App.css';
 import LogoKanoa from "./imagenes/LogoKanoa.png"
+import download from "./imagenes/download.png"
+import avatar1 from "./imagenes/avatar1.png"
+import avatar2 from "./imagenes/avatar2.png"
+import avatar3 from "./imagenes/avatar3.png"
+import bitcoin from "./imagenes/bitcoin.png"
 import { HeaderHome } from "./HeaderHome"
 
 function Home() {
@@ -9,7 +14,7 @@ function Home() {
     <div className="Home">
       <HeaderHome></HeaderHome>
 
-        <section>
+        <section><br></br><br></br><br></br>
           <div className='aboutus'>
             <div className='kanoa'>
               <h1>KANOA</h1>
@@ -71,15 +76,16 @@ function Home() {
               </div>
               <div class="pp3">
                 <div class="pp3_">
-                    <p><img src="imagenes/download.png" alt=""></img> <span>Enlace de descarga: </span></p>
+                    <p><img src={download}></img> <span>Enlace de descarga: </span></p>
                 </div>
               </div>
               <div class="pp4">
                 <p>Colaboradores: </p>
                   <div class="Colabimg">
-                    <img src="imagenes/avatar1.png"></img>
-                    <img src="imagenes/avatar2.png"></img>
-                    <img src="imagenes/avatar3.png"></img>
+                    <img src={avatar1}></img>
+                    <img src={avatar2}></img>
+                    <img src={avatar3}></img>
+                    
                   </div>
               </div>
               <br></br><br></br><br></br>
@@ -89,7 +95,7 @@ function Home() {
               <div class="pp6">
                 <p>Donar:</p>
                   <div class="donar">
-                    <img src="imagenes/bitcoin.png"></img><p><span>"Llave pública del proyecto"</span></p>
+                    <img src={bitcoin}></img><p><span>"Llave pública del proyecto"</span></p>
                   </div>
               </div>
             </div>

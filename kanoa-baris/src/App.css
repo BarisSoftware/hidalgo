@@ -26,7 +26,8 @@ body{
         0deg,
         rgba(80, 80, 80, 0.63),
         rgba(151, 151, 151, 0.63)
-    );
+    )
+    ,url("imagenes/header.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -176,7 +177,8 @@ p{
         0deg,
         rgba(80, 80, 80, 0.63),
         rgba(151, 151, 151, 0.63)
-    );
+    )
+    ,url("imagenes/header.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

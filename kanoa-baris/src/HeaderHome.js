@@ -1,3 +1,4 @@
+import './App.css';
 import { Link } from "react-router-dom"
 export const HeaderHome = () => {
   return (
@@ -7,7 +8,7 @@ export const HeaderHome = () => {
             <nav>
                 <li class="normal"><a href="">CREAR PROYECTO</a></li>
                 <li class="normal"><a href="transacciones.html">TRANSACCIONES </a></li>
-                <li class="normal"><a href="sc.html">Source Code</a></li>
+                <li class="normal"><a href="https://github.com/BarisSoftware/hidalgo">Source Code</a></li>
                 <li class="cta"><Link to="/login">LOGIN</Link></li>
             </nav>
         </div>

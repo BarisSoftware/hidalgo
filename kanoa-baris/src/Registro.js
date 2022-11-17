@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 
 function Registro (){
     return (
+    <div className="registros">
         <div className="formulario">
             <h1>Regitro</h1>
             <form className="registro" method="post">
@@ -35,6 +36,7 @@ function Registro (){
                 </div>
             </form>
         </div>
+    </div>
     );
 }
 
