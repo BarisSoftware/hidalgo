@@ -106,28 +106,14 @@ app.post('/logquest', (req, res) => {
         let db = new DataBase();
         console.log('Query: ' + query);
         let variable = false;
-        db.execute(query, (data) => {
-            /*let hash = user.getPassHash().toLowerCase();
-            let sus_passHash = data[0]['HEX(passHash)'].toLowerCase();
-
-            console.log('HEX pass: ' + sus_passHash);
-            console.log('pass: ' + hash);
-
-            if(hash == sus_passHash){
-                console.log('Good auth');
-                user.validated = true;
-                user.id = data[0].idUsuario;    
-                res.json({'user': user.show()});
-            }else{
-                console.log('bad auth');
-                user.validated = false;
-            }*/
-            console.log(data);
-            user.id = data[0].idUsuario;
+        const resulsts = db.execute2(query).then((value) => {
             variable = true;
+            console.log('Rsults2: ' );
+            console.log(value);
+            res.json([{'user': user, 'var': variable, 'res': value}]);
         });
-        db.end();
-        res.json([{'user': user, 'var': variable}]);
+        //db.end();
+        
     } catch (error) {
         console.log(error);
     }

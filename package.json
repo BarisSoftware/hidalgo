@@ -29,6 +29,7 @@
     "express-session": "^1.17.3",
     "multiformats": "^10.0.2",
     "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
     "web3": "^1.8.0"
   },
   "devDependencies": {

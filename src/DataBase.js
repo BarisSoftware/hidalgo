@@ -1,8 +1,5 @@
-mysql = require('mysql');
-
+mysql = require('mysql2');
 class DataBase{
-
-    mysql = require('mysql')
 
     connectionJson =  {
         host: 'localhost',
@@ -30,26 +27,11 @@ class DataBase{
         });
     };
 
-    /*execute = (sqlQuery, toExecute) => {
-        this.connection.query(sqlQuery, (error, data) => {
-            if (error) {
-                console.log('Error execute' + error);
-            }
-            console.log(data);
-            toExecute(data);
-        });
-    }*/
-
-    execute = (sqlQuery, callback) => {
-        this.connection.query(sqlQuery, (error, data)=>{
-            if(error) console.log('Execute Error: ' + error);
-            console.log('Data: + \n');
-            console.log(data);
-            return callback(data);
-        })
+    execute2 = async (sqlQuery) => {
+        const results = await this.connection.promise().query(sqlQuery);
+        console.log(results);
+        return results
     }
-
-    
 
     end = () => {
         this.connection.end((error) => {
