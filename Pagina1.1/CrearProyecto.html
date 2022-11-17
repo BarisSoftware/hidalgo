@@ -1,37 +1,140 @@
-<div class="sec2">
-    <div class="somos">
-        <h2 class="Pp"><b>Homefeed</b></h2>  
-        <h3><b>Tus Proyectos</b></h3><br>
-        <div class="Proyectos">
-            <div class="pp1">
-                <p>Nombre del Proyecto: </p>
-            </div>   
-            <div class="pp2"> 
-                <p>Descripción del proyecto:</p>
-            </div><br><br><br>
-            <div class="pp3">
-                <div class="pp3_">
-                    <p><img src="imagenes/download.png" alt=""> <span>Enlace de descarga: </span></p>
-                </div>
-            </div>
-            <div class="pp4">  
-                <p>Colaboradores: </p>
-                <div class="Colabimg">
-                    <img src="imagenes/avatar1.png">
-                    <img src="imagenes/avatar2.png">
-                    <img src="imagenes/avatar3.png">
-                </div>
-            </div><br><br><br>
-            <div class="pp5">    
-                <p> Checksum del proyecto</p>
-            </div>
-            <div class="pp6">
-                <p>Donar:
-                    <div class="donar">
-                        <img src="imagenes/bitcoin.png"><p><span><"Llave pública del proyecto"></p></span>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crear proyecto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="CrearProyecto.css" rel="stylesheet" type="text/css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <nav class="sidebar">
+            <header>
+                <div class="image-text">
+                    <span class="image">
+                        <img src="imagenes/avatar3.png">
+                    </span>
+                    <div class="text header-text">
+                        <span class="name">Usuario</span>
                     </div>
+                </div>
+                <i class='bx bxs-chevron-right toggle'></i>
+            </header> 
+            
+            <div class="menu-bar">
+                <div class="menu">
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                            <a href="homefeed.html">
+                                <i class='bx bx-home icon' ></i>
+                                <span class="text nav-text">Homefeed</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="CrearProyecto.html">
+                                <i class='bx bx-add-to-queue icon'></i>
+                                <span class="text nav-text">Crear proyecto</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-dollar icon'></i>
+                                <span class="text nav-text">Realizar <br>Transacción</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-cog icon' ></i>
+                                <span class="text nav-text">Administrar <br>perfil</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-star icon'></i>
+                                <span class="text nav-text">Proyectos<br>populares</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom-content">
+                    <div class="content">
+                        <li class="">
+                            <a href="#">
+                                <i class='bx bx-log-out icon' ></i>
+                                <span class="text nav-text">Cerrar sesión</span>
+                            </a>
+                        </li>
+                        <li class="mode">
+                            <div class="sun-moon">
+                                <i class='bx bx-moon icon moon'></i>
+                                <i class='bx bx-sun icon sun'></i>
+                            </div>
+                            <span class="mode-text text">Dark mode</span>
+                            <div class="toggle-switch">
+                                <span class="switch"></span>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <h1 class="titulo">Crear proyecto</h1>
+        <div class="contenedor">
+            <div class="contenido">
+                <div class="col1">
+                    <div class="elem1">
+                        <label for="Nombre">Nombre</label>
+                        <div class="input">
+                            <input type="text" id="Nombre" name="nombre" required>
+                        </div>
+                    </div><br><br>
+                    <div class="elem3">
+                    <label for="Desc">Descripción</label>
+                        <div class="input">
+                            <input type="text" id="Desc" name="Des" required>
+                        </div>
+                    </div><br><br>
+                    <div class="elem5">
+                        <label for="Nombre">Llaves públicas</label>
+                        <div class="input">
+                            <input type="text" id="Nombre" name="nombre" placeholder="ultimas 10 letras"required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="elem2">
+                        <label for="Nombre">Administradores</label>
+                        <div class="imagenes">
+                            <img src="imagenes/avatar1.png" class="imgs">
+                            <img src="imagenes/avatar2.png" class="imgs">
+                            <img src="imagenes/avatar3.png" class="imgs">
+                        </div>
+                    <div class="button">
+                        <input type="button" value="+">
+                    </div>
+                    </div><br><br>
+                    <div class="elem4">
+                        <label for="Nombre">Colaboradores</label>
+                        <div class="imagenes">
+                            <img src="imagenes/avatar4.png" class="imgs">
+                            <img src="imagenes/avatar5.png" class="imgs">
+                            <img src="imagenes/avatar6.png" class="imgs">
+                        </div>
+                    <div class="button">
+                        <input type="button" value="+">
+                    </div>    
+                    </div><br><br>
+                    <div class="elem6">
+                        <label for="Licencia">Licencia</label>
+                        <div class="input">
+                            <input type="text" id="Licencia" name="Licencia" required>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    <div class="espacio2"></div> 
-</div>
-</section>
+        <div class="submit">
+            <input type="submit" id="Crear proyecto" name="Crear proyecto" value="Crear proyecto">
+        </div>
+</body>
+        <script src="homefeed.js"></script>
