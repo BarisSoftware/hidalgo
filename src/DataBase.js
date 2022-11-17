@@ -28,8 +28,9 @@ class DataBase{
     };
 
     execute2 = async (sqlQuery) => {
+        console.log('Query: ' + sqlQuery);
         const results = await this.connection.promise().query(sqlQuery);
-        console.log(results);
+        //console.log(results);
         return results
     }
 

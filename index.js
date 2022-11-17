@@ -100,20 +100,13 @@ app.post('/logquest', (req, res) => {
         req.body.pass
     );
         // login sin metodo en clase
-    let query = `SELECT idUsuario, HEX(passHash) FROM Usuario where correo = '${user.email}'`;
 
     try{
-        let db = new DataBase();
-        console.log('Query: ' + query);
-        let variable = false;
-        const resulsts = db.execute2(query).then((value) => {
-            variable = true;
-            console.log('Rsults2: ' );
-            console.log(value);
-            res.json([{'user': user, 'var': variable, 'res': value}]);
-        });
-        //db.end();
-        
+        let auth = user.authenticate().then((results) => {
+            console.log('auth:  ' + results);
+            if(results) res.send('NOICE');
+            else res.send('WTF');
+        })
     } catch (error) {
         console.log(error);
     }
