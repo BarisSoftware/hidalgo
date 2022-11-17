@@ -1,8 +1,7 @@
 const express = require('express');
-const express_session = require('express-session');
+const session = require('express-session');
 const bodyParser  = require('body-parser');
 const { register } = require('./src/User');
-const { connection, query } = require('./src/mysqlConnection');
 
 let DataBase = require('./src/DataBase');
 let User = require('./src/User');
@@ -14,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({extended:true})); // Poner urlencoded a true permite procesar JSON
 
-app.use(express_session({
+app.use(session({
     secret: 'gluglunes',
     resave: false,
     saveUninitialized: true,
@@ -35,6 +34,7 @@ app.post('/test', (req, res) =>{
 });
 
 app.get('/register', (req, res)=>{
+    console.log(' ... Register Page Request');
     res.send(`<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -55,6 +55,7 @@ app.get('/register', (req, res)=>{
 });
 
 app.get('/login', (req, res) => {
+    console.log(' ... Login Page Request');
     res.send(`<!DOCTYPE html>
     <!DOCTYPE html>
     <html lang="en">
@@ -74,6 +75,24 @@ app.get('/login', (req, res) => {
         </form>
     </body>
     </html>`);
+});
+
+app.get('/homepage', (req, res) => {
+    console.log(' ... Homepage Page Request');
+    if(req.session.auth){
+        res.send(`<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Home Page</title>
+        </head>
+        <body>
+            <h1>SUP Brotha</h1>
+        </body>
+        </html>`);
+    } else res.redirect('/login');
 });
 
 app.post('/regquest', (req, res) => {
@@ -99,14 +118,19 @@ app.post('/logquest', (req, res) => {
         req.body.correo,
         req.body.pass
     );
-        // login sin metodo en clase
-
     try{
-        let auth = user.authenticate().then((results) => {
-            console.log('auth:  ' + results);
-            if(results) res.send('NOICE');
+        let auth = user.authenticate().then((authenticated) => {
+            console.log('auth:  ' + authenticated);
+            if(authenticated){
+                req.session.idUser = user.id;
+                req.session.email = user.email;
+                req.session.name = user.name;
+                req.session.auth = true;
+                //res.send('NOICE');
+                res.redirect('/homepage');
+            }
             else res.send('WTF');
-        })
+        });
     } catch (error) {
         console.log(error);
     }
