@@ -5,70 +5,114 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="homefeed.css" rel="stylesheet" type="text/css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <title>HomeFeed</title>
     </head>
     <body>
-        <header>
-            <div class="icon__menu">
-                <img src="imagenes/menu.png">
+        <nav class="sidebar">
+            <header>
+                <div class="image-text">
+                    <span class="image">
+                        <img src="imagenes/avatar3.png">
+                    </span>
+                    <div class="text header-text">
+                        <span class="name">Usuario</span>
+                    </div>
+                </div>
+                <i class='bx bxs-chevron-right toggle'></i>
+            </header> 
+            
+            <div class="menu-bar">
+                <div class="menu">
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                            <a href="homefeed.html">
+                                <i class='bx bx-home icon' ></i>
+                                <span class="text nav-text">Homefeed</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="CrearProyecto.html">
+                                <i class='bx bx-add-to-queue icon'></i>
+                                <span class="text nav-text">Crear proyecto</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-dollar icon'></i>
+                                <span class="text nav-text">Realizar <br>Transacción</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-cog icon' ></i>
+                                <span class="text nav-text">Administrar <br>perfil</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-star icon'></i>
+                                <span class="text nav-text">Proyectos<br>populares</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom-content">
+                    <div class="content">
+                        <li class="">
+                            <a href="#">
+                                <i class='bx bx-log-out icon' ></i>
+                                <span class="text nav-text">Cerrar sesión</span>
+                            </a>
+                        </li>
+                        <li class="mode">
+                            <div class="sun-moon">
+                                <i class='bx bx-moon icon moon'></i>
+                                <i class='bx bx-sun icon sun'></i>
+                            </div>
+                            <span class="mode-text text">Dark mode</span>
+                            <div class="toggle-switch">
+                                <span class="switch"></span>
+                            </div>
+                        </li>
+                    </div>
+                </div>
             </div>
-        </header>
-        <div class="menu__side" id="menu_side">
-            <div class="name__page">
-                <a href="homefeed.html"><img src="imagenes/avatar1.png"></a>
-                <h4>Homefeed</h4>
-            </div>
-            <div class="options__menu">	
-                    <div class="option">
-                        <a href="CrearProyecto.html" class="selected"><img src="imagenes/anadir.png"></a>
-                        <h4>Crear proyecto</h4>
+        </nav>
+        <section class="sec2">
+            <div class="somos">
+                <h1><b>Homefeed</b></h1>
+                <h2>Tus proyectos</h2>  <br>
+                <div class="Proyectos">
+                    <div class="pp1">
+                        <p>Nombre del Proyecto: </p>
+                    </div>   
+                    <div class="pp2"> 
+                        <p>Descripción del proyecto:</p>
+                    </div><br><br><br>
+                    <div class="pp3">
+                        <div class="pp3_">
+                            <p><img src="imagenes/download.png" alt=""> <span class="donar">Enlace de descarga: </span></p>
+                        </div>
                     </div>
-    
-                <a href="#">
-                    <div class="option">
-                        <img src="imagenes/dinero.png">
-                        <h4>Transacciones</h4>
+                    <div class="pp4">  
+                        <p>Colaboradores: </p>
+                        <div class="Colabimg">
+                            <img src="imagenes/avatar1.png">
+                            <img src="imagenes/avatar2.png">
+                            <img src="imagenes/avatar3.png">
+                        </div>
+                    </div><br><br><br>
+                    <div class="pp5">    
+                        <p> Checksum del proyecto</p>
                     </div>
-                </a>
-                
-                <a href="#">
-                    <div class="option">
-                        <i class="fas fa-video" title="Cursos"></i>
-                        <h4>Cursos</h4>
+                    <div class="pp6">
+                        <p>Donar:
+                            <div class="donar">
+                                <img src="imagenes/bitcoin.png"><p><span class="donar-span">"Llave pública del proyecto"</p></span>
+                            </div>
                     </div>
-                </a>
-    
-                <a href="#">
-                    <div class="option">
-                        <i class="far fa-sticky-note" title="Blog"></i>
-                        <h4>Blog</h4>
-                    </div>
-                </a>
-    
-                <a href="#">
-                    <div class="option">
-                        <i class="far fa-id-badge" title="Contacto"></i>
-                        <h4>Contacto</h4>
-                    </div>
-                </a>
-    
-                <a href="#">
-                    <div class="option">
-                        <i class="far fa-address-card" title="Nosotros"></i>
-                        <h4>Nosotros</h4>
-                    </div>
-                </a>
-    
-            </div>
-    
-        </div>
-    
-        <main>
-            <h1>Title Exemple</h1><br>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam sapiente cumque dicta animi explicabo sequi. Ex amet et, dolor eligendi commodi consectetur quo voluptatibus, cum nemo porro veniam at blanditiis?</p> <br>
-    
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident adipisci beatae impedit quia, deleniti quasi sequi iusto exercitationem nihil nulla, laboriosam dolore corrupti fuga officiis? Odit a mollitia id magnam amet delectus quia blanditiis reprehenderit explicabo eveniet! Rem voluptatum explicabo ipsum quae, dolorum, laudantium doloribus a, illum saepe sapiente accusantium dicta reiciendis? Amet iure porro voluptatum error fugit odit voluptas?</p>
-        </main>
-    
-        <script src="js/script.js"></script>
+                </div>
+        <script src="homefeed.js"></script>
     </body>
 </html>

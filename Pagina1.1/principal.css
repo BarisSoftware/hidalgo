@@ -243,12 +243,7 @@ p{
     display: flex;  
     margin-top: 15px;
     align-items: center;
-    justify-content: space-between;
-}
-
-span{
-    border: #8d8d8d;
-    background-color: #b1b1b1;
+    justify-content: center;
 }
 .espacio2{
     width: 100%;
