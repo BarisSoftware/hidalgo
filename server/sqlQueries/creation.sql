@@ -75,5 +75,7 @@ archivosProyecto longblob not null,
 version varchar(15) not null,
 foreign key (idProyecto) references Proyecto(idProyecto) on update cascade on delete cascade
 );
+use kanoa;
+select * from Usuario;
 
 

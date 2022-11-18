@@ -7,11 +7,11 @@ function Registro (){
     <div className="registros">
         <div className="formulario">
             <h1>Regitro</h1>
-            <form className="registro" method="post">
-                <input type="email" placeholder="Email" required></input>
-                <input type="text" placeholder="Nombre" required></input>
-                <input type="password" placeholder="Contraseña" required></input>
-                <input type="password" placeholder="Confirmación contraseña" required></input>
+            <form className="registro" method="post" action="/regquest">
+                <input type="email" name="correo" placeholder="Email" required></input>
+                <input type="text" name="nombre" placeholder="Nombre" required></input>
+                <input type="password" name="pass" placeholder="Contraseña" required></input>
+                <input type="password" placeholder="Confirmación contraseña"></input>
                 <h3 align="left">Tecnologías</h3>
                 <div class="divbut">
                     <div class="radiobutton">

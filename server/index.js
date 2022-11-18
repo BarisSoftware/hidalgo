@@ -8,7 +8,7 @@ let User = require('./src/User');
 
 const app = express();
 
-app.use(express.static(__dirname + "/public"));
+//app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({extended:true})); // Poner urlencoded a true permite procesar JSON
@@ -20,6 +20,7 @@ app.use(session({
     //cookie: {secure: true, httpOnly: true}
 }));
 
+/*
 app.get('/', (req, res) => {
     res.send('<a href="/register">Register</a><br><a href="/login">login</a>')
 });
@@ -93,7 +94,7 @@ app.get('/homepage', (req, res) => {
         </body>
         </html>`);
     } else res.redirect('/login');
-});
+});*/
 
 app.post('/regquest', (req, res) => {
     console.log(" ... Register Form Request");
@@ -136,8 +137,8 @@ app.post('/logquest', (req, res) => {
     }
 });
 
-const port = 3000;
+const PORT = process.env.PORT || 2000;
 
-app.listen(port, ()=>{
-    console.log(`Server Activo en: http://localhost:${port}`);
+app.listen(PORT, ()=>{
+    console.log(`Server Activo en: http://localhost:${PORT}`);
 });
