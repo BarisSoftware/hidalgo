@@ -60,7 +60,9 @@ function Home() { //Es necesario el corregir pasarle el texto en el parameto
           </div>
         </div>
       </section>
+
       <div className="espacio"></div>
+      
       <section className="sec2">
         <div className="somos">
           <h1>¿Qué es Kanoa?</h1>
