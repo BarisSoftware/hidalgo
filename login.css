@@ -49,21 +49,29 @@ header ul li{
 header ul li a{
     text-decoration: none;
     font-family: 'Quicksand', sans-serif;
-    color: rgb(0, 0, 0);
+    color: #ffffff;
 }
 
 .normal{
     padding: 10px 30px;
     margin: 10px;
-    border-radius: 20px;
+    border: #fff;
+    border-style: solid; 
+    border-width: 2px;
+    border-radius: 25px;
     font-size: 15px;
     font-weight: 600;
-    background-color: #bfdffd;
+    background-color: #00101c;
+    border-color: #ffffff;
 }
 
 .cta{
     padding: 10px 30px;
     margin: 10px;
+    border: #fff;
+    border-style: solid; 
+    border-width: 2px;
+    border-radius: 25px;
     border-radius: 20px;
     letter-spacing: 2px;
     font-size: 15px;
@@ -104,6 +112,7 @@ body{
     font-weight: 600;
     margin: 0 0 20px;
     letter-spacing: 2px;
+    color: #091a28;
   }
 
 .login{
