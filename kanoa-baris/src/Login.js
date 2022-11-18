@@ -8,12 +8,10 @@ function Login (){
     <body className="body">
 
         <div className="formulario">
-            
-
             <h1>Login</h1>
-            <form className="login" method="post">
-                <input type="email" required placeholder="Email"></input>
-                <input type="password" required placeholder="Contraseña"></input>
+            <form className="login" method="post" action="/logquest">
+                <input type="email" name="correo" required placeholder="Email"></input>
+                <input type="password" name="pass" required placeholder="Contraseña"></input>
                 <input type="submit" value="Ingresar"></input>
                 <div class="registrarse">
                     ¿No estas registrado? <Link to="/registro">Crea una cuenta</Link>
@@ -21,7 +19,6 @@ function Login (){
             </form>
         </div>
     </body>
-
     );
 }
 export default Login
