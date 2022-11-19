@@ -385,7 +385,7 @@ input[type=text]{
 .elem1{
     border-color: var(--text-color);
     border-style: solid;
-    border-width: 2px;
+    border-width: 3px;
     border-radius: 25px;
     height: 120px;
     width: 320px;
@@ -436,9 +436,9 @@ input[type="submit"]{
     width: 17%;
     height: 50px;
     border: 2.5px solid;
-    background: var(--button-color);
+    background: var(--primary-color);
     border-radius: 25px;
-    font-size: 18px;
+    font-size: 20px;
     border-color: var(--border-color);
     color: var(--border-color);
     cursor: pointer;

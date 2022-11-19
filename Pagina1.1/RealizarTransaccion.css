@@ -18,9 +18,11 @@
     --text-color: #303030;
     --border-color: #181818;
     --span-color: #b1b1b1;
-    --text-color2: #303030;
-    --button-color: #51cdd1;
-    --button-color2: #ad0000;
+    --button-color: #f03030;
+    --button-color2: #51cdd1;
+    --button-color3: #b9abbc;
+
+    --text-color2:#fff;
 
     --tran-03: all 0.2s ease;
     --tran-03: all 0.3s ease;
@@ -29,7 +31,7 @@
 }
 
 body{
-    min-height: 100vh;
+    min-height: 110vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
 }
@@ -47,9 +49,11 @@ body.dark{
     --toggle-color: #fff;
     --text-color: #ccc;
     --border-color: #dadada;
-    --button-color: #00b1b8;
-    --button-color2: #f03030;
-    --text-color2: #292a55; 
+    --button-color: #bd1313;
+    --button-color2: #0f6164;
+    --button-color3:#5a4f5c;
+    --span-color: #797979;  
+    --text-color2:#fff;
 }
 
  .sidebar{
@@ -316,24 +320,16 @@ body.dark .home .text{
     color: var(--text-color);
 }
 
-/*Seccion de Crear Proyecto */
+ /*Seccion de Realizar transaccion*/
+
 .titulo{
     display: flex;
     justify-content: center;
     color: var(--text-color);
     align-items: center;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     font-size: 70px;
-}
-
-.titulo2{
-    display: flex;
-    justify-content: center;
-    color: var(--text-color);
-    align-items: center;
-    margin-bottom: 30px;
-    font-size: 30px;
 }
 
 .contenedor{
@@ -341,7 +337,6 @@ body.dark .home .text{
     align-items: center;
     justify-content: center;
     height: 100%;
-    margin-top: 25px;
 }
 
 .contenedor .contenido{
@@ -372,14 +367,9 @@ label{
     align-items: center;
     color: var(--text-color);
     font-size: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
 }
 
-input[type="email"],
-input[type="tel"],
-input[type="password"],
+input[type="number"],
 input[type=text]{
     text-align: center;
     background: none;
@@ -392,22 +382,62 @@ input[type=text]{
 }
 
 .elem8,
-.elem7,
 .elem6,
 .elem5,
-.elem4,
 .elem3,
-.elem2,
 .elem1{
     border-color: var(--text-color);
     border-style: solid;
-    border-width: 2px;
+    border-width: 3px;
     border-radius: 25px;
     height: 120px;
     width: 320px;
     padding-top: 10px;
 }
 
+.elem2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: var(--text-color);
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 0;
+    height: 120px;
+    width: 320px;
+    padding-top: 10px;
+}
+
+.elem4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-color: var(--text-color);
+    border-style: solid;
+    border-top: none;
+    border-width: 3px;
+    border-radius: 0;
+    height: 260px;
+    width: 320px;
+    padding-top: 10px;
+    flex-direction: column;
+}
+
+.elem6{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: var(--text-color);
+    border-style: solid;
+    border-top: none;
+    border-width: 3px;
+    border-radius: 0;
+    height: 115px;
+    width: 320px;
+    padding-top: 10px;
+    flex-direction: column;
+}
 .input{
     display: flex;
     align-items: center;
@@ -415,80 +445,47 @@ input[type=text]{
     text-align: center;
 }
 
-.imgs{
-    width: 60px;
-    height: 60px;
-}
-
-.imagenes{
-    padding-top: 5px;
+.input2{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     text-align: center;
 }
 
-.button{
+.input3{
     display: flex;
-    justify-content: end;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
 }
 
-input[type="button"]{
-    align-items: left;
-    width: 17%;
-    height: 50px;
-    border: 2.5px solid;
-    background: var(--body-color);
-    border-radius: 25px;
-    font-size: 18px;
-    color: var(--border-color);
-    cursor: pointer;
-    outline: none;
+#img{
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
 }
 
-.profle-pic-div{
+#imagen{
     display: flex;
     justify-content: center;
-    color: var(--text-color);
     align-items: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-size: 70px;
-}
-
-input [type="file"]{
-    text-align: center;
     color: var(--text-color);
-    font-size: 20px;
-    display: block; 
+    font-size: 24px;
 }
 
-.profle-pic-div img{
+.sub1,
+.sub2,
+.sub3{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 150px;
-    height: 150px;
 }
 
-.buttons{
-    display: flex;
+#btnEstado{
     align-items: center;
-    justify-content: space-evenly;
-}
-
-.sub{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 35px;
-}
-
-#guardar{
-    align-items: center;
-    width: 240px;
+    width: 200px;
     height: 50px;
     border: 2.5px solid;
     background: var(--button-color);
@@ -500,16 +497,29 @@ input [type="file"]{
     outline: none;
 }
 
-#eliminar{
+#submit1_{
     align-items: center;
-    width: 240px;
+    width: 120px;
+    height: 50px;
+    border: 2.5px solid;
+    background: var(--button-color3);
+    font-size: 16px;
+    border-color: var(--border-color);
+    color: var(--text-color);
+    cursor: pointer;
+    outline: none;
+    margin-right: 15px;
+}
+
+#submit2_{
+    align-items: center;
+    width: 120px;
     height: 50px;
     border: 2.5px solid;
     background: var(--button-color2);
-    border-radius: 30px;
-    font-size: 20px;
+    font-size: 16px;
     border-color: var(--border-color);
-    color: var(--span-color);
+    color: var(--text-color);
     cursor: pointer;
     outline: none;
 }

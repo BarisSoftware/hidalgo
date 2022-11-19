@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Crear proyecto</title>
+        <title>HomeFeed</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="CrearProyecto.css" rel="stylesheet" type="text/css">
+        <link href="RealizarTransaccion.css" rel="stylesheet" type="text/css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
@@ -78,63 +78,60 @@
                 </div>
             </div>
         </nav>
-        <h1 class="titulo">Crear proyecto</h1>
+        <hi class="titulo">Realizar transacción</hi>
         <div class="contenedor">
             <div class="contenido">
                 <div class="col1">
                     <div class="elem1">
-                        <label for="Nombre">Nombre</label>
+                        <label for="Llaves">Llave pública</label>
                         <div class="input">
-                            <input type="text" id="Nombre" name="nombre" required>
+                            <input type="text" id="Llaves" name="Llaves">
                         </div>
                     </div><br><br>
                     <div class="elem3">
-                    <label for="Desc">Descripción</label>
+                        <label for="Llaves">Cantidad</label>
                         <div class="input">
-                            <input type="text" id="Desc" name="Des" required>
+                            <input type="number" id="Llaves" name="Llaves">
                         </div>
                     </div><br><br>
                     <div class="elem5">
-                        <label for="Nombre">Llaves públicas</label>
+                        <label for="Recompensa"> Recompensa </label>
                         <div class="input">
-                            <input type="text" id="Nombre" name="nombre" placeholder="ultimas 10 letras"required>
+                            <input type="text" id="Recompensa" name="Recompensa">
                         </div>
                     </div>
                 </div>
                 <div class="col2">
                     <div class="elem2">
-                        <label for="Nombre">Administradores</label>
-                        <div class="imagenes">
-                            <img src="imagenes/avatar1.png" class="imgs">
-                            <img src="imagenes/avatar2.png" class="imgs">
-                            <img src="imagenes/avatar3.png" class="imgs">
+                        <div class="input2">
+                            <input type="image" src="imagenes/avatar5.png "id="img" name="imagen">
+                            <label for="imagen" id="imagen"> Cuenta destino </label>
                         </div>
-                    <div class="button">
-                        <input type="button" value="+">
                     </div>
-                    </div><br><br>
                     <div class="elem4">
-                        <label for="Nombre">Colaboradores</label>
-                        <div class="imagenes">
-                            <img src="imagenes/avatar4.png" class="imgs">
-                            <img src="imagenes/avatar5.png" class="imgs">
-                            <img src="imagenes/avatar6.png" class="imgs">
+                        <div class="input3">
+                            <div class="sub1">
+                                <input type="text" id="IdTrans" placeholder="Id de Transacción">
+                            </div><br>
+                            <div class="sub2">
+                                <input type="text" id="LlavePub" placeholder="Llave pública">
+                            </div><br>
+                            <div class="sub3">
+                                <input type="button" id="btnEstado" value="Estado">  
+                            </div>
+
                         </div>
-                    <div class="button">
-                        <input type="button" value="+">
-                    </div>    
-                    </div><br><br>
+                    </div>
                     <div class="elem6">
-                        <label for="Licencia">Licencia</label>
-                        <div class="input">
-                            <input type="text" id="Licencia" name="Licencia" required>
+                        <div class="input2">
+                            <div class="submit1">
+                                <input type="submit" id="submit1_" value="Borrador">
+                                <input type="submit" id="submit2_" value="Transferir">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="submit">
-            <input type="submit" id="Crear proyecto" name="Crear proyecto" value="Crear proyecto">
-        </div>
-</body>
-        <script src="homefeed.js"></script>
+    <script src="AdministrarPerfil.js"></script>
+    </body>
+</html>

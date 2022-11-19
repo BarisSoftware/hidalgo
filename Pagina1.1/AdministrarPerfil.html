@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li class="nav-link">
-                            <a href="#">
+                            <a href="RealizarTransaccion.html">
                                 <i class='bx bx-dollar icon'></i>
                                 <span class="text nav-text">Realizar <br>Transacción</span>
                             </a>
@@ -79,10 +79,10 @@
             </div>
         </nav>
         <h1 class="titulo">Administrar perfil</h1>
-        <center>
-            <input type="file" name="archivo" id="image-input" accept="image/jpeg, image/png, image/jpg"><br>
-            <div class="display-image">
-            </center> 
+        <h4 class="titulo2">Actualizar foto de perfil</h4>
+        <div class="profle-pic-div">
+            <img src="imagenes/avatar3.png" id="imgp">
+            <input type="file" name="file" id="file" accept="image/jpeg, image/png, image/jpg">
         </div>
         <div class="contenedor">
             <div class="contenido">
@@ -109,6 +109,11 @@
                         <label for="Conpass">Confirmación contraseña</label>
                         <div class="input">
                             <input type="password" id="Conpass" name="Conpass">
+                        </div>
+                    </div><br><br>
+                    <div class="elem10">
+                        <div class="sub">
+                            <input type="submit" id="guardar" name="guardar" value="Guardar cambios">
                         </div>
                     </div>
                 </div>
@@ -142,12 +147,14 @@
                         <div class="button">
                             <input type="button" value="+">
                         </div>
+                    </div><br><br>
+                    <div class="elem10">
+                        <div class="sub">
+                            <input type="submit" id="eliminar" name="eliminar" value="Eliminar mi cuenta">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="submit">
-            <input type="submit" id="Crear proyecto" name="Crear proyecto" value="Crear proyecto">
         </div>
         <script src="AdministrarPerfil.js"></script>
 </body>
