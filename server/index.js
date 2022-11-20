@@ -74,11 +74,7 @@ app.get('/login', (req, res) => {
     </body>
     </html>`);
 });
-<<<<<<< HEAD
 */
-=======
-
->>>>>>> ReactAppJS
 app.get('/homepage', (req, res) => {
     console.log(' ... Homepage Page Request');
     if(req.session.auth){
@@ -95,11 +91,7 @@ app.get('/homepage', (req, res) => {
         </body>
         </html>`);
     } else res.redirect('/login');
-<<<<<<< HEAD
 });
-=======
-});*/
->>>>>>> ReactAppJS
 
 app.post('/regquest', (req, res) => {
     console.log(" ... Register Form Request");
@@ -118,7 +110,6 @@ app.post('/regquest', (req, res) => {
 });
 
 app.post('/logquest', (req, res) => {
-<<<<<<< HEAD
 
     if(req.session.auth == true){
         res.redirect('/');
@@ -146,30 +137,6 @@ app.post('/logquest', (req, res) => {
     } catch (error) {
         console.log(error);
     }}
-=======
-    console.log(' ... Login Form Request');
-    let user = new User(
-        req.body.nombre,
-        req.body.correo,
-        req.body.pass
-    );
-    try{
-        let auth = user.authenticate().then((authenticated) => {
-            console.log('auth:  ' + authenticated);
-            if(authenticated){
-                req.session.idUser = user.id;
-                req.session.email = user.email;
-                req.session.name = user.name;
-                req.session.auth = true;
-                //res.send('NOICE');
-                res.redirect('/homepage');
-            }
-            else res.send('WTF');
-        });
-    } catch (error) {
-        console.log(error);
-    }
->>>>>>> ReactAppJS
 });
 
 const PORT = process.env.PORT || 2000;
