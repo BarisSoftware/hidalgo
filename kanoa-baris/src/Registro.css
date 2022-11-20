@@ -55,30 +55,36 @@ header ul li a{
 .normal{
     padding: 10px 30px;
     margin: 10px;
-    border-radius: 20px;
+    border: #fff;
+    border-style: solid; 
+    border-width: 2px;
+    border-radius: 25px;
     font-size: 15px;
     font-weight: 600;
-    background-color: #000000;
+    background-color: #091a28;
 }
 
 .cta{
     padding: 10px 30px;
     margin: 10px;
-    border-radius: 20px;
+    border: #fff;
+    border-style: solid; 
+    border-width: 2px;
+    border-radius: 25px;
     letter-spacing: 2px;
     font-size: 15px;
     font-weight: 600;
     background-color: #00c4cc;
 }
 
-.registros{
+body{
     display: grid;
     place-items: center;
     margin: 0;
-    padding: 600px 24px;
+    padding: 100px 24px;
     background-image: url("imagenes/fondoreg.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 250vh;
     font-family: 'Poppins', sans-serif;
     color: #000;
     animation: rotate 10s infinite alternate linear;
@@ -104,6 +110,7 @@ header ul li a{
     font-weight: 600;
     margin: 0 0 20px;
     letter-spacing: 2px;
+    color: #091a28;
   }
 
 .registro{
@@ -181,7 +188,6 @@ input[type='radio'], label{
     align-items: left;
 }
 
-
 input[type="button"]{
     align-items: left;
     width: 15%;
@@ -194,3 +200,4 @@ input[type="button"]{
     cursor: pointer;
     outline: none;
 }
+

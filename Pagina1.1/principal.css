@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
@@ -253,4 +254,264 @@ span{
 .espacio2{
     width: 100%;
     height: 80px;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: #f7fffe;
+}
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20%;
+    width: 100%;
+    padding: 30px 50px 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(
+        0deg,
+        rgba(80, 80, 80, 0.63),
+        rgba(151, 151, 151, 0.63)
+    )
+    ,url("imagenes/header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+header .logo{
+    color: #ffffff;
+    font-weight: 750;
+    text-decoration: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    font-family: 'Popins', sans-serif;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style-type: none;
+}
+
+header ul li a{
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    color: #ffff;
+}
+.normal{
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #000000;
+}
+
+.cta{
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #00c4cc;
+}
+
+.aboutus{
+    display: grid ;
+    grid-template-columns: .7fr .4fr .4fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 150px;
+    grid-gap: 30px;
+    margin-right: 15px;
+}
+
+.kanoa{
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    position: absolute;
+    transform: translate(80%, 0%)
+}
+
+.cont1{
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    background-image: url ("Kanoa.png")
+}
+
+.cont2{
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+}
+
+.cont3{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.cont4{
+    grid-column: 3 / 3;
+    grid-row: 2 / 3;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.aboutus h3{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 750;
+    font-size: 1.3em;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+    font-size:18px;
+    text-align: justify;
+}
+
+.aboutus h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 65px;
+    font-weight: 500;
+}
+
+.cont3 ul li{
+    display: flex;
+    justify-content: center;        
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.sec2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.somos{
+    width: 70%;
+    height: 180px;
+}
+
+.somos p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.somos h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    font-weight: 200;
+}
+
+.espacio{
+    height: 100px;
+    background: linear-gradient(
+        0deg,
+        rgba(80, 80, 80, 0.63),
+        rgba(151, 151, 151, 0.63)
+    )
+    ,url("imagenes/header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.Proyectos{
+    border: #000000;
+    border-style: solid;
+    border-radius: 2rem; 
+    border-width: 8px;
+    margin: 0 20px;
+    padding: 40px 30px 44px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.pp2,
+.pp1{
+    width: 50%;
+    height: 180px;
+}
+
+.pp3_{
+    display: flex;
+    align-items: center;
+}
+
+.pp3,
+.pp4{
+    width: 50%;
+    height: 150px;
+}
+.pp5,
+.pp6{
+    width: 50%;
+    height: 80px;
+}
+
+.Colabimg{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.Colabimg img{
+    width: 90px;
+    height: 80px;
+}
+
+.pp3 img{
+    width: 20px;
+    height: 20px;
+}
+
+.donar img{
+    width: 70px;
+    height: 70px;
+}
+
+.donar{
+    display: flex;  
+    margin-top: 15px;
+    align-items: center;
+    justify-content: space-around;
+}
+.espacio2{
+    width: 100%;
+    height: 80px;
+}
+
+span{
+    background-color: rgb(172, 172, 172);
+}
+
+.somos h3{
+    font-size: 50px;
+>>>>>>> origin/main
 }

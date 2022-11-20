@@ -18,7 +18,8 @@
     --text-color: #303030;
     --border-color: #181818;
     --span-color: #b1b1b1;
-    --button-color: #ffb52e ;
+    --button-color: #a3a3a3;
+    --text-color2: #e4e4e4;
 
     --tran-03: all 0.2s ease;
     --tran-03: all 0.3s ease;
@@ -45,8 +46,8 @@ body.dark{
     --toggle-color: #fff;
     --text-color: #ccc;
     --border-color: #dadada;
-    --button-color: #be8927;
-    --span-color: #797979;  
+    --button-color: #727272;
+    --text-color2: #e4e4e4; 
 }
 
  .sidebar{
@@ -313,129 +314,167 @@ body.dark .home .text{
     color: var(--text-color);
 }
 
-/*Seccion de proyectos*/
-
-.sec2{
+/*Seccion de Crear Proyecto */
+.titulo{
+    display: flex;
+    justify-content: center;
     color: var(--text-color);
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 70px;
+}
+
+.contenedor{
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    margin-top: 25px;
 }
 
-.somos{
-    margin-top: 20px;
-    width: 80%;
-    height: 100px;
+.contenedor .contenido{
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
-.somos p{
-    font-family: 'Montserrat', sans-serif;
+.contenedor .contenido .col2,
+.contenedor .contenido .col1{
+    flex-direction: column;
+    color: var(--text-color);
+}
+
+.col1{
+    margin-right: 50px;
+    flex-direction: column;
+}
+
+.col2{
+    margin-left: 50px;
+    flex-direction: column;
+}
+
+label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type=text]{
+    text-align: center;
+    background: none;
+    color: var(--text-color);
     font-size: 20px;
-    text-align: justify;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    border-bottom: 2px solid var(--text-color);
 }
 
-.somos h1{
-    font-family: 'Poppins', sans-serif;
-    font-size: 50px;
-    text-align: center;
-    font-weight: 200;
-}
-
-.somos h2{
-    font-family: 'Poppins', sans-serif;
-    font-size: 30px;
-    text-align: center;
-    font-weight: 200;
-}
-
-.Proyectos{
-    border: var(--border-color);
+.elem8,
+.elem7,
+.elem6,
+.elem5,
+.elem4,
+.elem3,
+.elem2,
+.elem1{
+    border-color: var(--text-color);
     border-style: solid;
-    border-radius: 2rem; 
-    border-width: 8px;
-    margin: 0 20px;
-    padding: 40px 30px 44px;
+    border-width: 2px;
+    border-radius: 25px;
+    height: 120px;
+    width: 320px;
+    padding-top: 10px;
+}
+
+.input{
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.pp2,
-.pp1{
-    width: 50%;
-    height: 180px;
-}
-
-.pp3_{
-    display: flex;
-    align-items: center;
-}
-
-.pp3,
-.pp4{
-    width: 50%;
-    height: 150px;
-}
-.pp5,
-.pp6{
-    width: 50%;
-    height: 100px;
-}
-
-.Colabimg{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.Colabimg img{
-    width: 90px;
-    height: 80px;
-}
-
-.pp3 img{
-    width: 20px;
-    height: 20px;
-}
-
-.donar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.donar img{
-    width: 70px;
-    height: 70px;
-}
-
-.btn-admin{
-    display: flex;  
-    margin-top: 15px;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+.imgs{
+    width: 60px;
+    height: 60px;
+}
+
+.imagenes{
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.button{
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 input[type="button"]{
-    width: 250px;
+    align-items: left;
+    width: 17%;
+    height: 50px;
+    border: 2.5px solid;
+    background: var(--body-color);
+    border-radius: 25px;
+    font-size: 18px;
+    color: var(--border-color);
+    cursor: pointer;
+    outline: none;
+}
+
+
+input[type="submit"]{
+    align-items: left;
+    width: 17%;
     height: 50px;
     border: 2.5px solid;
     background: var(--button-color);
     border-radius: 25px;
     font-size: 18px;
-    color: var(--text-color);
+    border-color: var(--border-color);
+    color: var(--border-color);
     cursor: pointer;
     outline: none;
 }
 
-.donar-span{
-    background-color: var(--span-color);
-}
-.espacio2{
-    width: 100%;
-    height: 80px;
+.submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 35px;
 }
 
-.proyectos_{
-    text-align: left;
-    font-size: 50px;
+input[type="image"]{
+    width: 180px;
+    height: 180px;
+    display: block;
+}
+
+#display-image{
+    width: 400px;
+    height: 225px;
+    border: 1px solid var(--border-color);
+    background-position: center;
+    background-size: cover;
+  }
+
+
+.img-perfil img{
+    width: 100px;
+    height: 180px;
 }
