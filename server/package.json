@@ -1,0 +1,38 @@
+{
+  "name": "kanoa",
+  "version": "0.0.1",
+  "description": "Sistema de criptomonedas con recompensas por crear software libre",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BarisSoftware/hidalgo.git"
+  },
+  "keywords": [
+    "crypto",
+    "\"software",
+    "libre\"",
+    "\"free",
+    "software\""
+  ],
+  "author": "Baris Software Development",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BarisSoftware/hidalgo/issues"
+  },
+  "homepage": "https://github.com/BarisSoftware/hidalgo#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "express-session": "^1.17.3",
+    "multiformats": "^10.0.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "web3": "^1.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
