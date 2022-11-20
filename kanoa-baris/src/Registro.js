@@ -6,11 +6,7 @@ function Registro (){
     return (
     <div className="registros">
         <div className="formulario">
-<<<<<<< HEAD
-            <h1>Regitro</h1>
-=======
             <h1>Registro</h1>
->>>>>>> ReactAppJS
             <form className="registro" method="post" action="/regquest">
                 <input type="email" name="correo" placeholder="Email" required></input>
                 <input type="text" name="nombre" placeholder="Nombre" required></input>

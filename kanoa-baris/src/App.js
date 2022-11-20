@@ -12,14 +12,6 @@ function App() {
   return (
 
     <BrowserRouter>
-<<<<<<< HEAD
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/registro" element={<Registro />} />
-      </Routes>
-    </BrowserRouter>
-=======
     <Routes>
     <Route exact path="/" element={<Home />} />
     <Route exact path="/login" element={<Login />} />
@@ -29,7 +21,6 @@ function App() {
     <Route exact path="/home_feed" element={<Homefeed />} />
     </Routes>
 </BrowserRouter>
->>>>>>> ReactAppJS
 
   );
 }
