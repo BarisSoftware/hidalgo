@@ -18,9 +18,10 @@
     --text-color: #303030;
     --border-color: #181818;
     --span-color: #b1b1b1;
-    --text-color2: #303030;
-    --button-color: #51cdd1;
-    --button-color2: #ad0000;
+    --text-color2: #ffffff;
+    --text-color3: #ffffff;
+    --button-color: #00a1b0;
+    --button-color2: #d31111;
 
     --tran-03: all 0.2s ease;
     --tran-03: all 0.3s ease;
@@ -47,9 +48,10 @@ body.dark{
     --toggle-color: #fff;
     --text-color: #ccc;
     --border-color: #dadada;
-    --button-color: #00b1b8;
-    --button-color2: #f03030;
-    --text-color2: #292a55; 
+    --button-color: #68ecfc;
+    --button-color2: #d63636;
+    --text-color2: #ffffff; 
+    --text-color3: #04515a;
 }
 
  .sidebar{
@@ -325,6 +327,7 @@ body.dark .home .text{
     margin-top: 30px;
     margin-bottom: 30px;
     font-size: 70px;
+    font-weight: 500;
 }
 
 .titulo2{
@@ -495,7 +498,7 @@ input [type="file"]{
     border-radius: 30px;
     font-size: 20px;
     border-color: var(--border-color);
-    color: var(--text-color2);
+    color: var(--text-color3);
     cursor: pointer;
     outline: none;
 }
@@ -509,7 +512,7 @@ input [type="file"]{
     border-radius: 30px;
     font-size: 20px;
     border-color: var(--border-color);
-    color: var(--span-color);
+    color: var(--text-color2);
     cursor: pointer;
     outline: none;
 }
