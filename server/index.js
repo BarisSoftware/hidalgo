@@ -86,7 +86,7 @@ app.post('/crateProreq', (req, res) =>{
 
 app.get('/testReq', (req, res) =>{
     console.log(' ... TEST Project Request');
-    res.send('NOICE');
+    res.json({'valor':'webos'})
 })
 
 const PORT = process.env.PORT || 2000;
