@@ -6,6 +6,7 @@ import Home from "./Home"
 import Homefeed from "./Homefeed";
 import Login from "./Login"
 import Registro from "./Registro"
+import Testito from "./Testito";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <Route exact path="/admin" element={<Administrar />} />
     <Route exact path="/crear" element={<Crear />} />
     <Route exact path="/home_feed" element={<Homefeed />} />
+    <Route exact path="/testito" element={<Testito />} />
     </Routes>
 </BrowserRouter>
 
