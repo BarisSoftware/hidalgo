@@ -144,6 +144,11 @@ app.post('/crateProreq', (req, res) =>{
     res.send('NOICE');
 })
 
+app.get('/testReq', (req, res) =>{
+    console.log(' ... TEST Project Request');
+    res.send('NOICE');
+})
+
 const PORT = process.env.PORT || 2000;
 
 app.listen(PORT, ()=>{
