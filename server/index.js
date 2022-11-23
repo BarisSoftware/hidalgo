@@ -17,64 +17,6 @@ app.use(session({
     //cookie: {secure: true, httpOnly: true}
 }));
 
-/*
-app.get('/', (req, res) => {
-    res.send('<a href="/register">Register</a><br><a href="/login">login</a>')
-});
-
-app.post('/test', (req, res) =>{
-    console.log(" ... Test Form Request");
-    res.json({
-        tittle:"Form Response",
-        status: "Ok", 
-        pass: req.body.nombre,
-    });
-});
-
-app.get('/register', (req, res)=>{
-    console.log(' ... Register Page Request');
-    res.send(`<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Register</title>
-    </head>
-    <body>
-        <form action="/regquest" method="post">
-            <label>Nombre: <input type="text" id="nombre" name="nombre"  placeholder="Nombre"></label>
-            <label>Correo: <input type="email" name="correo" id="correo" placeholder="Correo"></label>
-            <label>Contraseña: <input type="password" name="pass" id="pass"></label>
-            <input type="submit">
-        </form>
-    </body>
-    </html>`);
-});
-
-app.get('/login', (req, res) => {
-    console.log(' ... Login Page Request');
-    res.send(`<!DOCTYPE html>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
-    </head>
-    <body>
-        <form action="/logquest" method="post">
-            <label for="correo">Correo: </label>
-            <input type="email" name="correo" id="correo">
-            <label for="pass">Pass: </label>
-            <input type="password" name="pass" id="pass">
-            <input type="submit" value="Enviar xd">
-        </form>
-    </body>
-    </html>`);
-});
-*/
 app.get('/homepage', (req, res) => {
     console.log(' ... Homepage Page Request');
     if(req.session.auth){
@@ -110,7 +52,6 @@ app.post('/regquest', (req, res) => {
 });
 
 app.post('/logquest', (req, res) => {
-
     if(req.session.auth == true){
         res.redirect('/');
     }
@@ -129,7 +70,6 @@ app.post('/logquest', (req, res) => {
                     req.session.email = user.email;
                     req.session.name = user.name;
                     req.session.auth = true;
-                    //res.send('NOICE');
                     res.redirect('/');
                 }
                 else res.send('WTF');
