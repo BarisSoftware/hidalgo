@@ -10,6 +10,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true })); // Poner urlencoded a true permite procesar JSON
 
+app.use(function(req, res, next){
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
+
+app.use(express.static('../Pagina1.1'))
+
 app.use(session({
     secret: 'gluglunes',
     resave: false,
@@ -36,13 +43,14 @@ app.get('/homepage', (req, res) => {
 });
 
 app.post('/regquest', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     console.log(" ... Register Form Request");
     console.log(JSON.stringify(req.headers));
 
     let nombre = req.body.nombre;
     let correo = req.body.correo;
     let pass = req.body.pass;
-    console.log('Petition: Nombre' + nombre );
+    console.log('Petition: Nombre' + nombre);
     let user = new User(nombre, correo, pass);
     let succes = user.register();
 
@@ -53,9 +61,13 @@ app.post('/regquest', (req, res) => {
     else res.send('<html><h1>Error!</h1></html>');
 });
 
+
 app.post('/logquest', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+
     if (req.session.auth == true) {
-        res.redirect('/');
+        res.send(true)
+        //res.redirect('/');
     }
     else {
         console.log(' ... Login Form Request');
@@ -72,9 +84,12 @@ app.post('/logquest', (req, res) => {
                     req.session.email = user.email;
                     req.session.name = user.name;
                     req.session.auth = true;
-                    res.redirect('/home_feed');
+                    res.send(true)
+                    //res.redirect('/home_feed');
                 }
-                else res.send('WTF');
+                else {
+                    res.send(false)
+                }
             });
         } catch (error) {
             console.log(error);
@@ -93,6 +108,7 @@ app.get('/testReq', (req, res) => {
 })
 
 app.post('/checkSession', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     console.log(' ... check Session request');
     console.log('Actual Session: ' + req.session.auth);
     if (req.session.auth) {
