@@ -40,7 +40,7 @@ app.post('/regquest', (req, res) => {
     let nombre = req.body.nombre;
     let correo = req.body.correo;
     let pass = req.body.pass;
-
+    console.log('Petition: Nombre' + nombre );
     let user = new User(nombre, correo, pass);
     let succes = user.register();
 
