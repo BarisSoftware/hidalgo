@@ -18,11 +18,14 @@
     --text-color: #303030;
     --border-color: #181818;
     --span-color: #b1b1b1;
-    --button-color: #f03030;
-    --button-color2: #51cdd1;
-    --button-color3: #b9abbc;
-
+    --button-color: #d31111;
+    --button-color2: #00a1b0;
+    --button-color3: #940726;
+    --button-color4: #390d2d;
+    --button-color5: #fd8808;
     --text-color2:#fff;
+    --text-color3: #fff;
+    --text-color4: #fff;
 
     --tran-03: all 0.2s ease;
     --tran-03: all 0.3s ease;
@@ -31,7 +34,7 @@
 }
 
 body{
-    min-height: 110vh;
+    min-height: 225vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
 }
@@ -49,11 +52,14 @@ body.dark{
     --toggle-color: #fff;
     --text-color: #ccc;
     --border-color: #dadada;
-    --button-color: #bd1313;
-    --button-color2: #0f6164;
-    --button-color3:#5a4f5c;
+    --button-color: #d63636;
+    --button-color2: #68ecfc;
+    --button-color3:#d31c51;
+    --button-color4:#a75a92;
+    --button-color5: #fea124;
     --span-color: #797979;  
     --text-color2:#fff;
+    --text-color3: #04515a;
 }
 
  .sidebar{
@@ -121,20 +127,11 @@ body.dark{
     display: flex;
     align-items: center;
 }
-.sidebar header .logo-text{
-    display: flex;
-    flex-direction: column;
-}
+
 header .image-text .name {
     margin-top: 2px;
     font-size: 18px;
     font-weight: 600;
-}
-
-header .image-text .profession{
-    font-size: 16px;
-    margin-top: -2px;
-    display: block;
 }
 
 .sidebar header .image{
@@ -329,7 +326,18 @@ body.dark .home .text{
     align-items: center;
     margin-top: 30px;
     margin-bottom: 60px;
-    font-size: 70px;
+    font-size: 65px;
+    font-weight: 400;
+}
+
+.titulo2{
+    display: flex;
+    justify-content: center;
+    color: var(--text-color);
+    align-items: center;
+    margin-top: 60px;
+    font-size: 65px;
+    font-weight: 400;
 }
 
 .contenedor{
@@ -352,12 +360,12 @@ body.dark .home .text{
 }
 
 .col1{
-    margin-right: 50px;
+    margin-right: 90px;
     flex-direction: column;
 }
 
 .col2{
-    margin-left: 50px;
+    margin-left: 90px;
     flex-direction: column;
 }
 
@@ -505,7 +513,7 @@ input[type=text]{
     background: var(--button-color3);
     font-size: 16px;
     border-color: var(--border-color);
-    color: var(--text-color);
+    color: var(--text-color2);
     cursor: pointer;
     outline: none;
     margin-right: 15px;
@@ -519,7 +527,62 @@ input[type=text]{
     background: var(--button-color2);
     font-size: 16px;
     border-color: var(--border-color);
-    color: var(--text-color);
+    color: var(--text-color3);
+    cursor: pointer;
+    outline: none;
+}
+
+h3{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+ 
+#Editar{
+    align-items: center;
+    width: 120px;
+    height: 50px;
+    border: 2.5px solid;
+    background: var(--button-color3);
+    font-size: 16px;
+    border-color: var(--border-color);
+    color: var(--text-color2);
+    cursor: pointer;
+    outline: none;
+    margin-right: 15px;
+}
+
+.buttonHis{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#historial{
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    border: 2.5px solid;
+    background: var(--button-color4);
+    border-radius: 30px;
+    font-size: 20px;
+    border-color: var(--border-color);
+    color: var(--text-color2);
+    cursor: pointer;
+    outline: none;
+}
+
+#CrearTrans{
+    align-items: center;
+    width: 230px;
+    height: 50px;
+    border: 2.5px solid;
+    background: var(--button-color5);
+    border-radius: 30px;
+    font-size: 20px;
+    border-color: var(--border-color);
+    color: var(--text-color2);
     cursor: pointer;
     outline: none;
 }
