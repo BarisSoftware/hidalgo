@@ -46,7 +46,8 @@ app.post('/regquest', (req, res) => {
 
     if (succes){
         console.log(`\tRegistrado: \n Nombre: ${nombre}\n Correo: ${correo}`);
-        res.redirect('/login');
+        //res.redirect('/login');
+        res.sendStatus(200);
     } 
     else res.send('<html><h1>Error!</h1></html>')
 });
