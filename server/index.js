@@ -1,19 +1,23 @@
 const express = require('express');
+const cors = require('cors');
 const session = require('express-session');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 let User = require('./src/User');
 
 const app = express();
 
 //app.use(express.static(__dirname + "/public"));
+app.use(cookieParser)
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true })); // Poner urlencoded a true permite procesar JSON
-
-app.use(function(req, res, next){
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-});
+app.use(
+    cors({
+        origin: ["http://localhost:3000"],
+        methods: ["GET", "POST"],
+        credentials:true,
+    })
+)
 
 app.use(express.static('../Pagina1.1'))
 
@@ -21,7 +25,9 @@ app.use(session({
     secret: 'gluglunes',
     resave: false,
     saveUninitialized: true,
-    //cookie: {secure: true, httpOnly: true}
+    cookie: {
+        expires: 60 * 24 *24
+    }
 }));
 
 app.get('/homepage', (req, res) => {
