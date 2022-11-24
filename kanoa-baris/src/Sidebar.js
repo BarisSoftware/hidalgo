@@ -27,13 +27,13 @@ function Sidebar(props){
                     <div class="menu">
                         <ul class="menu-links">
                             <li class="nav-link">
-                                <a href="homefeed.html">
+                                <a href="/home_feed">
                                     <i class='bx bx-home icon' ></i>
                                     <span class="text nav-text">Homefeed</span>
                                 </a>
                             </li>
                             <li class="nav-link">
-                                <a href="CrearProyecto.html">
+                                <a href="/crear">
                                     <i class='bx bx-add-to-queue icon'></i>
                                     <span class="text nav-text">Crear proyecto</span>
                                 </a>
