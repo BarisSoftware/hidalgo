@@ -45,7 +45,7 @@ strikes smallint not null);
 
 create table Proyecto (
 idProyecto int primary key auto_increment not null,
-nombreProyecto varchar(45) not null,
+nombreProyecto varchar(45) not null unique,
 descripcionProyecto varchar(45) not null,
 idMalwareStrike int,
 idPerfilProyecto int,

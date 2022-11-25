@@ -4,6 +4,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 let User = require('./src/User');
+let Project = require('./src/Project');
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(
     cors({
         origin: ["http://localhost:3000"],
         methods: ["GET", "POST"],
-        credentials:true,
+        credentials: true,
     })
 )
 
@@ -26,7 +27,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: {
-        expires: 60 * 24 *24
+        expires: 60 * 24 * 24
     }
 }));
 
@@ -103,9 +104,27 @@ app.post('/logquest', (req, res) => {
     }
 });
 
-app.post('/crateProreq', (req, res) => {
+app.post('/createProreq', (req, res) => {
     console.log(' ... Create Project Request');
-    res.send('NOICE');
+    if (req.session.auth) 
+    {
+        try
+        {
+            let nombre = req.body.nombre;
+            let descripcion = req.body.descripcion;
+            let idUser = req.session.idUser;
+            let newProject = new Project(nombre, descripcion, idUser);
+            newProject.create();
+        } 
+        catch(error)
+        {
+            console.log('Error: ' + error);
+        }
+    }
+    else
+    {
+        res.redirect('/login');
+    }
 })
 
 app.get('/testReq', (req, res) => {
