@@ -55,15 +55,15 @@ class User {
                 if(hash == hashDB){
                     console.log('Good Auth');
                     this.validated = true;
-                    this.id = results[0].idUsuario;
-                    this.name = results[0].nombre;
+                    this.id = results[0][0].idUsuario;
+                    this.name = results[0][0].nombre;
                 }else{
                 console.log('Bad Auth');
                 this.validated = false;
                 }
             }
         });
-        return this.validated;
+        return {name: this.name, email: this.email, id: this.id, auth: this.validated};
     }
 
     read = (id = null, correo = null, nombre = null) => { // Modulo para obtener la informacion del usuario

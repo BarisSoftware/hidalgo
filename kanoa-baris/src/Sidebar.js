@@ -10,14 +10,14 @@ import avatar6 from "./imagenes/avatar6.png"
 
 function Sidebar(props){
     return(
-        <nav class="sidebar">
+        <nav class="sidebar" >
                 <header>
                     <div class="image-text">
                         <span class="image">
                             <img src={avatar3}></img>
                         </span>
                         <div class="text header-text">
-                            <span class="name">Usuario</span>
+                            <span class="name">{props.nombre}</span>
                         </div>
                     </div>
                     <i class='bx bxs-chevron-right toggle'></i>

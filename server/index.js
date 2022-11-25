@@ -77,12 +77,11 @@ app.post('/logquest', (req, res) => {
         try {
             let auth = user.authenticate().then((authenticated) => {
                 console.log('auth:  ' + authenticated);
-                if (authenticated) {
-                    req.session.user = user;
-                    req.session.idUser = user.id;
-                    req.session.email = user.email;
-                    req.session.name = user.name;
-                    req.session.auth = true;
+                if (authenticated.auth) {
+                    req.session.idUser = authenticated.id;
+                    req.session.email = authenticated.email;
+                    req.session.name = authenticated.name;
+                    req.session.auth = authenticated.auth;
                     //res.send(true)
                     res.redirect('/home_feed');
                 }
@@ -170,11 +169,11 @@ app.post('/checkSession', (req, res) => {
     console.log(' ... Check Session Request');
     if (req.session.auth) {
         console.log('TRUE');
-        res.json({ 'auth': true, 'user': req.session.user});
+        res.json({ 'auth': true, 'name': req.session.name, 'email': req.session.email, 'id': req.session.idUser });
     }
     else {
         console.log('FALSE');
-        res.json({ 'auth': false });
+        res.json({ auth: false });
     }
 })
 
