@@ -45,15 +45,16 @@ strikes smallint not null);
 
 create table Proyecto (
 idProyecto int primary key auto_increment not null,
-nombreProyecto varchar(45) not null,
+nombreProyecto varchar(45) not null unique,
 descripcionProyecto varchar(45) not null,
 idMalwareStrike int,
-idPerfilProyecto int,
-foreign key (idPerfilProyecto) references Perfil_Proyecto(idPerfilProyecto) on update cascade on delete cascade,
-foreign key (idMalwareStrike) references MalwareStrikes(idMalwareStrike) on update cascade on delete cascade);
+idPerfilProyecto int
+#foreign key (idPerfilProyecto) references Perfil_Proyecto(idPerfilProyecto) on update cascade on delete cascade,
+#foreign key (idMalwareStrike) references MalwareStrikes(idMalwareStrike) on update cascade on delete cascade
+);
 
 create table Puestos (
-idPuesto int primary key not null,
+idPuesto int primary key auto_increment not null,
 idProyecto int not null,
 idUsuario int not null,
 puesto smallint not null,
@@ -77,5 +78,7 @@ foreign key (idProyecto) references Proyecto(idProyecto) on update cascade on de
 );
 use kanoa;
 select * from Usuario;
+select * from Proyecto;
+select * from Puestos;
 
 

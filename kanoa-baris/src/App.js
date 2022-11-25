@@ -9,7 +9,6 @@ import Registro from "./Registro"
 import Testito from "./Testito";
 import Transacciones from "./Transacciones";
 
-
 function App() {
   return (
 

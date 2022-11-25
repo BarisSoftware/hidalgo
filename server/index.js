@@ -4,29 +4,30 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 let User = require('./src/User');
+let Project = require('./src/Project');
 
 const app = express();
 
 //app.use(express.static(__dirname + "/public"));
-app.use(cookieParser)
+//app.use(cookieParser)
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true })); // Poner urlencoded a true permite procesar JSON
-app.use(
+/*app.use(
     cors({
         origin: ["http://localhost:3000"],
         methods: ["GET", "POST"],
-        credentials:true,
+        credentials: true,
     })
-)
+)*/
 
-app.use(express.static('../Pagina1.1'))
+//app.use(express.static('../Pagina1.1'))
 
 app.use(session({
     secret: 'gluglunes',
     resave: false,
     saveUninitialized: true,
     cookie: {
-        expires: 60 * 24 *24
+        expires: 60 * 24 * 24
     }
 }));
 
@@ -47,6 +48,8 @@ app.get('/homepage', (req, res) => {
         </html>`);
     } else res.redirect('/login');
 });
+
+//              USUARIOS
 
 app.post('/regquest', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -103,15 +106,74 @@ app.post('/logquest', (req, res) => {
     }
 });
 
-app.post('/crateProreq', (req, res) => {
+//              PROYECTOS
+
+app.post('/createProjectreq', (req, res) => {
     console.log(' ... Create Project Request');
-    res.send('NOICE');
+    //if (req.session.auth) 
+    {
+        try {
+            let nombre = req.body.nombre;
+            let descripcion = req.body.Des;
+            //let idUser = req.session.idUser;
+            let idUser = 1;
+            let newProject = new Project(nombre, descripcion, idUser);
+            newProject.create();
+            res.send('ok')
+        }
+        catch (error) {
+            console.log('Error: ' + error);
+            res.status(400);
+            res.send('error')
+        }
+    }
+    /*else
+    {
+        res.redirect('/login');
+    }*/
 })
+
+app.get('/myProjectsreq', (req, res) => {
+    console.log(' ... Popular Projects request');
+    //if(req.session.auth)
+    {
+        getData = async () => {
+            //const idCrea = req.session.idUser;
+            const idCrea = 1;
+            let myProjects = new Project('', '', 1);
+            const data = await myProjects.readMine();
+            res.json({ 'projects': data });
+        }
+        getData();
+    }
+    /*else
+    {
+    res.redirect('/login');   
+    }*/
+});
+
+app.get('/popularProjectreq', (req, res) => {
+    console.log(' ... Popular Projects request');
+    try {
+        execute = async () => {
+            let lectorProyectos = new Project();
+            const data = await lectorProyectos.readAll();
+            res.json({ 'projects': data })
+        }
+        execute();
+    }
+    catch (error) {
+        console.log('Error proyectos populares: ' + error);
+    }
+});
+
+
+//              PRUEBAS
 
 app.get('/testReq', (req, res) => {
     console.log(' ... TEST Project Request');
     res.json({ 'valor': 'webos' })
-})
+});
 
 app.post('/checkSession', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
