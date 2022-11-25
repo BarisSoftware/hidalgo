@@ -8,7 +8,6 @@ import Login from "./Login"
 import Registro from "./Registro"
 import Testito from "./Testito";
 
-
 function App() {
   return (
 

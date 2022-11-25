@@ -18,7 +18,7 @@ function Crear() {
         <>
             <Sidebar></Sidebar>
             <h1 class="titulo">Crear proyecto</h1>
-            <form method="POST" action="/createProreq">
+            <form method="POST" action="/createProjectreq">
                 <div class="contenedor">
                     <div class="contenido">
                         <div class="col1">

@@ -6,8 +6,9 @@ class Project {
     descripcion;
     idCreador;
     exists = false;
+    proyectos = []; //lista con todos los proyectos, no es necesaria declararla siempre, solo en readAll
 
-    constructor(nombre, descripcion, idCreador) {
+    constructor(nombre = '', descripcion = '', idCreador = 0) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.idCreador = idCreador;
@@ -56,8 +57,36 @@ class Project {
         }
     }
 
-    delete = () => {
+    readAll = async () => {
+        let query = `SELECT * FROM Proyecto;`;
+        try {
+            let db = new DataBase();
+            await db.execute2(query).then((results) => {
+                console.log('Results:');
+                console.log(results);
+                this.proyectos = results[0];
+            });
+        } catch (error) {
+            console.log('Error readAll: ' + error);
+        }
+        return this.proyectos;
+    }
 
+    readMine = async () => {
+        try {
+            let db = new DataBase();
+            let query = `SELECT * FROM Puestos WHERE Puesto = 0 AND idUsuario = ${this.idCreador};`;
+            await db.execute2(query).then((results) => {
+                console.log(results);
+                this.proyectos = results[0];
+            });
+        } catch (error) {
+            console.log('Error readAll: ' + error);
+        }
+        return this.proyectos;
+    }
+
+    delete = () => {
 
     }
 

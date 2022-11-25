@@ -49,6 +49,8 @@ app.get('/homepage', (req, res) => {
     } else res.redirect('/login');
 });
 
+//              USUARIOS
+
 app.post('/regquest', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     console.log(" ... Register Form Request");
@@ -104,12 +106,13 @@ app.post('/logquest', (req, res) => {
     }
 });
 
-app.post('/createProreq', (req, res) => {
+//              PROYECTOS
+
+app.post('/createProjectreq', (req, res) => {
     console.log(' ... Create Project Request');
     //if (req.session.auth) 
     {
-        try
-        {
+        try {
             let nombre = req.body.nombre;
             let descripcion = req.body.Des;
             //let idUser = req.session.idUser;
@@ -117,9 +120,8 @@ app.post('/createProreq', (req, res) => {
             let newProject = new Project(nombre, descripcion, idUser);
             newProject.create();
             res.send('ok')
-        } 
-        catch(error)
-        {
+        }
+        catch (error) {
             console.log('Error: ' + error);
             res.status(400);
             res.send('error')
@@ -131,10 +133,47 @@ app.post('/createProreq', (req, res) => {
     }*/
 })
 
+app.get('/myProjectsreq', (req, res) => {
+    console.log(' ... Popular Projects request');
+    //if(req.session.auth)
+    {
+        getData = async () => {
+            //const idCrea = req.session.idUser;
+            const idCrea = 1;
+            let myProjects = new Project('', '', 1);
+            const data = await myProjects.readMine();
+            res.json({ 'projects': data });
+        }
+        getData();
+    }
+    /*else
+    {
+    res.redirect('/login');   
+    }*/
+});
+
+app.get('/popularProjectreq', (req, res) => {
+    console.log(' ... Popular Projects request');
+    try {
+        execute = async () => {
+            let lectorProyectos = new Project();
+            const data = await lectorProyectos.readAll();
+            res.json({ 'projects': data })
+        }
+        execute()
+    }
+    catch (error) {
+        console.log('Error proyectos populares: ' + error);
+    }
+});
+
+
+//              PRUEBAS
+
 app.get('/testReq', (req, res) => {
     console.log(' ... TEST Project Request');
     res.json({ 'valor': 'webos' })
-})
+});
 
 app.post('/checkSession', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
