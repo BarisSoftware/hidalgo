@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
+//const cookieParser = require('cookie-parser');
 let User = require('./src/User');
 let Project = require('./src/Project');
 
@@ -11,16 +11,8 @@ const app = express();
 //app.use(express.static(__dirname + "/public"));
 //app.use(cookieParser)
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true })); // Poner urlencoded a true permite procesar JSON
-/*app.use(
-    cors({
-        origin: ["http://localhost:3000"],
-        methods: ["GET", "POST"],
-        credentials: true,
-    })
-)*/
-
-//app.use(express.static('../Pagina1.1'))
 
 app.use(session({
     secret: 'gluglunes',
@@ -65,18 +57,15 @@ app.post('/regquest', (req, res) => {
 
     if (succes) {
         console.log(`\tRegistrado: \n Nombre: ${nombre}\n Correo: ${correo}`);
-        res.redirect('/login');
+        res.json({ 'result': true })
     }
-    else res.send('<html><h1>Error!</h1></html>');
+    else res.json({ 'result': false })
 });
 
 
 app.post('/logquest', (req, res) => {
-    res.header('Access-Control-Allow-Origin', '*');
-
     if (req.session.auth == true) {
-        res.send(true)
-        //res.redirect('/');
+        res.redirect('/');
     }
     else {
         console.log(' ... Login Form Request');
@@ -176,19 +165,16 @@ app.get('/testReq', (req, res) => {
 });
 
 app.post('/checkSession', (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    console.log(' ... check Session request');
-    console.log('Actual Session: ' + req.session.auth);
+    console.log(' ... Check Session Request');
     if (req.session.auth) {
-        console.log('Session: true');
-        res.send(true);
+        console.log('TRUE');
+        res.json({ 'auth': true, 'email': req.session.email});
     }
     else {
-        console.log('Session: false');
-        res.send(false);
+        console.log('FALSE');
+        res.json({ 'auth': false });
     }
-
-});
+})
 
 const PORT = process.env.PORT || 2000;
 
