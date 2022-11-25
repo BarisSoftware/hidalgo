@@ -2,6 +2,7 @@ import React from "react";
 import "./Transacciones.css";
 import Sidebar from "./Sidebar";
 import avatar5 from "./imagenes/avatar5.png"
+import { Link } from "react-router-dom"
 
 function Transacciones(){
     return (
@@ -53,7 +54,7 @@ function Transacciones(){
                         <div class="elem6">
                             <div class="input2">
                                 <div class="submit1">
-                                    <input type="submit" id="submit1_" value="Borrador"></input>
+                                    <Link to="/borradores" id="submit1_"  type="submit">Borrador</Link>
                                     <input type="submit" id="submit2_" value="Transferir"></input>
                                 </div>
                             </div>
@@ -91,7 +92,7 @@ function Transacciones(){
                             </div>
                         </div><br></br>
                         <div class="buttonHis">
-                            <input type="submit" id="historial" value="Historial"></input>
+                            <Link to="/historial" id="historial">Historial</Link>
                         </div>
                     </div>
                     <div class="col2">
