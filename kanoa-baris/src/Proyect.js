@@ -7,15 +7,17 @@ import "./App.css";
 
 function NombreProyecto(props) {
     return(<div className="pp1">
-    <h2>Nombre del proyecto: </h2>
+    <h2>Nombre del Proyecto: </h2><br></br>
+    <h3>KANOA</h3>
   </div>
   );
-    
 }
 
 function DescripcionProyecto(props) {
     return(<div class="pp2">
         <p>Descripción del proyecto:</p>
+        <br></br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae distinctio quis sunt beatae nesciunt nobis consequuntur sed.</p>
         <br></br>
         <br></br>
         <br></br>
@@ -40,9 +42,9 @@ function Colaboradores(params) {
     return (<div class="pp4">
         <p>Colaboradores: </p>
         <div class="Colabimg">
-            <Colaborador avatar='avatar1'></Colaborador>
-            <Colaborador avatar='avatar2'></Colaborador>
-            <Colaborador avatar='avatar3'></Colaborador>
+            <img src={avatar1}></img>
+            <img src={avatar2}></img>
+            <img src={avatar3}></img>
         </div>
       </div>);
 }

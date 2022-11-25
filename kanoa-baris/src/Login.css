@@ -36,21 +36,16 @@ header .logo{
     font-family: 'Popins', sans-serif;
 }
 
-header ul{
+header nav{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-header ul li{
+header nav li{
     list-style-type: none;
 }
 
-header ul li a{
-    text-decoration: none;
-    font-family: 'Quicksand', sans-serif;
-    color: #ffffff;
-}
 
 .normal{
     padding: 10px 30px;
@@ -79,14 +74,14 @@ header ul li a{
     background-color: #00c4cc;
 }
 
-body{
+.body{
     display: grid;
     place-items: center;
-    margin: 0;
-    padding: 100px 24px;
+    padding: 440px 24px;
     background-image: url("imagenes/fondo2.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
     font-family: 'Poppins', sans-serif;
     color: #000;
     animation: rotate 6s infinite alternate linear;

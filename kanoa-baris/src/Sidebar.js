@@ -39,7 +39,7 @@ function Sidebar(props){
                                 </a>
                             </li>
                             <li class="nav-link">
-                                <a href="#">
+                                <a href="/transacciones">
                                     <i class='bx bx-dollar icon'></i>
                                     <span class="text nav-text">Realizar <br></br>Transacción</span>
                                 </a>
@@ -48,12 +48,6 @@ function Sidebar(props){
                                 <a href="/admin">
                                     <i class='bx bx-cog icon' ></i>
                                     <span class="text nav-text">Administrar <br></br>perfil</span>
-                                </a>
-                            </li>
-                            <li class="nav-link">
-                                <a href="#">
-                                    <i class='bx bx-star icon'></i>
-                                    <span class="text nav-text">Proyectos<br></br>populares</span>
                                 </a>
                             </li>
                         </ul>

@@ -1,9 +1,9 @@
 import React from "react";
 import './Login.css';
 import { Link } from "react-router-dom"
-import { HeaderLogin } from "./HeaderLogin"
 import axios from "axios";
 import { redirect } from "react-router-dom";
+import { HeaderLogin } from "./HeaderLogin";
 
 function Login() {
     const [auth, setAuth] = React.useState(false);
@@ -33,6 +33,8 @@ function Login() {
     };
 
     return (
+        <div>
+        <HeaderLogin></HeaderLogin>
         <body className="body">
             <div className="formulario">
                 <h1>Login</h1>
@@ -40,13 +42,13 @@ function Login() {
                     <input type="email" name="correo" id="correo" required placeholder="Email"></input>
                     <input type="password" name="pass" id="pass" required placeholder="Contraseña"></input>
                     <input type="submit" value="Ingresar" ></input>
-                    {auth ? <h1>SI</h1> : <h1>NO</h1> }
                     <div class="registrarse">
                         ¿No estas registrado? <Link to="/registro">Crea una cuenta</Link>
                     </div>
                 </form>
             </div>
         </body>
+        </div>
     );
 }
 

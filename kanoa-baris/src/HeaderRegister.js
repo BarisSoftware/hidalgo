@@ -1,6 +1,6 @@
-import './Login.css';
+import './Registro';
 import { Link } from "react-router-dom"
-export const HeaderLogin = () => {
+export const HeaderRegister = () => {
   return (
     <header>
         <div class="header">

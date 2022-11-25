@@ -1,10 +1,12 @@
 import React from "react";
 import './Registro.css';
+import { HeaderRegister } from "./HeaderRegister";
 import { Link } from "react-router-dom"
 
 function Registro (){
     return (
     <div className="registros">
+        <HeaderRegister></HeaderRegister>
         <div className="formulario">
             <h1>Registro</h1>
             <form className="registro" method="post" action="/regquest">

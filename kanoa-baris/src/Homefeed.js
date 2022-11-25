@@ -1,79 +1,12 @@
 import React from "react";
 import './Homefeed.css';
+import Sidebar from "./Sidebar";
 
 function Homefeed (){
     return (
         <body>
-        <nav class="sidebar">
-            <header>
-                <div class="image-text">
-                    <span class="image">
-                        <img src="imagenes/avatar3.png"></img>
-                    </span>
-                    <div class="text header-text">
-                        <span class="name">Usuario</span>
-                    </div>
-                </div>
-                <i class='bx bxs-chevron-right toggle'></i>
-            </header> 
-            
-            <div class="menu-bar">
-                <div class="menu">
-                    <ul class="menu-links">
-                        <li class="nav-link">
-                            <a href="homefeed.html">
-                                <i class='bx bx-home icon' ></i>
-                                <span class="text nav-text">Homefeed</span>
-                            </a>
-                        </li>
-                        <li class="nav-link">
-                            <a href="CrearProyecto.html">
-                                <i class='bx bx-add-to-queue icon'></i>
-                                <span class="text nav-text">Crear proyecto</span>
-                            </a>
-                        </li>
-                        <li class="nav-link">
-                            <a href="#">
-                                <i class='bx bx-dollar icon'></i>
-                                <span class="text nav-text">Realizar <br></br>Transacción</span>
-                            </a>
-                        </li>
-                        <li class="nav-link">
-                            <a href="AdministrarPerfil.html">
-                                <i class='bx bx-cog icon' ></i>
-                                <span class="text nav-text">Administrar <br></br>perfil</span>
-                            </a>
-                        </li>
-                        <li class="nav-link">
-                            <a href="#">
-                                <i class='bx bx-star icon'></i>
-                                <span class="text nav-text">Proyectos<br></br>populares</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="bottom-content">
-                    <div class="content">
-                        <li class="">
-                            <a href="#">
-                                <i class='bx bx-log-out icon' ></i>
-                                <span class="text nav-text">Cerrar sesión</span>
-                            </a>
-                        </li>
-                        <li class="mode">
-                            <div class="sun-moon">
-                                <i class='bx bx-moon icon moon'></i>
-                                <i class='bx bx-sun icon sun'></i>
-                            </div>
-                            <span class="mode-text text">Dark mode</span>
-                            <div class="toggle-switch">
-                                <span class="switch"></span>
-                            </div>
-                        </li>
-                    </div>
-                </div>
-            </div>
-        </nav>
+            <Sidebar></Sidebar>
+        
 
         <section class="sec2"></section>
             <div class="somos">

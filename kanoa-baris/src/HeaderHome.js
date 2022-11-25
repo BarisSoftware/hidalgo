@@ -19,8 +19,8 @@ export const HeaderHome = () => {
       <div class="header">
         <a href="#" class="logo">Baris <br></br>Software Development</a>
         <nav>
-          <HeaderLink link="" text="CREAR PROYECTO"></HeaderLink>
-          <HeaderLink link="transacciones.html" text="TRANSACCIONES"></HeaderLink>
+          <HeaderLink link="/crear" text="CREAR PROYECTO"></HeaderLink>
+          <HeaderLink link="/transacciones" text="TRANSACCIONES"></HeaderLink>
           <HeaderLink link="https://github.com/BarisSoftware/hidalgo" text="Source Code"></HeaderLink>
           <NavLink link="/login" text="LOGIN"></NavLink>
         </nav>
