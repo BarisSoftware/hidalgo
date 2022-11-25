@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './CrearProyecto.css';
 import Sidebar from "./Sidebar";
 import Licencia from "./formElements/Licencia";
@@ -6,17 +6,48 @@ import LlavesPublicas from "./formElements/LlavesPublicas"
 import Nombre from "./formElements/Nombre";
 import Descripcion from "./formElements/Descripcion";
 import Persona from "./formElements/Persona";
-import avatar1 from "./imagenes/avatar1.png"
-import avatar2 from "./imagenes/avatar2.png"
-import avatar3 from "./imagenes/avatar3.png"
-import avatar4 from "./imagenes/avatar4.png"
-import avatar5 from "./imagenes/avatar5.png"
-import avatar6 from "./imagenes/avatar6.png"
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+const client = axios.create({
+    baseURL: "http://localhost:3000/",
+    withCredentials: true
+});
 
 function Crear() {
+    const [logged, setLogged] = useState(false);
+    const [idUser, setIdUser] = useState(undefined);
+    const [nombre, setNombre] = useState('Usuario')
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        client.post('/checkSession').then((results) => {
+            if (results.data.auth) {
+                setLogged(results.data.auth);
+                setIdUser(results.data.idUser);
+                setNombre(results.data.name);
+            }
+            else {
+                navigate('/login');
+            }
+        }).catch((error) => {
+            console.log('Error');
+            navigate('/');
+        })
+    }, []);
+
+    const createProject = async () => {
+        client.post('/createProjectreq', {
+            nombre: document.getElementById('nombre'),
+            descripcion: document.getElementById('descripcion'),
+            licencia: document.getElementById('licencia'),
+        })
+    }
+
     return (
         <>
-            <Sidebar></Sidebar>
+            <Sidebar nombre={nombre}></Sidebar>
             <h1 class="titulo">Crear proyecto</h1>
             <form method="POST" action="/createProjectreq">
                 <div class="contenedor">
@@ -34,10 +65,10 @@ function Crear() {
                         </div>
                         <div class="col2">
                             <div class="elem2">
-                            <Persona type="Administradores"></Persona>                            
+                                <Persona type="Administradores"></Persona>
                             </div><br></br><br></br>
                             <div class="elem4">
-                                <Persona type="Colaboradores"></Persona>                            
+                                <Persona type="Colaboradores"></Persona>
                             </div><br></br><br></br>
                             <div class="elem6">
                                 <Licencia></Licencia>

@@ -47,6 +47,7 @@ create table Proyecto (
 idProyecto int primary key auto_increment not null,
 nombreProyecto varchar(45) not null unique,
 descripcionProyecto varchar(45) not null,
+licencia varchar(25) not null,
 idMalwareStrike int,
 idPerfilProyecto int
 #foreign key (idPerfilProyecto) references Perfil_Proyecto(idPerfilProyecto) on update cascade on delete cascade,

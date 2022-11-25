@@ -6,16 +6,18 @@ class Project {
     descripcion;
     idCreador;
     exists = false;
+    licencia;
     proyectos = []; //lista con todos los proyectos, no es necesaria declararla siempre, solo en readAll
 
-    constructor(nombre = '', descripcion = '', idCreador = 0) {
+    constructor(nombre = '', descripcion = '', idCreador = 0, licencia = '') {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.idCreador = idCreador;
+        this.licencia = licencia;
     }
 
     create = async () => {
-        let query = `INSERT INTO Proyecto(nombreProyecto, descripcionProyecto) VALUES('${this.nombre}', '${this.descripcion}');`;
+        let query = `INSERT INTO Proyecto(nombreProyecto, descripcionProyecto, licencia) VALUES('${this.nombre}', '${this.descripcion}', '${this.licencia}');`;
         console.log('Query: ' + query);
         try {
             let db = new DataBase();

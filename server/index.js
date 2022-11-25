@@ -2,14 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-//const cookieParser = require('cookie-parser');
 let User = require('./src/User');
 let Project = require('./src/Project');
 
 const app = express();
 
 //app.use(express.static(__dirname + "/public"));
-//app.use(cookieParser)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true })); // Poner urlencoded a true permite procesar JSON
@@ -19,7 +17,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: {
-        expires: 60 * 24 * 24
+        expires: 60 * 24 * 24 * 100
     }
 }));
 
@@ -100,14 +98,13 @@ app.post('/logquest', (req, res) => {
 
 app.post('/createProjectreq', (req, res) => {
     console.log(' ... Create Project Request');
-    //if (req.session.auth) 
-    {
+    if (req.session.auth) {
         try {
             let nombre = req.body.nombre;
-            let descripcion = req.body.Des;
-            //let idUser = req.session.idUser;
-            let idUser = 1;
-            let newProject = new Project(nombre, descripcion, idUser);
+            let descripcion = req.body.descripcion;
+            let idUser = req.session.idUser;
+            let licencia = req.body.licencia;
+            let newProject = new Project(nombre, descripcion, idUser, licencia);
             newProject.create();
             res.send('ok')
         }
@@ -117,29 +114,26 @@ app.post('/createProjectreq', (req, res) => {
             res.send('error')
         }
     }
-    /*else
-    {
+    else {
         res.redirect('/login');
-    }*/
+    }
 })
 
 app.get('/myProjectsreq', (req, res) => {
     console.log(' ... Popular Projects request');
-    //if(req.session.auth)
-    {
+    if (req.session.auth) {
         getData = async () => {
-            //const idCrea = req.session.idUser;
-            const idCrea = 1;
+            const idCrea = req.session.idUser;
+            //const idCrea = 1;
             let myProjects = new Project('', '', 1);
             const data = await myProjects.readMine();
             res.json({ 'projects': data });
         }
         getData();
     }
-    /*else
-    {
-    res.redirect('/login');   
-    }*/
+    else {
+        res.redirect('/login');
+    }
 });
 
 app.get('/popularProjectreq', (req, res) => {
@@ -156,7 +150,6 @@ app.get('/popularProjectreq', (req, res) => {
         console.log('Error proyectos populares: ' + error);
     }
 });
-
 
 //              PRUEBAS
 
