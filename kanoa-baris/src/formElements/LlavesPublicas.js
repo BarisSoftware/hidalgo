@@ -5,7 +5,7 @@ function LlavesPublicas(props) {
         <>
             <label for="Nombre">Llaves públicas</label>
             <div class="input">
-                <input type="text" id="Nombre" name="nombre" placeholder="ultimas 10 letras" required></input>
+                <input type="text" id="llaves" name="llaves" placeholder="ultimas 10 letras" required></input>
             </div>
         </>
     );

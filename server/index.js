@@ -9,18 +9,18 @@ let Project = require('./src/Project');
 const app = express();
 
 //app.use(express.static(__dirname + "/public"));
-app.use(cookieParser)
+//app.use(cookieParser)
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true })); // Poner urlencoded a true permite procesar JSON
-app.use(
+/*app.use(
     cors({
         origin: ["http://localhost:3000"],
         methods: ["GET", "POST"],
         credentials: true,
     })
-)
+)*/
 
-app.use(express.static('../Pagina1.1'))
+//app.use(express.static('../Pagina1.1'))
 
 app.use(session({
     secret: 'gluglunes',
@@ -106,25 +106,29 @@ app.post('/logquest', (req, res) => {
 
 app.post('/createProreq', (req, res) => {
     console.log(' ... Create Project Request');
-    if (req.session.auth) 
+    //if (req.session.auth) 
     {
         try
         {
             let nombre = req.body.nombre;
-            let descripcion = req.body.descripcion;
-            let idUser = req.session.idUser;
+            let descripcion = req.body.Des;
+            //let idUser = req.session.idUser;
+            let idUser = 1;
             let newProject = new Project(nombre, descripcion, idUser);
             newProject.create();
+            res.send('ok')
         } 
         catch(error)
         {
             console.log('Error: ' + error);
+            res.status(400);
+            res.send('error')
         }
     }
-    else
+    /*else
     {
         res.redirect('/login');
-    }
+    }*/
 })
 
 app.get('/testReq', (req, res) => {

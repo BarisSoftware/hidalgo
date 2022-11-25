@@ -13,34 +13,41 @@ class Project {
         this.idCreador = idCreador;
     }
 
-    create = () => {
-        let query = `INSERT INTO Proyecto(nombreProyecto, descripcionProyecto) VALUES(${this.nombre}, ${this.descripcion})`;
+    create = async () => {
+        let query = `INSERT INTO Proyecto(nombreProyecto, descripcionProyecto) VALUES('${this.nombre}', '${this.descripcion}');`;
         console.log('Query: ' + query);
         try {
             let db = new DataBase();
-            db.fquery(query);
+            await db.execute2(query);
             this.exists = true;
-            this.read()
-            query = `INSERT INTO Puestos(idProyecto, idUsuario, puesto) VALUES(${this.id}, ${this.idCreador}, 0)`;
-            db.fquery(query);
-            db.end();
+            await this.read()
+            try {
+                let diff = `INSERT INTO Puestos(idProyecto, idUsuario, puesto) VALUES(${this.id}, ${this.idCreador}, 0);`;
+                console.log('Query diff: ' + diff);
+                db.fquery(diff);
+                db.end();
+            } catch (error) {
+                console.log('Error Puestos: ' + error);
+            }
         } catch (error) {
             console.log('Error Create Project: ' + error);
         }
     }
 
     read = async () => {
-        let query = `SELECT * FROM Proyecto WHERE nombreProyecto = ${this.nombre}`;
+        let query = `SELECT * FROM Proyecto WHERE nombreProyecto = '${this.nombre}';`;
         console.log('Query: ' + query);
         try {
             let db = new DataBase();
             await db.execute2(query).then((results) => {
+                console.log('ATENCION A RESFGDSFSD');
                 console.log(results);
                 results = results[0][0];
                 if (results) {
                     this.id = results.idProyecto;
                     this.nombre = results.nombreProyecto;
                     this.descripcion = results.descripcionProyecto;
+                    console.log('ID' + this.id);
                 }
             });
             db.end()
@@ -57,5 +64,6 @@ class Project {
     update = () => {
 
     }
-
 }
+
+module.exports = Project;
