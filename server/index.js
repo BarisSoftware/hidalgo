@@ -78,15 +78,17 @@ app.post('/logquest', (req, res) => {
             let auth = user.authenticate().then((authenticated) => {
                 console.log('auth:  ' + authenticated);
                 if (authenticated) {
+                    req.session.user = user;
                     req.session.idUser = user.id;
                     req.session.email = user.email;
                     req.session.name = user.name;
                     req.session.auth = true;
-                    res.send(true)
-                    //res.redirect('/home_feed');
+                    //res.send(true)
+                    res.redirect('/home_feed');
                 }
                 else {
-                    res.send(false)
+                    //res.send(false)
+                    res.redirect('/login')
                 }
             });
         } catch (error) {
@@ -168,7 +170,7 @@ app.post('/checkSession', (req, res) => {
     console.log(' ... Check Session Request');
     if (req.session.auth) {
         console.log('TRUE');
-        res.json({ 'auth': true, 'email': req.session.email});
+        res.json({ 'auth': true, 'user': req.session.user});
     }
     else {
         console.log('FALSE');

@@ -41,7 +41,7 @@ class User {
     };
 
     authenticate = async () => {
-        let query = `SELECT idUsuario, HEX(passHash) FROM Usuario where correo = '${this.email}'`;
+        let query = `SELECT idUsuario, HEX(passHash), nombre FROM Usuario where correo = '${this.email}'`;
         let db = new DataBase();
         const valid = await db.execute2(query).then((results) => {
             console.log(results);
@@ -56,6 +56,7 @@ class User {
                     console.log('Good Auth');
                     this.validated = true;
                     this.id = results[0].idUsuario;
+                    this.name = results[0].nombre;
                 }else{
                 console.log('Bad Auth');
                 this.validated = false;

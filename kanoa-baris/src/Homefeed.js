@@ -1,13 +1,11 @@
 import React from "react";
 import './Homefeed.css';
 import Sidebar from "./Sidebar";
-
+import axios from "axios";
 function Homefeed (){
     return (
         <body>
             <Sidebar></Sidebar>
-        
-
         <section class="sec2"></section>
             <div class="somos">
                 <h1><b>Homefeed</b></h1>
