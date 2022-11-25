@@ -7,22 +7,19 @@ let User = require('./src/User');
 let Project = require('./src/Project');
 
 const app = express();
-
-//app.use(express.static(__dirname + "/public"));
-//app.use(cookieParser)
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true })); // Poner urlencoded a true permite procesar JSON
-/*app.use(
+app.use(
     cors({
         origin: ["http://localhost:3000"],
         methods: ["GET", "POST"],
         credentials: true,
     })
-)*/
-
-//app.use(express.static('../Pagina1.1'))
+)
+app.use(cookieParser)
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true })); // Poner urlencoded a true permite procesar JSON
 
 app.use(session({
+    key:"userId", 
     secret: 'gluglunes',
     resave: false,
     saveUninitialized: true,
@@ -65,7 +62,7 @@ app.post('/regquest', (req, res) => {
 
     if (succes) {
         console.log(`\tRegistrado: \n Nombre: ${nombre}\n Correo: ${correo}`);
-        res.redirect('/login');
+        res.send({'text':'nice'});
     }
     else res.send('<html><h1>Error!</h1></html>');
 });
@@ -190,7 +187,7 @@ app.post('/checkSession', (req, res) => {
 
 });
 
-const PORT = process.env.PORT || 2000;
+const PORT = 3001;
 
 app.listen(PORT, () => {
     console.log(`Server Activo en: http://localhost:${PORT}`);
