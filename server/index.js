@@ -160,7 +160,7 @@ app.get('/popularProjectreq', (req, res) => {
             const data = await lectorProyectos.readAll();
             res.json({ 'projects': data })
         }
-        execute()
+        execute();
     }
     catch (error) {
         console.log('Error proyectos populares: ' + error);
