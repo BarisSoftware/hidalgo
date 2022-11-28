@@ -1,5 +1,5 @@
 import axios from 'axios';
 
-export default Client {
+export default class Client {
 
 }
