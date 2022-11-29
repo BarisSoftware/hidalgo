@@ -39,6 +39,10 @@ app.get('/homepage', (req, res) => {
     } else res.redirect('/login');
 });
 
+app.get('crearProyecto', (req, res) => {
+    res.send();
+});
+
 //              USUARIOS
 
 app.post('/regquest', (req, res) => {
