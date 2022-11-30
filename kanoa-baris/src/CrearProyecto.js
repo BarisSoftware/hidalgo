@@ -7,6 +7,7 @@ import Nombre from "./formElements/Nombre";
 import Descripcion from "./formElements/Descripcion";
 import Persona from "./formElements/Persona";
 import axios from "axios";
+import PopOut from "./elements/PopOut";
 import { useNavigate } from "react-router-dom";
 
 const client = axios.create({
@@ -18,6 +19,7 @@ function Crear() {
     const [logged, setLogged] = useState(false);
     const [idUser, setIdUser] = useState(undefined);
     const [nombre, setNombre] = useState('Usuario')
+    const [admins, setAdmins] = useState(false);
 
     const navigate = useNavigate();
 
@@ -45,6 +47,10 @@ function Crear() {
         })
     }
 
+    const showPopOut = () => {
+        
+    }
+
     return (
         <>
             <Sidebar nombre={nombre}></Sidebar>
@@ -65,10 +71,10 @@ function Crear() {
                         </div>
                         <div class="col2">
                             <div class="elem2">
-                                <Persona type="Administradores"></Persona>
+                                <Persona id="addAdmin" type="Administradores"></Persona>
                             </div><br></br><br></br>
                             <div class="elem4">
-                                <Persona type="Colaboradores"></Persona>
+                                <Persona id="addColab" type="Colaboradores"></Persona>
                             </div><br></br><br></br>
                             <div class="elem6">
                                 <Licencia></Licencia>
@@ -80,6 +86,8 @@ function Crear() {
                     <input type="submit" id="Crear proyecto" name="Crear proyecto" value="Crear proyecto"></input>
                 </div>
             </form>
+            <PopOut placeholder="Administradores"></PopOut>
+            {}
         </>
     );
 }

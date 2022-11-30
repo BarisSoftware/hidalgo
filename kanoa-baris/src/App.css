@@ -261,3 +261,11 @@ section{
     margin-top: 200px;
     margin-bottom: 50px;
 }
+
+.PopOut{
+    margin-left: 50%;
+    width: 30%;
+    height: fit-content;
+    z-index: 2;
+    background-color: #00c4cc;
+}

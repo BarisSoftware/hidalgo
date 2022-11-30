@@ -8,7 +8,7 @@ function Persona(props) {
             <div class="imagenes">
             </div>
             <div class="button">
-                <input name={props.type} type="button" value="+"></input>
+                <input id={props.id} name={props.type} type="button" value="+"></input>
             </div>
         </>
     );
