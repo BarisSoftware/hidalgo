@@ -18,10 +18,14 @@
     --text-color: #303030;
     --border-color: #181818;
     --span-color: #b1b1b1;
-    --text-color2: #ffffff;
-    --text-color3: #ffffff;
-    --button-color: #00a1b0;
-    --button-color2: #d31111;
+    --button-color: #d31111;
+    --button-color2: #00a1b0;
+    --button-color3: #940726;
+    --button-color4: #390d2d;
+    --button-color5: #fd8808;
+    --text-color2:#fff;
+    --text-color3: #fff;
+    --text-color4: #fff;
 
     --tran-03: all 0.2s ease;
     --tran-03: all 0.3s ease;
@@ -30,7 +34,7 @@
 }
 
 body{
-    min-height: 100vh;
+    min-height: 110vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
 }
@@ -48,9 +52,13 @@ body.dark{
     --toggle-color: #fff;
     --text-color: #ccc;
     --border-color: #dadada;
-    --button-color: #68ecfc;
-    --button-color2: #d63636;
-    --text-color2: #ffffff; 
+    --button-color: #d63636;
+    --button-color2: #68ecfc;
+    --button-color3:#d31c51;
+    --button-color4:#a75a92;
+    --button-color5: #fea124;
+    --span-color: #797979;  
+    --text-color2:#fff;
     --text-color3: #04515a;
 }
 
@@ -119,20 +127,11 @@ body.dark{
     display: flex;
     align-items: center;
 }
-.sidebar header .logo-text{
-    display: flex;
-    flex-direction: column;
-}
+
 header .image-text .name {
     margin-top: 2px;
     font-size: 18px;
     font-weight: 600;
-}
-
-header .image-text .profession{
-    font-size: 16px;
-    margin-top: -2px;
-    display: block;
 }
 
 .sidebar header .image{
@@ -318,25 +317,17 @@ body.dark .home .text{
     color: var(--text-color);
 }
 
-/*Seccion de Crear Proyecto */
+/*Seccion de Borradores */
+
 .titulo{
     display: flex;
     justify-content: center;
     color: var(--text-color);
     align-items: center;
     margin-top: 30px;
-    margin-bottom: 30px;
-    font-size: 70px;
+    margin-bottom: 60px;
+    font-size: 80px;
     font-weight: 500;
-}
-
-.titulo2{
-    display: flex;
-    justify-content: center;
-    color: var(--text-color);
-    align-items: center;
-    margin-bottom: 30px;
-    font-size: 30px;
 }
 
 .contenedor{
@@ -344,7 +335,7 @@ body.dark .home .text{
     align-items: center;
     justify-content: center;
     height: 100%;
-    margin-top: 25px;
+    margin-left: 8%;
 }
 
 .contenedor .contenido{
@@ -353,6 +344,7 @@ body.dark .home .text{
    justify-content: center;
 }
 
+.contenedor .contenido .col3,
 .contenedor .contenido .col2,
 .contenedor .contenido .col1{
     flex-direction: column;
@@ -360,14 +352,20 @@ body.dark .home .text{
 }
 
 .col1{
-    margin-right: 50px;
+    margin-right: 30px;
     flex-direction: column;
 }
 
 .col2{
-    margin-left: 50px;
+    margin-left: 30px;
     flex-direction: column;
 }
+
+.col3{
+    margin-right: 30px;
+    flex-direction: column;
+}
+
 
 label{
     display: flex;
@@ -375,14 +373,8 @@ label{
     align-items: center;
     color: var(--text-color);
     font-size: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
 }
 
-input[type="email"],
-input[type="tel"],
-input[type="password"],
 input[type=text]{
     text-align: center;
     background: none;
@@ -394,21 +386,33 @@ input[type=text]{
     border-bottom: 2px solid var(--text-color);
 }
 
-.elem8,
-.elem7,
-.elem6,
-.elem5,
-.elem4,
-.elem3,
-.elem2,
 .elem1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-color: var(--text-color);
     border-style: solid;
-    border-width: 2px;
-    border-radius: 25px;
+    border-width: 3px;
+    border-radius: 0;
     height: 120px;
     width: 320px;
     padding-top: 10px;
+}
+
+.elem3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-color: var(--text-color);
+    border-style: solid;
+    border-top: none;
+    border-width: 3px;
+    border-radius: 0;
+    height: 260px;
+    width: 320px;
+    padding-top: 10px;
+    flex-direction: column;
 }
 
 .input{
@@ -418,97 +422,43 @@ input[type=text]{
     text-align: center;
 }
 
-.imgs{
-    width: 60px;
-    height: 60px;
-}
-
-.imagenes{
-    padding-top: 5px;
+.input2{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     text-align: center;
+    flex-direction: column;
 }
 
-.button{
-    display: flex;
-    justify-content: end;
-    align-items: center;
+#img{
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
 }
 
-input[type="button"]{
-    align-items: left;
-    width: 17%;
-    height: 50px;
-    border: 2.5px solid;
-    background: var(--body-color);
-    border-radius: 25px;
-    font-size: 18px;
-    color: var(--border-color);
-    cursor: pointer;
-    outline: none;
-}
-
-.profle-pic-div{
+#imagen{
     display: flex;
     justify-content: center;
-    color: var(--text-color);
     align-items: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-size: 70px;
-}
-
-input [type="file"]{
-    text-align: center;
     color: var(--text-color);
-    font-size: 20px;
-    display: block; 
+    font-size: 24px;
 }
 
-.profle-pic-div img{
+.sub1,
+.sub2,
+.sub3{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 150px;
-    height: 150px;
 }
 
-.buttons{
-    display: flex;
+#btnEstado{
     align-items: center;
-    justify-content: space-evenly;
-}
-
-.sub{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 35px;
-}
-
-#guardar{
-    align-items: center;
-    width: 240px;
+    width: 200px;
     height: 50px;
     border: 2.5px solid;
     background: var(--button-color);
-    border-radius: 30px;
-    font-size: 20px;
-    border-color: var(--border-color);
-    color: var(--text-color3);
-    cursor: pointer;
-    outline: none;
-}
-
-#eliminar{
-    align-items: center;
-    width: 240px;
-    height: 50px;
-    border: 2.5px solid;
-    background: var(--button-color2);
     border-radius: 30px;
     font-size: 20px;
     border-color: var(--border-color);

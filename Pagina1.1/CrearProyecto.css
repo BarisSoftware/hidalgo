@@ -18,7 +18,7 @@
     --text-color: #303030;
     --border-color: #181818;
     --span-color: #b1b1b1;
-    --button-color: #a3a3a3;
+    --button-color: #00a1b0;
     --text-color2: #e4e4e4;
 
     --tran-03: all 0.2s ease;
@@ -323,6 +323,7 @@ body.dark .home .text{
     margin-top: 30px;
     margin-bottom: 60px;
     font-size: 70px;
+    font-weight: 300;
 }
 
 .contenedor{
