@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import './Registro.css';
 import { HeaderRegister } from "./HeaderRegister";
 import { Link } from "react-router-dom"
 import axios from "axios";

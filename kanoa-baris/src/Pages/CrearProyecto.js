@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import './CrearProyecto.css';
 import Sidebar from "./Sidebar";
-import Licencia from "./formElements/Licencia";
-import LlavesPublicas from "./formElements/LlavesPublicas"
-import Nombre from "./formElements/Nombre";
-import Descripcion from "./formElements/Descripcion";
-import Persona from "./formElements/Persona";
+import Licencia from "../formElements/Licencia";
+import LlavesPublicas from "../formElements/LlavesPublicas"
+import Nombre from "../formElements/Nombre";
+import Descripcion from "../formElements/Descripcion";
+import Persona from "../formElements/Persona";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 

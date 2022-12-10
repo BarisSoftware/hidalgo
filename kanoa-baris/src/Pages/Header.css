@@ -1,0 +1,29 @@
+header{
+    display: flex;
+    position: sticky;
+    top: 0px;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: darkblue;
+    padding: 2% 
+}
+.home-link {
+    padding-left: 2%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+a{
+    color: white;
+    text-decoration: none;  
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+}
+

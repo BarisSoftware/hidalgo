@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Administrar from "./AdministarPerfil";
-import Borradores from "./Borradores";
-import Crear from "./CrearProyecto";
-import Historial from "./Historial";
-import Home from "./Home"
-import Homefeed from "./Homefeed";
-import Login from "./Login"
-import Registro from "./Registro"
-import Testito from "./Testito";
-import Transacciones from "./Transacciones";
+import Administrar from "./Pages/AdministarPerfil";
+import Borradores from "./Pages/Borradores";
+import Crear from "./Pages/CrearProyecto";
+import Historial from "./Pages/Historial";
+import Home from "./Pages/Home"
+import Homefeed from "./Pages/Homefeed";
+import Login from "./Pages/Login"
+import Registro from "./Pages/Registro"
+import Testito from "./Pages/Testito";
+import Transacciones from "./Pages/Transacciones";
 
 function App() {
   return (

@@ -1,7 +1,6 @@
 import React from "react";
-import "./Transacciones.css";
 import Sidebar from "./Sidebar";
-import avatar5 from "./imagenes/avatar5.png"
+import avatar5 from "../imagenes/avatar5.png"
 import { Link } from "react-router-dom"
 
 function Transacciones(){

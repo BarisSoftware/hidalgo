@@ -1,5 +1,4 @@
 import React from "react";
-import './AdministrarPerfil.css';
 import Sidebar from "./Sidebar";
 
 function Administrar (){
