@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import LogoKanoa from "./imagenes/LogoKanoa.png";
-import { HeaderHome } from "./HeaderHome";
+//import { HeaderHome } from "./HeaderHome";
+import { Header } from "./pages/Header";
 import Proyect from "./Proyect";
 
 // Para crear un nuevo elemento creamos una funcion
@@ -35,7 +36,9 @@ function Valores(props){ // valores, mision y esas weas
 function Home() { //Es necesario el corregir pasarle el texto en el parameto
   return (
     <div className="Home">
-      <HeaderHome></HeaderHome>
+      {//<HeaderHome></HeaderHome>
+      }
+      <Header text="Login" link="/login"></Header>
       <section>
         <div className="aboutus">
           <div className="kanoa">

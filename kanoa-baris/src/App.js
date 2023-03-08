@@ -4,16 +4,19 @@ import Administrar from "./AdministarPerfil";
 import Borradores from "./Borradores";
 import Crear from "./CrearProyecto";
 import Historial from "./Historial";
-import Home from "./Home"
+import Home from "./pages/Home"
 import Homefeed from "./Homefeed";
-import Login from "./Login"
-import Registro from "./Registro"
+import Login from "./pages/Login"
+import Registro from "./pages/Registro"
 import Testito from "./Testito";
 import Transacciones from "./Transacciones";
 
+// Reparacion de paginas
+//import LoginPage from "./pages/Login"
+//import RegistroPage from "./pages/Registro"
+
 function App() {
   return (
-
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Home />} />
@@ -26,7 +29,11 @@ function App() {
         <Route exact path="/transacciones" element={<Transacciones />} />
         <Route exact path="/borradores" element={<Borradores />} />
         <Route exact path="/historial" element={<Historial />} />
-
+        {// Reparacion de paginas
+        //<Route exact path="/registroPage" element={<RegistroPage/>} />
+        //<Route exact path="/loginPage" element={<LoginPage />} />
+        }
+        
       </Routes>
     </BrowserRouter>
 
