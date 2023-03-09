@@ -9,6 +9,16 @@
     font-family: 'Poppins', sans-serif;
 }
 
+span{
+    background-color: #FFF;
+}
+
+span:hover{
+    background-color: #FFF;
+    color: var(--text-color);
+}
+
+
 :root{
     --body-color: #E4E9F7;
     --sidebar-color: #FFF;
@@ -17,7 +27,7 @@
     --toggle-color: rgb(143, 143, 143);
     --text-color: #303030;
     --border-color: #181818;
-    --span-color: #b1b1b1;
+    --span-color: #ffffff;
     --button-color: #ffb52e ;
 
     --tran-03: all 0.2s ease;

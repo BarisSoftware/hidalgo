@@ -1,8 +1,8 @@
 import React from "react";
 // Todos los elementos usan un mismo css
 // O que almenos lo usen por tipo, por ejemplo login/register form
-import '../App.css'
-import './Login.css';
+//import '../App.css'
+import './formLog.css';
 
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios";
@@ -27,13 +27,13 @@ function Login() {
         checkLogin();
     }, [])
     return (
-        <div>
+        <div className="forms" id="Login">
             <Header text="Home" link="/"></Header>
             //El div abajo era body originalmente
             <div className="body">
                 <div className="formulario">
                     <h1>Login</h1>
-                    <form className="login" method="post" action="/logquest">
+                    <form className="form" method="post" action="/logquest">
                         <input type="email" name="correo" required placeholder="Email"></input>
                         <input type="password" name="pass" required placeholder="Contraseña"></input>
                         <input type="submit" value="Ingresar"></input>

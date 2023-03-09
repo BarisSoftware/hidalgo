@@ -17,15 +17,9 @@
     --toggle-color: rgb(143, 143, 143);
     --text-color: #303030;
     --border-color: #181818;
-    --span-color: #b1b1b1;
-    --button-color: #d31111;
-    --button-color2: #00a1b0;
-    --button-color3: #940726;
-    --button-color4: #390d2d;
-    --button-color5: #fd8808;
-    --text-color2:#fff;
-    --text-color3: #fff;
-    --text-color4: #fff;
+    --span-color: #ffffff;
+    --button-color: #a3a3a3;
+    --text-color2: #e4e4e4;
 
     --tran-03: all 0.2s ease;
     --tran-03: all 0.3s ease;
@@ -34,7 +28,7 @@
 }
 
 body{
-    min-height: 110vh;
+    min-height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
 }
@@ -52,14 +46,8 @@ body.dark{
     --toggle-color: #fff;
     --text-color: #ccc;
     --border-color: #dadada;
-    --button-color: #d63636;
-    --button-color2: #68ecfc;
-    --button-color3:#d31c51;
-    --button-color4:#a75a92;
-    --button-color5: #fea124;
-    --span-color: #797979;  
-    --text-color2:#fff;
-    --text-color3: #04515a;
+    --button-color: #727272;
+    --text-color2: #e4e4e4; 
 }
 
  .sidebar{
@@ -127,11 +115,20 @@ body.dark{
     display: flex;
     align-items: center;
 }
-
+.sidebar header .logo-text{
+    display: flex;
+    flex-direction: column;
+}
 header .image-text .name {
     margin-top: 2px;
     font-size: 18px;
     font-weight: 600;
+}
+
+header .image-text .profession{
+    font-size: 16px;
+    margin-top: -2px;
+    display: block;
 }
 
 .sidebar header .image{
@@ -317,8 +314,7 @@ body.dark .home .text{
     color: var(--text-color);
 }
 
-/*Seccion de Borradores */
-
+/*Seccion de Crear Proyecto */
 .titulo{
     display: flex;
     justify-content: center;
@@ -326,8 +322,7 @@ body.dark .home .text{
     align-items: center;
     margin-top: 30px;
     margin-bottom: 60px;
-    font-size: 65px;
-    font-weight: 500;
+    font-size: 70px;
 }
 
 .contenedor{
@@ -335,7 +330,7 @@ body.dark .home .text{
     align-items: center;
     justify-content: center;
     height: 100%;
-    margin-left: 8%;
+    margin-top: 25px;
 }
 
 .contenedor .contenido{
@@ -344,7 +339,6 @@ body.dark .home .text{
    justify-content: center;
 }
 
-.contenedor .contenido .col3,
 .contenedor .contenido .col2,
 .contenedor .contenido .col1{
     flex-direction: column;
@@ -352,20 +346,14 @@ body.dark .home .text{
 }
 
 .col1{
-    margin-right: 30px;
+    margin-right: 50px;
     flex-direction: column;
 }
 
 .col2{
-    margin-left: 30px;
+    margin-left: 50px;
     flex-direction: column;
 }
-
-.col3{
-    margin-right: 30px;
-    flex-direction: column;
-}
-
 
 label{
     display: flex;
@@ -373,6 +361,9 @@ label{
     align-items: center;
     color: var(--text-color);
     font-size: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 input[type=text]{
@@ -386,48 +377,19 @@ input[type=text]{
     border-bottom: 2px solid var(--text-color);
 }
 
+.elem6,
+.elem5,
+.elem4,
+.elem3,
+.elem2,
 .elem1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-color: var(--text-color);
     border-style: solid;
-    border-width: 3px;
-    border-radius: 0;
+    border-width: 2px;
+    border-radius: 25px;
     height: 120px;
     width: 320px;
     padding-top: 10px;
-}
-
-.elem3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-color: var(--text-color);
-    border-style: solid;
-    border-top: none;
-    border-width: 3px;
-    border-radius: 0;
-    height: 260px;
-    width: 320px;
-    padding-top: 10px;
-    flex-direction: column;
-}
-
-.elem5{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-color: var(--text-color);
-    border-style: solid;
-    border-top: none;
-    border-width: 3px;
-    border-radius: 0;
-    height: 115px;
-    width: 320px;
-    padding-top: 10px;
-    flex-direction: column;
 }
 
 .input{
@@ -437,74 +399,56 @@ input[type=text]{
     text-align: center;
 }
 
-.input2{
+.imgs{
+    width: 60px;
+    height: 60px;
+}
+
+.imagenes{
+    padding-top: 5px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     text-align: center;
-    flex-direction: column;
 }
 
-#img{
-    width: 90px;
-    height: 90px;
-    margin-right: 10px;
-}
-
-#imagen{
+.button{
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
-    color: var(--text-color);
-    font-size: 24px;
 }
 
-.sub1,
-.sub2,
-.sub3{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+input[type="button"]{
+    align-items: left;
+    width: 17%;
+    height: 50px;
+    border: 2.5px solid;
+    background: var(--body-color);
+    border-radius: 25px;
+    font-size: 18px;
+    color: var(--border-color);
+    cursor: pointer;
+    outline: none;
 }
 
-#btnEstado{
-    align-items: center;
-    width: 200px;
+input[type="submit"]{
+    align-items: left;
+    width: 17%;
     height: 50px;
     border: 2.5px solid;
     background: var(--button-color);
-    border-radius: 30px;
-    font-size: 20px;
+    border-radius: 25px;
+    font-size: 18px;
     border-color: var(--border-color);
-    color: var(--text-color2);
+    color: var(--border-color);
     cursor: pointer;
     outline: none;
 }
 
-#submit1_{
+.submit{
+    display: flex;
     align-items: center;
-    width: 120px;
-    height: 50px;
-    border: 2.5px solid;
-    background: var(--button-color3);
-    font-size: 16px;
-    border-color: var(--border-color);
-    color: var(--text-color2);
-    cursor: pointer;
-    outline: none;
-    margin-right: 15px;
-}
-
-#submit2_{
-    align-items: center;
-    width: 120px;
-    height: 50px;
-    border: 2.5px solid;
-    background: var(--button-color2);
-    font-size: 16px;
-    border-color: var(--border-color);
-    color: var(--text-color3);
-    cursor: pointer;
-    outline: none;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 35px;
 }

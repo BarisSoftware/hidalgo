@@ -1,5 +1,5 @@
-import './Registro.css';
-import '../App.css'
+import './formLog.css';
+//import '../App.css'
 
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom"
@@ -29,11 +29,12 @@ function Registro() {
     }
 
     return (
-        <div className="registros">
+        <div className="forms" id='Registro'>
         <Header text="Home" link="/"></Header>
+        <div className='body'>
             <div className="formulario">
                 <h1>Registro</h1>
-                <form className="registro" method="post" action="/regquest">
+                <form className="form" method="post" action="/regquest">
                     <input type="email" id="correo" name="correo" placeholder="Email" required></input>
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre" required></input>
                     <input type="password" id="pass" name="pass" placeholder="Contraseña" required></input>
@@ -56,11 +57,12 @@ function Registro() {
                     <h3 align="left">Llaves públicas</h3>
                     <input type="text" placeholder="Últimas 10 letras" required></input>
                     <input type="button" value="+"></input>
-                    <input type="button" value="Ingresar" onClick={getPost}></input>
+                    <input type="submit" value="Ingresar" onClick={getPost}></input>
                     <div class="registrarse"><br></br>
                         ¿Ya tienes una cuenta? <Link to="/login">Ingresa</Link>
                     </div>
                 </form>
+            </div>
             </div>
         </div>
     );

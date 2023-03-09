@@ -1,5 +1,5 @@
 import React from "react";
-import "./Borradores.css";
+import './AppComplete.css';
 import Sidebar from "./Sidebar";
 import avatar2 from "./imagenes/avatar2.png"
 import avatar4 from "./imagenes/avatar4.png"
