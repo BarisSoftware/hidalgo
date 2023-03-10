@@ -3,7 +3,6 @@ import download from "./imagenes/download.png";
 import avatar1 from "./imagenes/avatar1.png";
 import avatar2 from "./imagenes/avatar2.png";
 import avatar3 from "./imagenes/avatar3.png";
-import "./App.css";
 
 function NombreProyecto(props) {
   return (<div className="pp1">

@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css";
 import LogoKanoa from "../imagenes/LogoKanoa.png";
 //import { HeaderHome } from "./HeaderHome";
 import { Header } from "./Header";

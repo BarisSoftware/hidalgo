@@ -2,7 +2,6 @@ import React from "react";
 // Todos los elementos usan un mismo css
 // O que almenos lo usen por tipo, por ejemplo login/register form
 //import '../App.css'
-import './formLog.css';
 
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios";
