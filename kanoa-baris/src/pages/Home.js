@@ -2,7 +2,6 @@ import React from "react";
 import LogoKanoa from "../imagenes/LogoKanoa.png";
 //import { HeaderHome } from "./HeaderHome";
 import {Header} from "./NavBar";
-import Proyect from "../Proyect";
 import '../App.css'
 
 // Para crear un nuevo elemento creamos una funcion
@@ -84,8 +83,6 @@ function Home() { //Es necesario el corregir pasarle el texto en el parameto
           <br></br>
         </div>
       </section>
-      <section><Proyect></Proyect></section>
-      
     </div>
   );
 }
