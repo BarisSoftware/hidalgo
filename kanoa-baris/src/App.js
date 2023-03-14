@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Registro from "./pages/Registro"
+import CreateProyect from "./pages/CreateProyectFix";
 /*
 import Administrar from "./AdministarPerfil";
 import Borradores from "./Borradores";
@@ -23,7 +24,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
-        <Route exact path="/registro" element={<Registro />} />
+        <Route exact path="/registro" element={<Registro />}/>
+        <Route exact path="/createProyect" element={<CreateProyect/>}/>
         {
           /*
           <Route exact path="/admin" element={<Administrar />} />
