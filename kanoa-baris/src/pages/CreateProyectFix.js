@@ -7,6 +7,7 @@ import InputDescripcion from "../formElements/InputDescripcion";
 import InputPersonas from "../formElements/InputPersona";
 import InputLicencia from "../formElements/InputLicencia";
 import InputSubmit from "../formElements/InputSubmit";
+import LlavesPublicas from "../formElements/InputPublicKeys";
 
 function CreateProyect(params) {
   return (
@@ -22,8 +23,20 @@ function CreateProyect(params) {
               <span className="solybox">
                 <InputNombre></InputNombre>
                 <InputDescripcion></InputDescripcion>
+                <LlavesPublicas></LlavesPublicas>
                 <InputLicencia></InputLicencia>
-                <InputPersonas></InputPersonas>
+                <InputPersonas
+                  type="Administradores"
+                  butid="addA"
+                  buttype="addA"
+                  demo={true}
+                ></InputPersonas>
+                <InputPersonas
+                  type="Colaboradores"
+                  butid="addC"
+                  buttype="addC"
+                  demo={true}
+                ></InputPersonas>
                 <InputSubmit
                   text="Crear Proyecto"
                   id="Crear Proyecto"

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 //import './AppComplete.css';
 import Sidebar from "./Sidebar";
 import Licencia from "./formElements/InputLicencia";
-import LlavesPublicas from "./formElements/LlavesPublicas"
+import LlavesPublicas from "./formElements/InputPublicKeys"
 import Nombre from "./formElements/InputNombre";
 import Descripcion from "./formElements/InputDescripcion";
 import Persona from "./formElements/InputPersona";
