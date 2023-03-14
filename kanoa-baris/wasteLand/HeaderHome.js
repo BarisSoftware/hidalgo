@@ -3,21 +3,21 @@ import { Link } from "react-router-dom"
 
 function HeaderLink(props) {
   return (
-    <li class="normal"><a href={props.link}>{props.text}</a></li>
+    <li className"normal"><a href={props.link}>{props.text}</a></li>
   );
 }
 
 function NavLink(props) {
   return (
-    <li class="cta"><Link to={props.link}>{props.text}</Link></li>
+    <li className"cta"><Link to={props.link}>{props.text}</Link></li>
   );
 }
 
 export const HeaderHome = () => {
   return (
     <header>
-      <div class="header">
-        <a href="#" class="logo">Baris <br></br>Software Development</a>
+      <div className"header">
+        <a href="#" className"logo">Baris <br></br>Software Development</a>
         <nav>
           <HeaderLink link="/crear" text="CREAR PROYECTO"></HeaderLink>
           <HeaderLink link="/transacciones" text="TRANSACCIONES"></HeaderLink>

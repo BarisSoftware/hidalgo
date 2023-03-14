@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 //import './AppComplete.css';
 import Sidebar from "./Sidebar";
-import Licencia from "./formElements/Licencia";
+import Licencia from "./formElements/InputLicencia";
 import LlavesPublicas from "./formElements/LlavesPublicas"
-import Nombre from "./formElements/Nombre";
-import Descripcion from "./formElements/Descripcion";
-import Persona from "./formElements/Persona";
+import Nombre from "./formElements/InputNombre";
+import Descripcion from "./formElements/InputDescripcion";
+import Persona from "./formElements/InputPersona";
 import axios from "axios";
 import PopOut from "./elements/PopOut";
 import { useNavigate } from "react-router-dom";
@@ -54,35 +54,35 @@ function Crear() {
     return (
         <>
             <Sidebar nombre={nombre}></Sidebar>
-            <h1 class="titulo">Crear proyecto</h1>
+            <h1 className="titulo">Crear proyecto</h1>
             <form method="POST" action="/createProjectreq">
-                <div class="contenedor">
-                    <div class="contenido">
-                        <div class="col1">
-                            <div class="elem1">
+                <div className="contenedor">
+                    <div className="contenido">
+                        <div className="col1">
+                            <div className="elem1">
                                 <Nombre></Nombre>
                             </div><br></br><br></br>
-                            <div class="elem3">
+                            <div className="elem3">
                                 <Descripcion></Descripcion>
                             </div><br></br><br></br>
-                            <div class="elem5">
+                            <div className="elem5">
                                 <LlavesPublicas></LlavesPublicas>
                             </div>
                         </div>
-                        <div class="col2">
-                            <div class="elem2">
+                        <div className="col2">
+                            <div className="elem2">
                                 <Persona id="addAdmin" type="Administradores"></Persona>
                             </div><br></br><br></br>
-                            <div class="elem4">
+                            <div className="elem4">
                                 <Persona id="addColab" type="Colaboradores"></Persona>
                             </div><br></br><br></br>
-                            <div class="elem6">
+                            <div className="elem6">
                                 <Licencia></Licencia>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="submit">
+                <div className="submit">
                     <input type="submit" id="Crear proyecto" name="Crear proyecto" value="Crear proyecto"></input>
                 </div>
             </form>

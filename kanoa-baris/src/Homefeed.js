@@ -58,8 +58,8 @@ function Homefeed() {
     return (
         <body>
             <Sidebar nombre={nombre} ></Sidebar>
-            <section class="sec2"></section>
-            <div class="somos">
+            <section className="sec2"></section>
+            <div className="somos">
                 <h1><b>Homefeed</b></h1>
                 <h2>Tus proyectos</h2>  <br></br>
                 {

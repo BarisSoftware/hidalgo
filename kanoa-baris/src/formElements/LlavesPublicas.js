@@ -3,8 +3,8 @@ import React from "react";
 function LlavesPublicas(props) {
     return (
         <>
-            <label for="Nombre">Llaves públicas</label>
-            <div class="input">
+            <label htmlFor="Nombre">Llaves públicas</label>
+            <div className="input">
                 <input type="text" id="llaves" name="llaves" placeholder="ultimas 10 letras" required></input>
             </div>
         </>

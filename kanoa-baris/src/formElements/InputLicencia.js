@@ -1,13 +1,13 @@
 import React from 'react';
-function Licencia(props) {
+function InputLicencia(props) {
     return (
         <>
-            <label for="Licencia">Licencia</label>
-            <div class="input">
+            <label htmlFor="Licencia">Licencia</label>
+            <div className="input">
                 <input type="text" id="licencia" name="licencia" required></input>
             </div>
         </>
     );
 }
 
-export default Licencia
+export default InputLicencia;

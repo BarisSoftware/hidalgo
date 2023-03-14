@@ -9,64 +9,64 @@ import avatar6 from "./imagenes/avatar6.png"
 
 function Sidebar(props){
     return(
-        <nav class="sidebar" >
+        <nav className="sidebar" >
                 <header>
-                    <div class="image-text">
-                        <span class="image">
+                    <div className="image-text">
+                        <span className="image">
                             <img src={avatar3}></img>
                         </span>
-                        <div class="text header-text">
-                            <span class="name">{props.nombre}</span>
+                        <div className="text header-text">
+                            <span className="name">{props.nombre}</span>
                         </div>
                     </div>
-                    <i class='bx bxs-chevron-right toggle'></i>
+                    <i className='bx bxs-chevron-right toggle'></i>
                 </header>
 
-                <div class="menu-bar">
-                    <div class="menu">
-                        <ul class="menu-links">
-                            <li class="nav-link">
+                <div className="menu-bar">
+                    <div className="menu">
+                        <ul className="menu-links">
+                            <li className="nav-link">
                                 <a href="/home_feed">
-                                    <i class='bx bx-home icon' ></i>
-                                    <span class="text nav-text">Homefeed</span>
+                                    <i className='bx bx-home icon' ></i>
+                                    <span className="text nav-text">Homefeed</span>
                                 </a>
                             </li>
-                            <li class="nav-link">
+                            <li className="nav-link">
                                 <a href="/crear">
-                                    <i class='bx bx-add-to-queue icon'></i>
-                                    <span class="text nav-text">Crear proyecto</span>
+                                    <i className='bx bx-add-to-queue icon'></i>
+                                    <span className="text nav-text">Crear proyecto</span>
                                 </a>
                             </li>
-                            <li class="nav-link">
+                            <li className="nav-link">
                                 <a href="/transacciones">
-                                    <i class='bx bx-dollar icon'></i>
-                                    <span class="text nav-text">Realizar <br></br>Transacción</span>
+                                    <i className='bx bx-dollar icon'></i>
+                                    <span className="text nav-text">Realizar <br></br>Transacción</span>
                                 </a>
                             </li>
-                            <li class="nav-link">
+                            <li className="nav-link">
                                 <a href="/admin">
-                                    <i class='bx bx-cog icon' ></i>
-                                    <span class="text nav-text">Administrar <br></br>perfil</span>
+                                    <i className='bx bx-cog icon' ></i>
+                                    <span className="text nav-text">Administrar <br></br>perfil</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <div class="bottom-content">
-                        <div class="content">
-                            <li class="">
+                    <div className="bottom-content">
+                        <div className="content">
+                            <li className="">
                                 <a href="#">
-                                    <i class='bx bx-log-out icon' ></i>
-                                    <span class="text nav-text">Cerrar sesión</span>
+                                    <i className='bx bx-log-out icon' ></i>
+                                    <span className="text nav-text">Cerrar sesión</span>
                                 </a>
                             </li>
-                            <li class="mode">
-                                <div class="sun-moon">
-                                    <i class='bx bx-moon icon moon'></i>
-                                    <i class='bx bx-sun icon sun'></i>
+                            <li className="mode">
+                                <div className="sun-moon">
+                                    <i className='bx bx-moon icon moon'></i>
+                                    <i className='bx bx-sun icon sun'></i>
                                 </div>
-                                <span class="mode-text text">Dark mode</span>
-                                <div class="toggle-switch">
-                                    <span class="switch"></span>
+                                <span className="mode-text text">Dark mode</span>
+                                <div className="toggle-switch">
+                                    <span className="switch"></span>
                                 </div>
                             </li>
                         </div>

@@ -33,7 +33,7 @@ function Login() {
                         <input type="email" name="correo" required placeholder="Email"></input>
                         <input type="password" name="pass" required placeholder="Contraseña"></input>
                         <input type="submit" value="Ingresar"></input>
-                        <div class="registrarse">
+                        <div className"registrarse">
                             ¿No estas registrado? <Link to="/registro">Crea una cuenta</Link>
                         </div>
                     </form>

@@ -37,25 +37,25 @@ function Registro() {
                     <input type="password" id="pass" name="pass" placeholder="Contraseña" required></input>
                     <input type="password" placeholder="Confirmación contraseña"></input>
                     <h3 align="left">Tecnologías</h3>
-                    <div class="divbut">
-                        <div class="radiobutton">
+                    <div className="divbut">
+                        <div className="radiobutton">
                             <input type="radio" name="tecs" value="Primera"></input>
-                            <label for="Primera">Primera Tecnología</label>
+                            <label htmlFor="Primera">Primera Tecnología</label>
                         </div>
-                        <div class="radiobutton">
+                        <div className="radiobutton">
                             <input type="radio" name="tecs" value="Segunda"></input>
-                            <label for="Segunda">Segunda Tecnologia</label>
+                            <label htmlFor="Segunda">Segunda Tecnologia</label>
                         </div>
-                        <div class="radiobutton">
+                        <div className="radiobutton">
                             <input type="radio" name="tecs" value="Tercera"></input>
-                            <label for="Tercera">Tercera Tecnología</label>
+                            <label htmlFor="Tercera">Tercera Tecnología</label>
                         </div>
                     </div>
                     <h3 align="left">Llaves públicas</h3>
                     <input type="text" placeholder="Últimas 10 letras" required></input>
                     <input type="button" value="+"></input>
                     <input type="submit" value="Ingresar" onClick={getPost}></input>
-                    <div class="registrarse"><br></br>
+                    <div className="registrarse"><br></br>
                         ¿Ya tienes una cuenta? <Link to="/login">Ingresa</Link>
                     </div>
                 </form>

@@ -10,68 +10,68 @@ function Historial (){
         <>
         <Sidebar></Sidebar>
         <div>
-        <h1 class="titulo">Historial</h1>
-        <div class="contenedor">
-            <div class="contenido">
-                <div class="col1">
-                    <div class="elem1">
-                        <div class="input">
+        <h1 className="titulo">Historial</h1>
+        <div className="contenedor">
+            <div className="contenido">
+                <div className="col1">
+                    <div className="elem1">
+                        <div className="input">
                         <img src={avatar2} id="img"></img>
-                            <label for="imagen" id="imagen"> Cuenta destino </label>
+                            <label htmlFor="imagen" id="imagen"> Cuenta destino </label>
                         </div>
                     </div>
-                    <div class="elem3">
-                        <div class="input2">
-                            <div class="sub1">
+                    <div className="elem3">
+                        <div className="input2">
+                            <div className="sub1">
                                 <input type="text" id="IdTrans" placeholder="Id de Transacción"></input>
                             </div><br></br>
-                            <div class="sub2">
+                            <div className="sub2">
                                 <input type="text" id="LlavePub" placeholder="Llave pública"></input>
                             </div><br></br>
-                            <div class="sub3">
+                            <div className="sub3">
                                 <input type="button" id="btnEstado" value="Estado"></input>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col1">
-                <div class="elem1">
-                    <div class="input">
+            <div className="col1">
+                <div className="elem1">
+                    <div className="input">
                         <img src={avatar4} id="img"></img>
-                        <label for="imagen" id="imagen"> Cuenta destino </label>
+                        <label htmlFor="imagen" id="imagen"> Cuenta destino </label>
                     </div>
                 </div>
-                <div class="elem3">
-                    <div class="input2">
-                        <div class="sub1">
+                <div className="elem3">
+                    <div className="input2">
+                        <div className="sub1">
                             <input type="text" id="IdTrans" placeholder="Id de Transacción"></input>
                         </div><br></br>
-                        <div class="sub2">
+                        <div className="sub2">
                             <input type="text" id="LlavePub" placeholder="Llave pública"></input>
                         </div><br></br>
-                        <div class="sub3">
+                        <div className="sub3">
                             <input type="button" id="btnEstado" value="Estado"></input> 
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col1">
-                <div class="elem1">
-                    <div class="input">
+            <div className="col1">
+                <div className="elem1">
+                    <div className="input">
                         <img src={avatar6} id="img"></img>
-                        <label for="imagen" id="imagen"> Cuenta destino </label>
+                        <label htmlFor="imagen" id="imagen"> Cuenta destino </label>
                     </div>
                 </div>
-                <div class="elem3">
-                    <div class="input2">
-                        <div class="sub1">
+                <div className="elem3">
+                    <div className="input2">
+                        <div className="sub1">
                             <input type="text" id="IdTrans" placeholder="Id de Transacción"></input>
                         </div><br></br>
-                        <div class="sub2">
+                        <div className="sub2">
                             <input type="text" id="LlavePub" placeholder="Llave pública"></input>
                         </div><br></br>
-                        <div class="sub3">
+                        <div className="sub3">
                             <input type="button" id="btnEstado" value="Estado"></input>
                         </div>
                     </div>

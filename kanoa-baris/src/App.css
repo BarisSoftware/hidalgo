@@ -1,3 +1,4 @@
+/*  GENERAL CONFIGURATION   */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
@@ -49,6 +50,15 @@ body.dark{
     --button-color: #727272;
     --text-color2: #e4e4e4; 
 }
+
+.solybox span{
+    margin: 0%;
+    border: none;
+    padding: none;
+    width: fit-content;
+    height: fit-content;
+}
+
 /*  SIDEBAR */
 
 .sidebar{
@@ -316,4 +326,115 @@ body.dark .switch::before{
 }
 body.dark .home .text{
     color: var(--text-color);
+}
+
+/*  PAGES   */
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    color: var(--text-color);
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    font-size: 70px;
+    font-weight: 300;
+}
+
+.contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 25px;
+}
+
+.contenedor .contenido{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+/*  PAGES FORMS */
+label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+input[type=text]{
+    text-align: center;
+    background: none;
+    color: var(--text-color);
+    font-size: 20px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    border-bottom: 2px solid var(--text-color);
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100px;
+}
+
+.elem {
+    border-color: var(--text-color);
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 25px;
+    height: 120px;
+    width: 320px;
+    padding-top: 10px;
+}
+
+
+.button{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+input[type="button"]{
+    align-items: left;
+    width: 17%;
+    height: 50px;
+    border: 2.5px solid;
+    background: var(--body-color);
+    border-radius: 25px;
+    font-size: 18px;
+    color: var(--border-color);
+    cursor: pointer;
+    outline: none;
+}
+
+
+input[type="submit"]{
+    align-items: left;
+    width: 17%;
+    height: 50px;
+    border: 2.5px solid;
+    background: var(--primary-color);
+    border-radius: 25px;
+    font-size: 20px;
+    border-color: var(--border-color);
+    color: var(--border-color);
+    cursor: pointer;
+    outline: none;
+}
+
+.submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 35px;
 }

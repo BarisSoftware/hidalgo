@@ -13,7 +13,7 @@ function NombreProyecto(props) {
 }
 
 function DescripcionProyecto(props) {
-  return (<div class="pp2">
+  return (<div className="pp2">
     <p>Descripción del proyecto:</p>
     <br></br>
     <p>{props.description}</p>
@@ -24,8 +24,8 @@ function DescripcionProyecto(props) {
 }
 
 function EnlaceDescarga(props) {
-  return (<div class="pp3">
-    <div class="pp3_">
+  return (<div className="pp3">
+    <div className="pp3_">
       <p>
         <img src={download}></img> <span>Enlace de descarga: </span>
       </p>
@@ -38,9 +38,9 @@ function Colaborador(props) {
 }
 
 function Colaboradores(params) {
-  return (<div class="pp4">
+  return (<div className="pp4">
     <p>Colaboradores: </p>
-    <div class="Colabimg">
+    <div className="Colabimg">
       <img src={avatar1}></img>
       <img src={avatar2}></img>
       <img src={avatar3}></img>
@@ -49,7 +49,7 @@ function Colaboradores(params) {
 }
 
 function ChecksumProyecto(props) {
-  return (<div class="pp5">
+  return (<div className="pp5">
     <p> Checksum del proyecto</p>
   </div>);
 }
@@ -59,9 +59,9 @@ function PublicKey(props) {
 }
 
 function Donate(props) {
-  return (<div class="pp6">
+  return (<div className="pp6">
     <p>Donar:</p>
-    <div class="donar">
+    <div className="donar">
       <img src={bitcoin}></img>
       <p>
         <PublicKey text="Llave publica del proyecto"></PublicKey>
