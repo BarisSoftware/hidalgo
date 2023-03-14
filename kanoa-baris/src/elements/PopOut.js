@@ -1,5 +1,5 @@
 import React from "react";
-import PopOutStyle from '../styles/PopOutStyle.css'
+//import PopOutStyle from '../styles/PopOutStyle.css'
 
 function Search(props) {
     return (

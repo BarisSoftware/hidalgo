@@ -1,5 +1,5 @@
 import React from "react";
-import './AppComplete.css';
+//import './AppComplete.css';
 import Sidebar from "./Sidebar";
 
 function Administrar (){

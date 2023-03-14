@@ -1,5 +1,5 @@
 import React from "react";
-import './AppComplete.css'
+//import './AppComplete.css'
 import Sidebar from "./Sidebar";
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios";

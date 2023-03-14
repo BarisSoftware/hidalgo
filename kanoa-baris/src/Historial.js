@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import './AppComplete.css'
+//import './AppComplete.css'
 import avatar2 from "./imagenes/avatar2.png"
 import avatar4 from "./imagenes/avatar4.png"
 import avatar6 from "./imagenes/avatar6.png"

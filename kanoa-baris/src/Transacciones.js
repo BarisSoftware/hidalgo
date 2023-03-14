@@ -1,5 +1,5 @@
 import React from "react";
-import './AppComplete.css'
+//import './AppComplete.css'
 import Sidebar from "./Sidebar";
 import avatar5 from "./imagenes/avatar5.png"
 import { Link } from "react-router-dom"
