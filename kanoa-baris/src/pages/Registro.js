@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Header } from "./Header";
+import { Header } from "./NavBar";
 
 const client = axios.create({
     baseURL: "http://localhost:3000/"

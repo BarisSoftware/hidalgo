@@ -11,7 +11,7 @@ function Header(props) {
       />
       <div className="image-text">
         <span className="image">
-          <img src={avatar3} />
+          <img src={avatar3} alt="profile"/>
         </span>
         <div className="text header-text">
           <span className="name">Usuario</span>
@@ -27,7 +27,7 @@ function LinkMenu(props) {
     <li className="nav-link">
       <a href={props.link}>
         <i className={"bx icon " + props.icon}></i>
-        <span className="text nav-text">{props.text}</span>
+        <span className="text nav-text">{props.text}<br/>{props.text2}</span>
       </a>
     </li>
   );
@@ -38,9 +38,9 @@ function MenuLinks(props) {
     <ul className="menu-links">
       <LinkMenu link="/homefeed" text="HomeFeed" icon="bx-home" />
       <LinkMenu link="/createProyect" text='Crear proyecto' icon='bx-add-to-queue icon'/>
-      <LinkMenu link="/transacciones" text='Transacción' icon='bx-dollar'/>
-      <LinkMenu link='/adminProfile' text="Administrar/nperfil" icon='bx-cog'/>
-      <LinkMenu link='/popularProyects' text='Proyectos populares' icon='bx-star'/>
+      <LinkMenu link="/transacciones" text='Realizar' text2='Transacción' icon='bx-dollar'/>
+      <LinkMenu link='/adminProfile' text="Administrar" text2="perfil" icon='bx-cog'/>
+      <LinkMenu link='/popularProyects' text="Proyectos" text2="populares" icon='bx-star'/>
     </ul>
   );
 }

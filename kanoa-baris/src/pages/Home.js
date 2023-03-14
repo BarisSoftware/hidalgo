@@ -1,7 +1,7 @@
 import React from "react";
 import LogoKanoa from "../imagenes/LogoKanoa.png";
 //import { HeaderHome } from "./HeaderHome";
-import { Header } from "./Header";
+import {Header} from "./NavBar";
 import Proyect from "../Proyect";
 import '../App.css'
 
