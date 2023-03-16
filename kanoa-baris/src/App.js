@@ -2,9 +2,12 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import HomeFix from './pages/HomeFix'
+
 import Login from "./pages/Login";
 import Registro from "./pages/Registro";
+
 import CreateProyect from "./pages/CreateProyectFix";
+import HomeFeed from "./pages/HomeFeed";
 
 import Testito from "./Testito";
 
@@ -21,6 +24,7 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/registro" element={<Registro />} />
         <Route exact path="/createProyect" element={<CreateProyect />} />
+        <Route exact path="/homeFeed" element={<HomeFeed />} />
         <Route exact path="/testito" element={<Testito />} />
       </Routes>
     </BrowserRouter>
