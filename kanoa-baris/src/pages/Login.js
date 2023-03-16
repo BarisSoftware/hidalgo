@@ -26,15 +26,15 @@ function Login() {
         checkLogin();
     }, [])
     return (
-        <div className="forms" id="Login">
+        <div className="forms wft" id="Login">
             <NavBar text="Home" link="/"></NavBar>
             <div className="body">
                 <div className="formulario">
                     <h1>Login</h1>
                     <form className="form" method="post" action="/logquest">
-                        <input type="email" name="correo" required placeholder="Email"></input>
+                        <input type="email" name="correo" required className="formil" placeholder="Email"></input>
                         <input type="password" name="pass" required placeholder="Contraseña"></input>
-                        <input type="submit" value="Ingresar"></input>
+                        <input type="submit" value="Ingresar" className="formal"></input>
                         <div className="registrarse">
                             ¿No estas registrado? <Link to="/registro">Crea una cuenta</Link>
                         </div>

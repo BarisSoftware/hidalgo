@@ -6,10 +6,10 @@ import BlueButton from "../HomeElements/NavBar/BlueButtonNavBar";
 
 function NavBar(props) {
   return (
-    <header>
+    <header className="navhome">
       <div className="homeNavBar">
         <LogoNavBar />
-        <nav>
+        <ul>
           <BlackButton link="/crear" text="CREAR PROYECTO"></BlackButton>
           <BlackButton link="/transacciones" text="TRANSACCIONES"></BlackButton>
           <BlackButton
@@ -17,7 +17,7 @@ function NavBar(props) {
             text="SOURCE CODE"
           ></BlackButton>
           <BlueButton link={props.link} text={props.text}></BlueButton>
-        </nav>
+        </ul>
       </div>
     </header>
   );
