@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Header } from "./NavBar";
+import NavBar from "./NavBarFix";
 
 const client = axios.create({
     baseURL: "http://localhost:3000/"
@@ -27,7 +27,7 @@ function Registro() {
 
     return (
         <div className="forms" id='Registro'>
-        <Header text="Home" link="/"></Header>
+        <NavBar text="Home" link="/"></NavBar>
         <div className='body'>
             <div className="formulario">
                 <h1>Registro</h1>

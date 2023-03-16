@@ -5,7 +5,7 @@ import React from "react";
 
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios";
-import { Header } from "./NavBar";
+import NavBar from "./NavBarFix";
 
 const client = axios.create({
     baseURL: "http://localhost:3000/"
@@ -27,8 +27,7 @@ function Login() {
     }, [])
     return (
         <div className="forms" id="Login">
-            <Header text="Home" link="/"></Header>
-            //El div abajo era body originalmente
+            <NavBar text="Home" link="/"></NavBar>
             <div className="body">
                 <div className="formulario">
                     <h1>Login</h1>

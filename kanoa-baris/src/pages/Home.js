@@ -1,7 +1,7 @@
 import React from "react";
 import LogoKanoa from "../imagenes/LogoKanoa.png";
 //import { HeaderHome } from "./HeaderHome";
-import {Header} from "./NavBar";
+import NavBar from "./NavBarFix";
 import '../App.css'
 
 // Para crear un nuevo elemento creamos una funcion
@@ -37,7 +37,7 @@ function Home() { //Es necesario el corregir pasarle el texto en el parameto
     <div className="Home">
       {//<HeaderHome></HeaderHome>
       }
-      <Header text="Login" link="/login"></Header>
+      <NavBar text="Login" link="/login"></NavBar>
       <section>
         <div className="aboutus">
           <div className="kanoa">

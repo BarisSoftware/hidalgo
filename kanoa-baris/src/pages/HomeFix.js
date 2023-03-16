@@ -1,7 +1,6 @@
 import React from "react";
 import LogoKanoa from "../imagenes/LogoKanoa.png";
 import NavBarFix from './NavBarFix'
-import Proyect from "../Proyect";
 
 import '../App.css'
 
@@ -82,7 +81,6 @@ function Home() { //Es necesario el corregir pasarle el texto en el parameto
           <br></br>
         </div>
       </section>
-      <section><Proyect></Proyect></section>
       
     </div>
   );
