@@ -30,7 +30,7 @@ foreign key (idPerfil) references Perfil_Usuario(idPerfil) on update cascade on 
 create table Llave_Usuario(
 idLlaveUsuario int primary key auto_increment not null,
 idUsuario int not null,
-llaveUsuario binary(33),
+llaveUsuario varchar(42),
 foreign key (idUsuario) references Usuario(idUsuario) on update cascade on delete cascade
 );
 
@@ -82,5 +82,7 @@ use kanoa;
 select * from Usuario;
 select * from Proyecto;
 select * from Puestos;
-
-
+select * from Archivos;
+select * from Puestos;
+select * from MalwareStrikes;
+select * from Llave_Usuario;

@@ -55,7 +55,8 @@ app.post('/regquest', (req, res) => {
 
     if (succes) {
         console.log(`\tRegistrado: \n Nombre: ${nombre}\n Correo: ${correo}`);
-        res.json({ 'result': true })
+        //res.json({ 'result': true })
+        res.redirect('/login')
     }
     else res.json({ 'result': false })
 });
@@ -81,7 +82,7 @@ app.post('/logquest', (req, res) => {
                     req.session.name = authenticated.name;
                     req.session.auth = authenticated.auth;
                     //res.send(true)
-                    res.redirect('/home_feed');
+                    res.redirect('/homeFeed');
                 }
                 else {
                     //res.send(false)
@@ -100,13 +101,13 @@ app.post('/createProjectreq', (req, res) => {
     console.log(' ... Create Project Request');
     if (req.session.auth) {
         try {
+            let idUser = req.session.idUser;
             let nombre = req.body.nombre;
             let descripcion = req.body.descripcion;
-            let idUser = req.session.idUser;
             let licencia = req.body.licencia;
             let newProject = new Project(nombre, descripcion, idUser, licencia);
             newProject.create();
-            res.send('ok')
+            res.redirect('/homeFeed')
         }
         catch (error) {
             console.log('Error: ' + error);
