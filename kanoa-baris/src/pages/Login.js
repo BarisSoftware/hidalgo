@@ -23,7 +23,7 @@ function Login() {
       const response = await client.post("/checkSession");
       console.log("Auth " + response.data.auth);
       if (response.data.auth) {
-        navigate("/home_feed");
+        navigate("/homeFeed");
       }
     };
     checkLogin();

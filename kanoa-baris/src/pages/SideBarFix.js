@@ -1,6 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import avatar3 from "../imagenes/avatar3.png";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const client = axios.create({
+  baseURL: "http://localhost:3000/",
+});
 
 function Header(props) {
   return (
@@ -11,10 +16,10 @@ function Header(props) {
       />
       <div className="image-text">
         <span className="image">
-          <img src={avatar3} alt="profile"/>
+          <img src={avatar3} alt="profile" />
         </span>
         <div className="text header-text">
-          <span className="name">Usuario</span>
+          <span className="name">{props.userName}</span>
         </div>
       </div>
       <i className="bx bxs-chevron-right toggle"></i>
@@ -27,7 +32,11 @@ function LinkMenu(props) {
     <li className="nav-link">
       <a href={props.link}>
         <i className={"bx icon " + props.icon}></i>
-        <span className="text nav-text">{props.text}<br/>{props.text2}</span>
+        <span className="text nav-text">
+          {props.text}
+          <br />
+          {props.text2}
+        </span>
       </a>
     </li>
   );
@@ -36,11 +45,30 @@ function LinkMenu(props) {
 function MenuLinks(props) {
   return (
     <ul className="menu-links">
-      <LinkMenu link="/homefeed" text="HomeFeed" icon="bx-home" />
-      <LinkMenu link="/createProyect" text='Crear proyecto' icon='bx-add-to-queue icon'/>
-      <LinkMenu link="/transacciones" text='Realizar' text2='Transacción' icon='bx-dollar'/>
-      <LinkMenu link='/adminProfile' text="Administrar" text2="perfil" icon='bx-cog'/>
-      <LinkMenu link='/popularProyects' text="Proyectos" text2="populares" icon='bx-star'/>
+      <LinkMenu link="/homefeed" text="Home" icon="bx-home" />
+      <LinkMenu
+        link="/createProyect"
+        text="Crear proyecto"
+        icon="bx-add-to-queue icon"
+      />
+      <LinkMenu
+        link="/transacciones"
+        text="Realizar"
+        text2="Transacción"
+        icon="bx-dollar"
+      />
+      <LinkMenu
+        link="/adminProfile"
+        text="Administrar"
+        text2="perfil"
+        icon="bx-cog"
+      />
+      <LinkMenu
+        link="/popularProyects"
+        text="Proyectos"
+        text2="populares"
+        icon="bx-star"
+      />
     </ul>
   );
 }
@@ -82,9 +110,51 @@ function BottomContent(props) {
 }
 
 function SideBar(props) {
+  const navigate = useNavigate();
+  const [nombre, setNombre] = React.useState("");
+  const [correo, setCorreo] = React.useState("");
+  const [idUsuario, setIdUsuario] = React.useState(undefined);
+  const [projects, setProjects] = React.useState(undefined);
+  React.useEffect(() => {
+    const checkLogin = async () => {
+      await client.post("/checkSession").then((response) => {
+        console.log("Auth " + response.data.auth);
+        console.log("Nombre " + response.data.name);
+        console.log("Email " + response.data.email);
+        console.log("id " + response.data.id);
+        if (response.data.auth) {
+          setNombre(response.data.name);
+          setCorreo(response.data.email);
+          setIdUsuario(response.data.id);
+        } else {
+          navigate("/login");
+        }
+      });
+    };
+    checkLogin()
+      .then(() => {
+        console.log(nombre);
+        console.log(correo);
+        console.log(idUsuario);
+      })
+      .then(() => {
+        bringMine();
+      });
+
+    const bringMine = async () => {
+      await client.post("/myProjectsreq").then((response) => {
+        let pros = [];
+        for (const pro of response) {
+          pros.push(pro);
+        }
+        setProjects(response);
+      });
+    };
+  }, []);
+
   return (
     <nav className="sidebar">
-      <Header></Header>
+      <Header userName={nombre} />
       <Content />
     </nav>
   );
