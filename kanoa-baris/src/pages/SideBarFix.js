@@ -7,6 +7,25 @@ const client = axios.create({
   baseURL: "http://localhost:3000/",
 });
 
+function handleToggle() {
+  let sidebar = document.querySelector("nav");
+  sidebar.classList.toggle("close");
+  console.log("Hiding");
+}
+
+function handleTheme() {
+  let wholePage = document.querySelector("body");
+  wholePage.classList.toggle("dark");
+
+  let modeText = wholePage.querySelector(".mode-text");
+
+  if (wholePage.classList.contains("dark")) {
+    modeText.innerText = "Light mode";
+  } else {
+    modeText.innerText = "Dark mode";
+  }
+}
+
 function Header(props) {
   return (
     <header>
@@ -22,7 +41,7 @@ function Header(props) {
           <span className="name">{props.userName}</span>
         </div>
       </div>
-      <i className="bx bxs-chevron-right toggle"></i>
+      <i onClick={handleToggle} className="bx bxs-chevron-right toggle"></i>
     </header>
   );
 }
@@ -100,7 +119,7 @@ function BottomContent(props) {
             <i className="bx bx-sun icon sun"></i>
           </div>
           <span className="mode-text text">Dark mode</span>
-          <div className="toggle-switch">
+          <div onClick={handleTheme} className="toggle-switch">
             <span className="switch"></span>
           </div>
         </li>
@@ -115,6 +134,7 @@ function SideBar(props) {
   const [correo, setCorreo] = React.useState("");
   const [idUsuario, setIdUsuario] = React.useState(undefined);
   const [projects, setProjects] = React.useState(undefined);
+
   React.useEffect(() => {
     const checkLogin = async () => {
       await client.post("/checkSession").then((response) => {
