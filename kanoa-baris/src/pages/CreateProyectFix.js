@@ -8,6 +8,7 @@ import InputPersonas from "../formElements/InputPersona";
 import InputLicencia from "../formElements/InputLicencia";
 import InputSubmit from "../formElements/InputSubmit";
 import LlavesPublicas from "../formElements/InputPublicKeys";
+import InputFileZip from "../formElements/InputFileZip";
 
 function CreateProyect(params) {
   return (
@@ -22,6 +23,7 @@ function CreateProyect(params) {
             child={
               <span className="solybox">
                 <InputNombre></InputNombre>
+                <InputFileZip></InputFileZip>
                 <InputDescripcion></InputDescripcion>
                 <LlavesPublicas></LlavesPublicas>
                 <InputLicencia></InputLicencia>
