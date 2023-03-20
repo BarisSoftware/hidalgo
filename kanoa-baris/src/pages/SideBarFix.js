@@ -45,7 +45,7 @@ function LinkMenu(props) {
 function MenuLinks(props) {
   return (
     <ul className="menu-links">
-      <LinkMenu link="/homefeed" text="Home" icon="bx-home" />
+      <LinkMenu link="/homeFeed" text="Home" icon="bx-home" />
       <LinkMenu
         link="/createProyect"
         text="Crear proyecto"
