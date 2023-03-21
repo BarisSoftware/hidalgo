@@ -14,6 +14,7 @@ import TecnologiasInput from "../formalForm/TecnologiasInput";
 import PublicKeyInput from "../formalForm/PublicKeyInput";
 import SubmitButton from "../formalForm/SubmitButton";
 import ProfilePicInput from "../formalForm/ProfilePicInput";
+import LandsPicInput from "../formalForm/LandscapePicInput";
 
 const client = axios.create({
   baseURL: "http://localhost:3000/",
@@ -56,6 +57,7 @@ function Registro() {
             {/* <TecnologiasInput /> */}
             <PublicKeyInput />
             <ProfilePicInput />
+            <LandsPicInput />
             <BottomLink
               text="¿Ya tienes una cuenta?"
               textLink="Ingresa"

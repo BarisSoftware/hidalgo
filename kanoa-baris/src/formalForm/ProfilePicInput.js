@@ -1,7 +1,7 @@
 import React from "react";
 import MiniContainer from "./MiniContainer";
 function ProfilePicInput(props) {
-  /*  return (
+  return (
     <MiniContainer
       title="Foto de Perfil"
       child={
@@ -14,16 +14,6 @@ function ProfilePicInput(props) {
         ></input>
       }
     ></MiniContainer>
-  );*/
-
-  return (
-    <input
-      className="formital"
-      type="file"
-      id="propic"
-      name="propic"
-      accept=".png"
-    ></input>
   );
 }
 
