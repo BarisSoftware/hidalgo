@@ -22,7 +22,7 @@ class DataBase {
     let queryResponse = 0;
     this.connection.query(sqlQuery, (error, data) => {
       if (error) console.log("Error en query: " + error);
-      console.log(data);
+      console.log("\nQuery Response: " + data);
     });
   };
 

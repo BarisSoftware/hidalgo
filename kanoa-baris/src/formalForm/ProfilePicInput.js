@@ -1,11 +1,29 @@
 import React from "react";
 import MiniContainer from "./MiniContainer";
 function ProfilePicInput(props) {
-  return (
+  /*  return (
     <MiniContainer
       title="Foto de Perfil"
-      child={<input className="formital" type="file" accept=".png"></input>}
+      child={
+        <input
+          className="formital"
+          type="file"
+          id="propic"
+          name="propic"
+          accept=".png"
+        ></input>
+      }
     ></MiniContainer>
+  );*/
+
+  return (
+    <input
+      className="formital"
+      type="file"
+      id="propic"
+      name="propic"
+      accept=".png"
+    ></input>
   );
 }
 

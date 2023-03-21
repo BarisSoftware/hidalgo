@@ -52,7 +52,9 @@ app.get("/homepage", (req, res) => {
 
 //              USUARIOS
 
-app.post("/regquest", (req, res) => {
+const uploadPicture = multer({ dest: __dirname + "/ProfilePicture" });
+
+app.post("/regquest", uploadPicture.single("propic"), (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
   console.log(" ... Register Form Request");
   //console.log(JSON.stringify(req.headers));
@@ -62,11 +64,17 @@ app.post("/regquest", (req, res) => {
   let correo = req.body.correo;
   let pass = req.body.pass;
   let apellido = req.body.lastName;
-  console.log("Petition: Nombre" + nombre);
   let user = new User(nombre, correo, pass);
   user.username = username;
   user.apellido = apellido;
   user.email = correo;
+  try {
+    user.profilePictureTitle = req.file.filename;
+  } catch (error) {
+    user.profilePictureTitle = undefined;
+  }
+  console.log("Petition: Nombre" + nombre);
+  //user.profilePictureTitle = proPicName;
   if (req.body.publickey.length > 0) {
     user.publicKeys = [req.body.publickey];
   }

@@ -41,7 +41,12 @@ function Registro() {
       <div className="body">
         <div className="formulario">
           <h1>Registro</h1>
-          <form className="form" method="post" action="/regquest">
+          <form
+            className="form"
+            method="POST"
+            action="/regquest"
+            encType="multipart/form-data"
+          >
             <EmailInput />
             <UserNameInput />
             <NameInput />

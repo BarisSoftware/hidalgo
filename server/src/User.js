@@ -8,6 +8,7 @@ class User {
   email = "";
   pass = "";
   passHash = "";
+  profilePictureTitle = "";
   idPerfil = undefined;
   publicKeys = [];
   tech = [];
@@ -34,7 +35,7 @@ class User {
 
     //      CREAR PERFIL en tabla
 
-    let createProfilequery = `INSERT INTO Perfil_Usuario() values()`;
+    let createProfilequery = `INSERT INTO Perfil_Usuario(fotoPerfilNombre) values('${this.profilePictureTitle}')`;
     try {
       let db = new DataBase();
       console.log("\nProfile Query: " + createProfilequery);
@@ -69,6 +70,7 @@ class User {
         console.log("F Up in lastProfile: " + error);
         return false;
       }
+      db.end();
       return true;
     } catch (error) {
       console.log("F Up in create profile: " + error);
@@ -98,6 +100,7 @@ class User {
           return false;
         }
       });
+      db.end();
     } catch (error) {
       console.log("F Up in query getIdUSurio: " + error);
       return false;
@@ -142,6 +145,7 @@ class User {
         }
       }
     });
+    db.end();
     return {
       name: this.name,
       email: this.email,

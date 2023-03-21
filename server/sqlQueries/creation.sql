@@ -10,6 +10,7 @@ use kanoa;
 
 create table Perfil_Usuario(
 idPerfil int primary key auto_increment not null,
+fotoPerfilNombre varchar(80),
 fotoPerfil mediumblob,
 paisajePerfil mediumblob
 );
