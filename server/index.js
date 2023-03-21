@@ -24,6 +24,10 @@ app.use(
   })
 );
 
+app.post("/", (req, res) => {
+  res.json({ test: "Hola, Baris!!" });
+});
+
 app.get("/homepage", (req, res) => {
   console.log(" ... Homepage Page Request");
   if (req.session.auth) {
@@ -63,7 +67,7 @@ app.post("/regquest", (req, res) => {
     console.log(`\tRegistrado: \n Nombre: ${nombre}\n Correo: ${correo}`);
     //res.json({ 'result': true })
     res.redirect("/login");
-  } else res.json({ result: false });
+  } else res.redirect("/registro");
 });
 
 app.post("/test2", (req, res) => {

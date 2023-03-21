@@ -13,4 +13,4 @@ select * from Llave_Usuario;
 #insert into Usuario(nombre, correo, idPerfil) values("webos","qwert",1);
 #SELECT idPerfil FROM Perfil_Usuario
 
-SELECT idUsuario FROM Usuario WHERE correo = "anon@anon.com"
+#SELECT idUsuario FROM Usuario WHERE correo = "anon@anon.com"
