@@ -146,6 +146,10 @@ class User {
     };
   };
 
+  getMyProyects = () => {
+    let query = `SELECT (idProyecto, puesto) FROM Puesto WHERE idUsuario = ${this.idPerfil} `;
+  };
+
   read = (id = null, correo = null, nombre = null) => {
     // Modulo para obtener la informacion del usuario
     let query;
