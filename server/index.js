@@ -47,7 +47,7 @@ app.get("/homepage", (req, res) => {
 app.post("/regquest", (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
   console.log(" ... Register Form Request");
-  console.log(JSON.stringify(req.headers));
+  //console.log(JSON.stringify(req.headers));
 
   let nombre = req.body.nombre;
   let correo = req.body.correo;
