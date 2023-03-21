@@ -24,7 +24,11 @@ app.use(
   })
 );
 
-app.post("/", (req, res) => {
+app.post("/show", (req, res) => {
+  res.json({ test: "Hola, Baris!!" });
+});
+
+app.get("/show", (req, res) => {
   res.json({ test: "Hola, Baris!!" });
 });
 

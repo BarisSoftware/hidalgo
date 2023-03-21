@@ -6,6 +6,7 @@ import LlavesPublicas from "../../formElements/InputPublicKeys";
 import InputNombre from "../../formElements/InputNombre";
 import { BaseContainer, Title } from "../PageBase";
 import SideBar from "../SideBarFix";
+import InputPass from "../../formElements/InputPass";
 function AdminProfile(props) {
   return (
     <>
@@ -19,6 +20,7 @@ function AdminProfile(props) {
                 <InputNombre />
                 <InputEmails />
                 <LlavesPublicas />
+                <InputPass />
               </>
             }
           ></BaseForm>
