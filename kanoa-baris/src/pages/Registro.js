@@ -47,7 +47,7 @@ function Registro() {
             <LastNameInput />
             <PassInput />
             <PassConfirmatioInput />
-            <TecnologiasInput />
+            {/* <TecnologiasInput /> */}
             <PublicKeyInput />
             <BottomLink
               text="¿Ya tienes una cuenta?"

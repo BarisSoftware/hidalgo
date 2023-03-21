@@ -579,7 +579,7 @@ label {
   text-align: center;
 }
 
-input[type="text"] {
+.funform input[type="text"] {
   width: 80%;
   text-align: center;
   background: none;

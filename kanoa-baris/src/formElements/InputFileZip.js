@@ -2,7 +2,7 @@ import React from "react";
 
 function InputFileZip(props) {
   return (
-    <div className="elem">
+    <div className="elem funform">
       <label htmlFor="zipfile">Archivo</label>
       <div className="input">
         <input

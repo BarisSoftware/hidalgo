@@ -2,7 +2,7 @@ import React from "react";
 
 function InputNombre(props) {
   return (
-    <div className="elem">
+    <div className="elem funform">
       <label htmlFor="nombre">Nombre</label>
       <div className="input">
         <input type="text" id="nombre" name="nombre" required></input>
