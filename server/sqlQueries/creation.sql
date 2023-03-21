@@ -16,7 +16,9 @@ paisajePerfil mediumblob
 
 create table Usuario(
 idUsuario int primary key auto_increment not null,
+userName varchar(45) not null,
 nombre varchar(45) not null,
+apellido varchar(45) not null,
 correo varchar(45) not null unique,
 passHash binary(32),
 idPerfil int,

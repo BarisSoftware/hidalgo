@@ -58,10 +58,14 @@ app.post("/regquest", (req, res) => {
   //console.log(JSON.stringify(req.headers));
 
   let nombre = req.body.nombre;
+  let username = req.body.username;
   let correo = req.body.correo;
   let pass = req.body.pass;
+  let apellido = req.body.lastName;
   console.log("Petition: Nombre" + nombre);
   let user = new User(nombre, correo, pass);
+  user.username = username;
+  user.apellido = apellido;
   user.email = correo;
   if (req.body.publickey.length > 0) {
     user.publicKeys = [req.body.publickey];

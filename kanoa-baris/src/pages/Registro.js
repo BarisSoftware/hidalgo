@@ -13,6 +13,7 @@ import PassConfirmatioInput from "../formalForm/PassConfirmationInput";
 import TecnologiasInput from "../formalForm/TecnologiasInput";
 import PublicKeyInput from "../formalForm/PublicKeyInput";
 import SubmitButton from "../formalForm/SubmitButton";
+import ProfilePicInput from "../formalForm/ProfilePicInput";
 
 const client = axios.create({
   baseURL: "http://localhost:3000/",
@@ -49,6 +50,7 @@ function Registro() {
             <PassConfirmatioInput />
             {/* <TecnologiasInput /> */}
             <PublicKeyInput />
+            <ProfilePicInput />
             <BottomLink
               text="¿Ya tienes una cuenta?"
               textLink="Ingresa"

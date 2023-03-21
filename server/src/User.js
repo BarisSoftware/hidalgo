@@ -2,9 +2,12 @@ let DataBase = require("./DataBase");
 const crypto = require("crypto");
 class User {
   id = undefined;
-  name = "";
+  username = "";
+  nombre = "";
+  apellido = "";
   email = "";
   pass = "";
+  passHash = "";
   idPerfil = undefined;
   publicKeys = [];
   tech = [];
@@ -34,22 +37,22 @@ class User {
     let createProfilequery = `INSERT INTO Perfil_Usuario() values()`;
     try {
       let db = new DataBase();
-      console.log("Profile Query: " + createProfilequery);
+      console.log("\nProfile Query: " + createProfilequery);
       db.fquery(createProfilequery);
 
       try {
         let getLastProfilequery = `SELECT idPerfil FROM Perfil_Usuario`;
 
-        let profileIds = db.execute2(getLastProfilequery).then((results) => {
+        db.execute2(getLastProfilequery).then((results) => {
           let values = results[0];
           let amountofResults = values.length;
           this.idPerfil = values[amountofResults - 1].idPerfil;
 
-          let query = `INSERT INTO Usuario(nombre, correo, passHash, idPerfil) VALUES('${this.name}', '${this.email}', UNHEX('${hash}'), ${this.idPerfil});`;
+          let query = `INSERT INTO Usuario(userName, nombre, apellido, correo, passHash, idPerfil) VALUES('${this.username}','${this.name}','${this.apellido}', '${this.email}', UNHEX('${hash}'), ${this.idPerfil});`;
 
           try {
             let db = new DataBase();
-            console.log("Query: " + query);
+            console.log("\nQuery insert into Usuarios: " + query);
             db.fquery(query);
             db.end();
 
@@ -75,7 +78,7 @@ class User {
 
   getIdUsuario = (emailK) => {
     let query = `SELECT idUsuario FROM Usuario WHERE correo = "${emailK}"`;
-    console.log("Query: " + query);
+    console.log("\nQuery select idUsario: " + query);
     try {
       let db = new DataBase();
       db.execute2(query).then((result) => {
@@ -107,6 +110,7 @@ class User {
     try {
       for (let i = 0; i < this.publicKeys.length; i++) {
         let query = `INSERT INTO Llave_Usuario(idUsuario, llaveUsuario) VALUES(${this.idPerfil}, "${this.publicKeys[i]}")`;
+        console.log("\nRegistering llave: " + query);
         db.fquery(query);
       }
       db.end();
