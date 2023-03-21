@@ -19,11 +19,7 @@ idUsuario int primary key auto_increment not null,
 nombre varchar(45) not null,
 correo varchar(45) not null unique,
 passHash binary(32),
-# tech
-# publicKeys
 idPerfil int,
-fotoPerfil mediumblob,
-paisajePerfil mediumblob,
 foreign key (idPerfil) references Perfil_Usuario(idPerfil) on update cascade on delete cascade
 );
 
@@ -79,17 +75,3 @@ foreign key (idProyecto) references Proyecto(idProyecto) on update cascade on de
 );
 
 use kanoa;
-select * from Perfil_Usuario;
-select * from Usuario;
-#select * from Proyecto;
-#select * from Puestos;
-#select * from Archivos;
-#select * from Puestos;
-#select * from MalwareStrikes;
-#select * from Llave_Usuario;
-#describe Usuario;
-#describe Proyecto;
-#insert into Perfil_Usuario() values();
-#insert into Usuario(nombre, correo, idPerfil) values("webos","qwert",1);
-
-#SELECT idPerfil FROM Perfil_Usuario

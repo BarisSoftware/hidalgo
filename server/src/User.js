@@ -24,7 +24,7 @@ class User {
     return sho;
   };
 
-  register = () => {
+  register = (emailK) => {
     // metodo para registrar al usuario
     const hash = this.getPassHash();
     //console.log('\n\nHASH TYPE: ' + typeof(hash) + '\n\n');
@@ -52,9 +52,13 @@ class User {
             console.log("Query: " + query);
             db.fquery(query);
             db.end();
+
+            this.getIdUsuario(emailK);
+            this.registerPublicKey(emailK);
+
             return true;
           } catch (error) {
-            console.log("F Up in insert into usurios: " + error);
+            console.log("F Up in insert into usuarios: " + error);
             return false;
           }
         });
@@ -62,11 +66,52 @@ class User {
         console.log("F Up in lastProfile: " + error);
         return false;
       }
-
       return true;
     } catch (error) {
       console.log("F Up in create profile: " + error);
       return false;
+    }
+  };
+
+  getIdUsuario = (emailK) => {
+    let query = `SELECT idUsuario FROM Usuario WHERE correo = "${emailK}"`;
+    console.log("Query: " + query);
+    try {
+      let db = new DataBase();
+      db.execute2(query).then((result) => {
+        try {
+          let acu = result[0][0].idUsuario;
+          console.log("IdUsers: " + acu);
+          this.id = acu;
+          return acu;
+          /*console.log("For IdUsW: " + result);
+          console.log("For IdUs0: " + Object.keys(result[0][0]));
+          console.log("For IdUs1: " + Object.keys(result[1][0]));
+          console.log("RESu0: " + result[0][0].idUsuario);
+          console.log("RESu0: " + result[1][0]);
+          return 2;*/
+        } catch (error) {
+          console.log("F Up in getIdUSurio: " + error);
+          return false;
+        }
+      });
+    } catch (error) {
+      console.log("F Up in query getIdUSurio: " + error);
+      return false;
+    }
+  };
+
+  registerPublicKey = (emailK) => {
+    let db = new DataBase();
+    this.getIdUsuario(emailK);
+    try {
+      for (let i = 0; i < this.publicKeys.length; i++) {
+        let query = `INSERT INTO Llave_Usuario(idUsuario, llaveUsuario) VALUES(${this.idPerfil}, "${this.publicKeys[i]}")`;
+        db.fquery(query);
+      }
+      db.end();
+    } catch (error) {
+      console.log("F Up in insert into llave usuario: " + error);
     }
   };
 

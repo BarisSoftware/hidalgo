@@ -40,7 +40,7 @@ function Login() {
             <SubmitButton />
             <BottomLink
               text="¿No estas registrado? "
-              textLink="Crea una cunta"
+              textLink="Crea una cuenta"
               link="/registro"
             />
           </form>

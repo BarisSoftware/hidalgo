@@ -54,13 +54,22 @@ app.post("/regquest", (req, res) => {
   let pass = req.body.pass;
   console.log("Petition: Nombre" + nombre);
   let user = new User(nombre, correo, pass);
-  let succes = user.register();
-
+  user.email = correo;
+  if (req.body.publickey.length > 0) {
+    user.publicKeys = [req.body.publickey];
+  }
+  let succes = user.register(correo);
   if (succes) {
     console.log(`\tRegistrado: \n Nombre: ${nombre}\n Correo: ${correo}`);
     //res.json({ 'result': true })
     res.redirect("/login");
   } else res.json({ result: false });
+});
+
+app.post("/test2", (req, res) => {
+  let us = new User();
+  us.email = "q@q.q";
+  res.json({ res: us.getIdUsuario(), holis: "webos" });
 });
 
 app.post("/logquest", (req, res) => {
