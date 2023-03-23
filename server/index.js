@@ -133,7 +133,6 @@ app.post("/testProyect", upload.single("zipfile"), (req, res) => {
 
 app.post("/createProjectreq", upload.single("zipfile"), (req, res) => {
   console.log(" ... Create Project Request");
-  console.log("quepedoquepedo: " + Object.keys(req));
   if (req.session.auth) {
     try {
       let idUserQ = req.session.idUser;
