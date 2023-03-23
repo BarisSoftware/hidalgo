@@ -131,21 +131,30 @@ app.post("/testProyect", upload.single("zipfile"), (req, res) => {
   });
 });
 
-app.post("/createProjectreq", (req, res) => {
+app.post("/createProjectreq", upload.single("zipfile"), (req, res) => {
   console.log(" ... Create Project Request");
+  console.log("quepedoquepedo: " + Object.keys(req));
   if (req.session.auth) {
     try {
-      let idUser = req.session.idUser;
-      let nombre = req.body.nombre;
-      let descripcion = req.body.descripcion;
-      let licencia = req.body.licencia;
-      let newProject = new Project(nombre, descripcion, idUser, licencia);
+      let idUserQ = req.session.idUser;
+      let nombreQ = req.body.nombre;
+      let descripcionQ = req.body.descripcion;
+      let licenciaQ = req.body.licencia;
+      let newProject = new Project(nombreQ, descripcionQ, idUserQ, licenciaQ);
+      newProject.idCreador = idUserQ;
+      newProject.nombre = nombreQ;
+      newProject.descripcion = descripcionQ;
+      newProject.licencia = licenciaQ;
+      console.log("Desde index: " + idUserQ);
+      console.log("Desde index: " + nombreQ);
+      console.log("Desde index: " + descripcionQ);
+      console.log("Desde index: " + licenciaQ);
+      newProject.describe();
       newProject.create();
       res.redirect("/homeFeed");
     } catch (error) {
       console.log("Error: " + error);
-      res.status(400);
-      res.send("error");
+      res.status(400).send("error");
     }
   } else {
     res.redirect("/login");

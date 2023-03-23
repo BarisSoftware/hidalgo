@@ -72,7 +72,7 @@ create table Archivos (
 idArchivos int primary key auto_increment not null,
 idProyecto int not null,
 archivoHash binary(33) not null,
-archivosProyecto longblob not null,
+archivoName varchar(80) not null,
 version varchar(15) not null,
 foreign key (idProyecto) references Proyecto(idProyecto) on update cascade on delete cascade
 );

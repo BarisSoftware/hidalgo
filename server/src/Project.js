@@ -16,6 +16,14 @@ class Project {
     this.licencia = licencia;
   }
 
+  describe = () => {
+    console.log("Describiendo Poyecto");
+    console.log("Nombre: " + this.nombre);
+    console.log("Descripcion: " + this.descripcion);
+    console.log("idCreador: " + this.idCreador);
+    console.log("licencia: " + this.licencia);
+  };
+
   setAdmin = (idUsuario) => {
     let query = `INSERT INTO Puestos(idProyecto, idUsuario, puesto) VALUES(${idUsuario}, ${this.id}, 0)`;
 
@@ -55,8 +63,8 @@ class Project {
     try {
       let db = new DataBase();
       await db.execute2(query).then((results) => {
-        console.log("ATENCION A RESFGDSFSD");
-        console.log(results);
+        console.log("ATENCION A Resultados de proyectos");
+        //console.log(results);
         results = results[0][0];
         if (results) {
           this.id = results.idProyecto;

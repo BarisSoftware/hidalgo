@@ -4,7 +4,13 @@ function InputLicencia(props) {
     <div className="elem funform">
       <label htmlFor="licencia">Licencia</label>
       <div className="input">
-        <input type="text" id="licencia" name="licencia" required></input>
+        <select id="licencia" name="licencia">
+          <option>MIT</option>
+          <option>GPLv3</option>
+          <option>Apache 2.0</option>
+          <option>BSD</option>
+        </select>
+        {/* <input type="text" id="licencia" name="licencia" required></input> */}
       </div>
     </div>
   );

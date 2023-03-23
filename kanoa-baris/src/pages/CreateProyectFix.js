@@ -19,33 +19,31 @@ function CreateProyect(params) {
         child={
           <form
             method="POST"
-            action="/testProyect"
+            action="/createProjectreq"
             enctype="multipart/form-data"
           >
-            <span className="solybox">
-              <InputNombre></InputNombre>
-              <InputFileZip></InputFileZip>
-              <InputDescripcion></InputDescripcion>
-              <LlavesPublicas></LlavesPublicas>
-              <InputLicencia></InputLicencia>
-              <InputPersonas
-                type="Administradores"
-                butid="addA"
-                buttype="addA"
-                demo={true}
-              ></InputPersonas>
-              <InputPersonas
-                type="Colaboradores"
-                butid="addC"
-                buttype="addC"
-                demo={true}
-              ></InputPersonas>
-              <InputSubmit
-                text="Crear Proyecto"
-                id="Crear Proyecto"
-                name="Crear Proyecto"
-              ></InputSubmit>
-            </span>
+            <InputNombre></InputNombre>
+            <InputFileZip></InputFileZip>
+            <InputDescripcion></InputDescripcion>
+            <LlavesPublicas></LlavesPublicas>
+            <InputLicencia></InputLicencia>
+            <InputPersonas
+              type="Administradores"
+              butid="addA"
+              buttype="addA"
+              demo={true}
+            ></InputPersonas>
+            <InputPersonas
+              type="Colaboradores"
+              butid="addC"
+              buttype="addC"
+              demo={true}
+            ></InputPersonas>
+            <InputSubmit
+              text="Crear Proyecto"
+              id="submit"
+              name="submit"
+            ></InputSubmit>
           </form>
         }
       ></BaseContainer>
