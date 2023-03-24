@@ -10,13 +10,11 @@ function HomeFeed(props) {
       <SubTitle text="Mis Proyectos" />
       <BaseContainer
         child={
-          <span className="soleybox">
-            <MyProyect
-              nombre="Kanoa"
-              descripcion="Respositorio de software libre con utilidad para recompensas"
-              publickey="0x936a1F1d74F3FA60eE4044488011328f2E68dC88"
-            />
-          </span>
+          <MyProyect
+            nombre="Kanoa"
+            descripcion="Respositorio de software libre con utilidad para recompensas"
+            publickey="0x936a1F1d74F3FA60eE4044488011328f2E68dC88"
+          />
         }
       />
     </>

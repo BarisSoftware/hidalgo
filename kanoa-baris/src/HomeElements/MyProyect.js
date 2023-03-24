@@ -1,4 +1,5 @@
 import React from "react";
+import ether from "../imagenes/ethereum.png";
 
 function MyProyect(props) {
   return (
@@ -29,7 +30,7 @@ function MyProyect(props) {
       </div>
       <div class="pp4">
         <div class="donar">
-          <img src="imagenes/bitcoin.png" />
+          <img src={ether} alt="ether" />
           <span class="donar-span">{props.publickey}</span>
           {/* <span class="donar-span"> Últimas 10 letras" </span> */}
         </div>

@@ -29,7 +29,7 @@ function InputPersonas(props) {
       <div className="button">
         <input
           id={props.butid}
-          className="clasic proyect-button"
+          className="clasic"
           name={props.buttype}
           type="button"
           value="+"

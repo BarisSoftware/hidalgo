@@ -2,8 +2,14 @@ import React from "react";
 
 function InputSubmit(props) {
   return (
-    <div className="submit proyect-button">
-      <input type="submit" id={props.id} name={props.name} value={props.text} />
+    <div className="submit">
+      <input
+        type="submit"
+        id={props.id}
+        name={props.name}
+        value={props.text}
+        className="create-pro"
+      />
     </div>
   );
 }

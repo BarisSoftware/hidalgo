@@ -816,7 +816,7 @@ label {
   height: 60px;
 }
 
-input[type="button"] .clasic {
+input[type="button"].clasic {
   align-items: left;
   width: 17%;
   height: 50px;
@@ -829,9 +829,9 @@ input[type="button"] .clasic {
   outline: none;
 }
 
-.clasic input[type="submit"] {
+input[type="submit"].create-pro {
   align-items: left;
-  width: 250px;
+  width: 70%;
   height: 50px;
   border: 2.5px solid;
   background: var(--primary-color);
@@ -841,6 +841,14 @@ input[type="button"] .clasic {
   color: var(--border-color);
   cursor: pointer;
   outline: none;
+}
+
+select.licencia {
+  background-color: var(--body-color);
+  border: none;
+  margin: 20px 0px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
 }
 
 .submit {
@@ -858,7 +866,7 @@ input[type="button"] .clasic {
   border-style: solid;
   border-radius: 2rem;
   border-width: 8px;
-  margin: 0 20px;
+  margin: 20px 0 20px 10%;
   padding: 40px 30px 44px;
   display: flex;
   justify-content: space-around;
@@ -925,7 +933,7 @@ input[type="button"] .clasic {
   width: 260px;
   height: 60px;
   border: 2.5px solid;
-  background: var(--button-color);
+  background: var(--primary-color);
   border-radius: 25px;
   font-size: 20px;
   color: var(--text-color);
