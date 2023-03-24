@@ -11,6 +11,8 @@ class Project {
   licencia;
   proyectos = []; //lista con todos los proyectos, no es necesaria declararla siempre, solo en readAll
 
+  debug = false;
+
   constructor(nombre = "", descripcion = "", idCreador = 0, licencia = "") {
     this.nombre = nombre;
     this.descripcion = descripcion;
@@ -79,7 +81,6 @@ class Project {
       let data = await db.execute2();
       let idProyecto = data[0][0].idProyecto;
       this.id = idProyecto;
-      console.log();
       db.end();
       return idProyecto;
     } catch (error) {
@@ -116,8 +117,11 @@ class Project {
     try {
       let db = new DataBase();
       await db.execute2(query).then((results) => {
-        console.log("Results:");
-        console.log(results);
+        if (this.debug) {
+          console.log("Results:");
+          console.log(results);
+        }
+
         this.proyectos = results[0];
       });
     } catch (error) {
@@ -132,7 +136,10 @@ class Project {
       let query = `SELECT * FROM Puestos WHERE Puesto = 0 AND idUsuario = ${this.idCreador};`;
       let idProyectos = undefined;
       await db.execute2(query).then((results) => {
-        console.log(results);
+        if (this.debug) {
+          console.log("Results getidProyect: ");
+          console.log(results);
+        }
         idProyectos = results[0];
       });
 

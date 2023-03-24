@@ -52,7 +52,6 @@ class User {
           let query = `INSERT INTO Usuario(userName, nombre, apellido, correo, passHash, idPerfil) VALUES('${this.username}','${this.name}','${this.apellido}', '${this.email}', UNHEX('${hash}'), ${this.idPerfil});`;
 
           try {
-            let db = new DataBase();
             console.log("\nQuery insert into Usuarios: " + query);
             db.fquery(query);
             db.end();
@@ -73,6 +72,7 @@ class User {
       db.end();
       return true;
     } catch (error) {
+      db.end();
       console.log("F Up in create profile: " + error);
       return false;
     }
@@ -102,6 +102,7 @@ class User {
       });
       db.end();
     } catch (error) {
+      db.end();
       console.log("F Up in query getIdUSurio: " + error);
       return false;
     }
@@ -118,6 +119,7 @@ class User {
       }
       db.end();
     } catch (error) {
+      db.end();
       console.log("F Up in insert into llave usuario: " + error);
     }
   };
@@ -126,7 +128,7 @@ class User {
     let query = `SELECT idUsuario, HEX(passHash), nombre FROM Usuario where correo = '${this.email}'`;
     let db = new DataBase();
     const valid = await db.execute2(query).then((results) => {
-      console.log(results);
+      //console.log(results);
       let hash = this.getPassHash().toLowerCase();
       let hashDB = results[0][0]["HEX(passHash)"].toLowerCase();
       console.log(hash + " vs " + hashDB);

@@ -1,4 +1,4 @@
-mysql = require("mysql2");
+const mysql = require("mysql2");
 class DataBase {
   connectionJson = {
     host: "localhost",
