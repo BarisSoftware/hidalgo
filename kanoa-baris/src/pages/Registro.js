@@ -57,7 +57,7 @@ function Registro() {
             {/* <TecnologiasInput /> */}
             <PublicKeyInput />
             <ProfilePicInput />
-            <LandsPicInput />
+            {/* <LandsPicInput /> */}
             <BottomLink
               text="¿Ya tienes una cuenta?"
               textLink="Ingresa"
