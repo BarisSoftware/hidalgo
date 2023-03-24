@@ -226,7 +226,7 @@ p {
   font-weight: 200;
 }
 
-.espacio {
+/* .espacio {
   height: 100px;
   background: linear-gradient(
       0deg,
@@ -237,7 +237,8 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-}
+} */
+
 
 /*  LOGIN   */
 .homeNavBar {
@@ -738,12 +739,14 @@ h3.titulo {
   justify-content: center;
   height: 100%;
   margin-top: 25px;
+  
 }
 
 .contenedor .contenido {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 23px;
 }
 
 /*  PAGES FORMS */
@@ -870,13 +873,16 @@ select.licencia {
   border: var(--border-color);
   border-style: solid;
   border-radius: 2rem;
-  border-width: 8px;
+  border-width: 7px;
   margin: 20px 0 20px 10%;
   padding: 40px 30px 44px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 62%;
+  width: 70%;border-radius: 23px;
+  background: #ecf0f3;
+  box-shadow:  23px 23px 47px #9c9ea0,
+               -23px -23px 47px #ffffff;
 }
 
 .pp2,
@@ -953,4 +959,32 @@ select.licencia {
 .proyectos_ {
   text-align: left;
   font-size: 50px;
+}
+
+*{
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+bodys {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ecf0f3;
+}
+
+.formulario{
+  border-radius: 40px;
+  background: #ecf0f3;
+  box-shadow:  21px 21px 32px #9c9ea0,
+               -21px -21px 32px #ffffff;
+}
+
+EmailInputs {
+  border-radius: 23px;
+  background: #ecf0f3;
+  box-shadow:  23px 23px 47px #9c9ea0,
+               -23px -23px 47px #ffffff;
 }

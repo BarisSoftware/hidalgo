@@ -31,7 +31,7 @@ function Login() {
   return (
     <div className="forms wft" id="Login">
       <NavBar text="Home" link="/"></NavBar>
-      <div className="body">
+      <div className="bodys">
         <div className="formulario">
           <h1>Login</h1>
           <form className="form" method="post" action="/logquest">
