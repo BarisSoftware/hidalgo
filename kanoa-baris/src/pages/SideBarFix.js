@@ -170,7 +170,7 @@ function SideBar(props) {
         console.log(idUsuario);
       })
       .then(() => {
-        bringMine();
+        // bringMine();
       });
 
     const bringMine = async () => {

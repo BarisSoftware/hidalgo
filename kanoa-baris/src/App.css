@@ -771,6 +771,19 @@ label {
   outline: none;
 }
 
+.funform input[type="password"] {
+  width: 80%;
+  text-align: center;
+  background: none;
+  color: var(--text-color);
+  font-size: 20px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  border: none;
+  border-bottom: 2px solid var(--text-color);
+  outline: none;
+}
+
 .funform input[type="email"] {
   width: 80%;
   text-align: center;

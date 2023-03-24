@@ -3,7 +3,7 @@ import React from "react";
 function LlavesPublicas(props) {
   return (
     <div className="elem funform">
-      <label for="publickey">Llaves públicas</label>
+      <label htmlFor="publickey">Llaves públicas</label>
       <div className="input">
         <input
           type="text"

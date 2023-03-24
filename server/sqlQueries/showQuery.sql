@@ -13,3 +13,6 @@ select * from Llave_Usuario;
 #SELECT idPerfil FROM Perfil_Usuario
 
 #SELECT idUsuario FROM Usuario WHERE correo = "anon@anon.com"
+
+#SELECT * FROM Puestos WHERE Puesto = 0 AND idUsuario = 1;
+

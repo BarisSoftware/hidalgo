@@ -130,10 +130,18 @@ class Project {
     try {
       let db = new DataBase();
       let query = `SELECT * FROM Puestos WHERE Puesto = 0 AND idUsuario = ${this.idCreador};`;
+      let idProyectos = undefined;
       await db.execute2(query).then((results) => {
         console.log(results);
-        this.proyectos = results[0];
+        idProyectos = results[0];
       });
+
+      for (const idObj of idProyectos) {
+        let getMyProyect = `SELECT * FROM PROYECTO WHERE idProyecto = ${idObj.idProyecto}`;
+        await db.execute2(getMyProyect).then((results) => {
+          this.proyectos.push(results[0][0]);
+        });
+      }
     } catch (error) {
       console.log("Error readAll: " + error);
     }

@@ -170,13 +170,14 @@ app.post("/createProjectreq", upload.single("zipfile"), (req, res) => {
   }
 });
 
-app.get("/myProjectsreq", (req, res) => {
+app.post("/myProjectsreq", (req, res) => {
   console.log(" ... Popular Projects request");
   if (req.session.auth) {
     getData = async () => {
       const idCrea = req.session.idUser;
       //const idCrea = 1;
-      let myProjects = new Project("", "", 1);
+      let myProjects = new Project();
+      myProjects.idCreador = idCrea;
       const data = await myProjects.readMine();
       res.json({ projects: data });
     };

@@ -20,7 +20,7 @@ function CreateProyect(params) {
           <form
             method="POST"
             action="/createProjectreq"
-            enctype="multipart/form-data"
+            encType="multipart/form-data"
           >
             <InputNombre></InputNombre>
             <InputFileZip></InputFileZip>

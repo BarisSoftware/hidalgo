@@ -3,49 +3,49 @@ import ether from "../imagenes/ethereum.png";
 
 function MyProyect(props) {
   return (
-    <div class="Proyecto">
-      <div class="pp1">
+    <div className="Proyecto">
+      <div className="pp1">
         <p>Nombre del Proyecto:</p>
         <br />
-        <h3 class="proyectos_">{props.nombre}</h3>
+        <h3 className="proyectos_">{props.nombre}</h3>
       </div>
-      <div class="pp2">
-        <p class="titulo">Descripción del proyecto:</p>
+      <div className="pp2">
+        <p className="titulo">Descripción del proyecto:</p>
         <br />
         <p>{props.descripcion}</p>
       </div>
       <br />
       <br />
       <br />
-      <div class="pp3">
-        <div class="pp3_">
+      <div className="pp3">
+        <div className="pp3_">
           <p>
-            <span class="donar-span">
-              <i class="bx bx-upload icon"></i> Actualizar repositorio del
+            <span className="donar-span">
+              <i className="bx bx-upload icon"></i> Actualizar repositorio del
               <br />
               proyecto:
             </span>
           </p>
         </div>
       </div>
-      <div class="pp4">
-        <div class="donar">
+      <div className="pp4">
+        <div className="donar">
           <img src={ether} alt="ether" />
-          <span class="donar-span">{props.publickey}</span>
-          {/* <span class="donar-span"> Últimas 10 letras" </span> */}
+          <span className="donar-span">{props.publickey}</span>
+          {/* <span className="donar-span"> Últimas 10 letras" </span> */}
         </div>
       </div>
       <br />
       <br />
       <br />
-      <div class="pp5">
+      <div className="pp5">
         <p>Número de descargas funcionales:</p>
         <br />
         <br />
         <p>Recaudación total del proyecto:</p>
       </div>
-      <div class="pp6">
-        <div class="btn-admin">
+      <div className="pp6">
+        <div className="btn-admin">
           <input
             className="proyect-button"
             type="button"
