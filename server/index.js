@@ -119,6 +119,12 @@ app.post("/logquest", (req, res) => {
   }
 });
 
+app.post("/killsession", (req, res) => {
+  console.log(" ... Kill Session Req");
+  req.session.destroy();
+  res.redirect("/");
+});
+
 //              PROYECTOS
 const upload = multer({ dest: __dirname + "/OpenProyects" });
 

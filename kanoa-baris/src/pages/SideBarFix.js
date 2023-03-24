@@ -26,6 +26,18 @@ function handleTheme() {
   }
 }
 
+function handleKillSession(props) {
+  console.log("Fkyou");
+  axios
+    .post("http://localhost:2000/killsession")
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function Header(props) {
   return (
     <header>
@@ -107,8 +119,8 @@ function BottomContent(props) {
   return (
     <div className="bottom-content">
       <div className="content">
-        <li className="">
-          <a href="#">
+        <li className="" id="killSession">
+          <a onClick={handleKillSession}>
             <i className="bx bx-log-out icon"></i>
             <span className="text nav-text">Cerrar sesión</span>
           </a>
