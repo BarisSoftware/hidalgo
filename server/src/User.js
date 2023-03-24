@@ -36,8 +36,8 @@ class User {
     //      CREAR PERFIL en tabla
 
     let createProfilequery = `INSERT INTO Perfil_Usuario(fotoPerfilNombre) values('${this.profilePictureTitle}')`;
+    let db = new DataBase();
     try {
-      let db = new DataBase();
       console.log("\nProfile Query: " + createProfilequery);
       db.fquery(createProfilequery);
 
@@ -109,11 +109,14 @@ class User {
     let db = new DataBase();
     this.getIdUsuario(emailK);
     try {
-      for (let i = 0; i < this.publicKeys.length; i++) {
-        let query = `INSERT INTO Llave_Usuario(idUsuario, llaveUsuario) VALUES(${this.idPerfil}, "${this.publicKeys[i]}")`;
-        console.log("\nRegistering llave: " + query);
-        db.fquery(query);
+      if (this.idPerfil != null || this.idPerfil != undefined) {
+        for (let i = 0; i < this.publicKeys.length; i++) {
+          let query = `INSERT INTO Llave_Usuario(idUsuario, llaveUsuario) VALUES(${this.idPerfil}, "${this.publicKeys[i]}")`;
+          console.log("\nRegistering llave: " + query);
+          db.fquery(query);
+        }
       }
+
       db.end();
     } catch (error) {
       db.end();

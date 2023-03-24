@@ -25,11 +25,13 @@ app.use(
 );
 
 app.post("/show", (req, res) => {
-  res.json({ test: "Hola, Baris!!" });
+  let data = req.body.dato;
+  res.json({ test: "Hola, Baris!!", dato: data });
 });
 
 app.get("/show", (req, res) => {
-  res.json({ test: "Hola, Baris!!" });
+  let data = req.body.dato;
+  res.json({ test: "Hola, Baris!!", dato: data });
 });
 
 app.get("/homepage", (req, res) => {
