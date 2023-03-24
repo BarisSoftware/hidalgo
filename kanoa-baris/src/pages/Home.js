@@ -85,6 +85,10 @@ function Home() {
 
       <section className="sec2">
         <div className="somos">
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
           <h1>¿Qué es Kanoa?</h1>
           <br></br>
           <p>
