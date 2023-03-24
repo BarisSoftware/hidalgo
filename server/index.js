@@ -139,11 +139,15 @@ app.post("/createProjectreq", upload.single("zipfile"), (req, res) => {
       let nombreQ = req.body.nombre;
       let descripcionQ = req.body.descripcion;
       let licenciaQ = req.body.licencia;
+      let fileNameQ = req.file.filename;
+      let originalFileNameQ = req.file.originalname;
       let newProject = new Project(nombreQ, descripcionQ, idUserQ, licenciaQ);
       newProject.idCreador = idUserQ;
       newProject.nombre = nombreQ;
       newProject.descripcion = descripcionQ;
       newProject.licencia = licenciaQ;
+      newProject.nombreArchivo = fileNameQ;
+      newProject.nombreArchivoReal = originalFileNameQ;
       console.log("Desde index: " + idUserQ);
       console.log("Desde index: " + nombreQ);
       console.log("Desde index: " + descripcionQ);

@@ -3,6 +3,8 @@ const DataBase = require("./DataBase");
 class Project {
   id;
   nombre;
+  nombreArchivo;
+  nombreOriginalArchivo;
   descripcion;
   idCreador;
   exists = false;
@@ -48,12 +50,42 @@ class Project {
         let diff = `INSERT INTO Puestos(idProyecto, idUsuario, puesto) VALUES(${this.id}, ${this.idCreador}, 0);`;
         console.log("Query diff: " + diff);
         db.fquery(diff);
+
+        let idProyecto = await this.getProyectId();
+
+        let archiveQuery = `INSERT INTO Archivos(idProyecto, archivoName, archivoOriginalName) VALUES(${this.id}, '${this.nombreArchivo}', '${this.nombreOriginalArchivo}' )`;
+
+        try {
+          db.fquery(archiveQuery);
+          db.end();
+          console.log(" ... finished creating proyect");
+        } catch (error) {
+          console.log("F Up in Archivos: " + error);
+        }
         db.end();
       } catch (error) {
         console.log("Error Puestos: " + error);
       }
     } catch (error) {
       console.log("Error Create Project: " + error);
+    }
+  };
+
+  getProyectId = async () => {
+    let query = `SELECT idProyecto FROM Proyecto WHERE nombreProyecto = '${this.nombre}'`;
+    console.log("Query getproyectid: " + query);
+    let db = new DataBase();
+    try {
+      let data = await db.execute2();
+      let idProyecto = data[0][0].idProyecto;
+      this.id = idProyecto;
+      console.log();
+      db.end();
+      return idProyecto;
+    } catch (error) {
+      console.log("F Up in getidproyecto: " + error);
+      db.end();
+      return false;
     }
   };
 

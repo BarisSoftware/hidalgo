@@ -8,73 +8,87 @@ create database kanoa;
 
 use kanoa;
 
-create table Perfil_Usuario(
-idPerfil int primary key auto_increment not null,
-fotoPerfilNombre varchar(80),
-fotoPerfil mediumblob,
-paisajePerfil mediumblob
+CREATE TABLE Perfil_Usuario (
+    idPerfil INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    fotoPerfilNombre VARCHAR(80),
+    fotoPerfil MEDIUMBLOB,
+    paisajePerfil MEDIUMBLOB
 );
 
-create table Usuario(
-idUsuario int primary key auto_increment not null,
-userName varchar(45) not null,
-nombre varchar(45) not null,
-apellido varchar(45) not null,
-correo varchar(45) not null unique,
-passHash binary(32),
-idPerfil int,
-foreign key (idPerfil) references Perfil_Usuario(idPerfil) on update cascade on delete cascade
+CREATE TABLE Usuario (
+    idUsuario INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    userName VARCHAR(45) NOT NULL,
+    nombre VARCHAR(45) NOT NULL,
+    apellido VARCHAR(45) NOT NULL,
+    correo VARCHAR(45) NOT NULL UNIQUE,
+    passHash BINARY(32),
+    idPerfil INT,
+    FOREIGN KEY (idPerfil)
+        REFERENCES Perfil_Usuario (idPerfil)
+        ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-create table Llave_Usuario(
-idLlaveUsuario int primary key auto_increment not null,
-idUsuario int not null,
-llaveUsuario varchar(42),
-foreign key (idUsuario) references Usuario(idUsuario) on update cascade on delete cascade
+CREATE TABLE Llave_Usuario (
+    idLlaveUsuario INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    idUsuario INT NOT NULL,
+    llaveUsuario VARCHAR(42),
+    FOREIGN KEY (idUsuario)
+        REFERENCES Usuario (idUsuario)
+        ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-create table Perfil_Proyecto (
-idPerfilProyecto int primary key auto_increment not null,
-fotoPerfilProyecto mediumblob,
-paisajePerfilProyecto mediumblob);
-
-create table MalwareStrikes(
-idMalwareStrike int primary key auto_increment not null,
-strikes smallint not null);
-
-create table Proyecto (
-idProyecto int primary key auto_increment not null,
-nombreProyecto varchar(45) not null unique,
-descripcionProyecto varchar(45) not null,
-licencia varchar(25) not null,
-idMalwareStrike int,
-idPerfilProyecto int
-#foreign key (idPerfilProyecto) references Perfil_Proyecto(idPerfilProyecto) on update cascade on delete cascade,
-#foreign key (idMalwareStrike) references MalwareStrikes(idMalwareStrike) on update cascade on delete cascade
+CREATE TABLE Perfil_Proyecto (
+    idPerfilProyecto INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    fotoPerfilProyecto MEDIUMBLOB,
+    paisajePerfilProyecto MEDIUMBLOB
 );
 
-create table Puestos (
-idPuesto int primary key auto_increment not null,
-idProyecto int not null,
-idUsuario int not null,
-puesto smallint not null,
-foreign key (idProyecto) references Proyecto(idProyecto) on update cascade on delete cascade,
-foreign key (idUsuario) references Usuario(idUsuario) on update cascade on delete cascade);
-
-create table Llave_Proyecto (
-idLlaveProyecto int primary key auto_increment not null,
-idProyecto int not null,
-LlaveProyecto binary(33),
-foreign key (idProyecto) references Proyecto (idProyecto) on update cascade on delete cascade
+CREATE TABLE MalwareStrikes (
+    idMalwareStrike INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    strikes SMALLINT NOT NULL
 );
 
-create table Archivos (
-idArchivos int primary key auto_increment not null,
-idProyecto int not null,
-archivoHash binary(33) not null,
-archivoName varchar(80) not null,
-version varchar(15) not null,
-foreign key (idProyecto) references Proyecto(idProyecto) on update cascade on delete cascade
+CREATE TABLE Proyecto (
+    idProyecto INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nombreProyecto VARCHAR(45) NOT NULL UNIQUE,
+    descripcionProyecto VARCHAR(45) NOT NULL,
+    licencia VARCHAR(25) NOT NULL,
+    idMalwareStrike INT,
+    idPerfilProyecto INT
+);
+
+CREATE TABLE Puestos (
+    idPuesto INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    idProyecto INT NOT NULL,
+    idUsuario INT NOT NULL,
+    puesto SMALLINT NOT NULL,
+    FOREIGN KEY (idProyecto)
+        REFERENCES Proyecto (idProyecto)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (idUsuario)
+        REFERENCES Usuario (idUsuario)
+        ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Llave_Proyecto (
+    idLlaveProyecto INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    idProyecto INT NOT NULL,
+    LlaveProyecto BINARY(33),
+    FOREIGN KEY (idProyecto)
+        REFERENCES Proyecto (idProyecto)
+        ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Archivos (
+    idArchivos INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    idProyecto INT NOT NULL,
+    archivoHash BINARY(33),
+    archivoName VARCHAR(80) NOT NULL,
+    archivoOriginalName VARCHAR(80) NOT NULL,
+    versionA VARCHAR(15),
+    FOREIGN KEY (idProyecto)
+        REFERENCES Proyecto (idProyecto)
+        ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 use kanoa;

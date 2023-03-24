@@ -1,9 +1,9 @@
 use kanoa;
-select * from Perfil_Usuario;
-select * from Usuario;
-select * from Proyecto;
-select * from Puestos;
-select * from Archivos;
+SELECT * FROM Perfil_Usuario;
+SELECT * FROM Usuario;
+SELECT * FROM Proyecto;
+SELECT * FROM Puestos;
+SELECT * FROM Archivos;
 select * from MalwareStrikes;
 select * from Llave_Usuario;
 #describe Usuario;
