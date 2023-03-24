@@ -54,7 +54,6 @@ class User {
           try {
             console.log("\nQuery insert into Usuarios: " + query);
             db.fquery(query);
-            db.end();
 
             this.getIdUsuario(emailK);
             this.registerPublicKey(emailK);
@@ -69,10 +68,8 @@ class User {
         console.log("F Up in lastProfile: " + error);
         return false;
       }
-      db.end();
       return true;
     } catch (error) {
-      db.end();
       console.log("F Up in create profile: " + error);
       return false;
     }
