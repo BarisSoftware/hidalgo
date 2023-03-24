@@ -10,11 +10,15 @@ function NavBar(props) {
       <div className="homeNavBar">
         <LogoNavBar />
         <ul>
-          <BlackButton link="/crear" text="CREAR PROYECTO"></BlackButton>
-          <BlackButton link="/transacciones" text="TRANSACCIONES"></BlackButton>
+          <BlackButton
+            link="/createProyect"
+            text="Crear Proyecto"
+          ></BlackButton>
+          <BlackButton link="/popularProyects" text="Proyectos Populares" />
+          {/* <BlackButton link="/transacciones" text="TRANSACCIONES"></BlackButton> */}
           <BlackButton
             link="https://github.com/BarisSoftware/hidalgo"
-            text="SOURCE CODE"
+            text="Source Code"
           ></BlackButton>
           <BlueButton link={props.link} text={props.text}></BlueButton>
         </ul>

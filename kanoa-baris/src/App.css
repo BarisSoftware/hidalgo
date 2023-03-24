@@ -249,6 +249,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #00828e;
 }
 
 header .logo {
@@ -319,6 +320,10 @@ header ul li a {
   border-radius: 1.25rem;
   background: #fff;
   text-align: center;
+}
+
+.regisss {
+  top: 90%;
 }
 
 .formulario h1 {

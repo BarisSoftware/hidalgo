@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBarFix";
@@ -10,11 +8,11 @@ import NameInput from "../formalForm/NameInput";
 import LastNameInput from "../formalForm/LastNameInput";
 import PassInput from "../formalForm/PassInput";
 import PassConfirmatioInput from "../formalForm/PassConfirmationInput";
-import TecnologiasInput from "../formalForm/TecnologiasInput";
 import PublicKeyInput from "../formalForm/PublicKeyInput";
 import SubmitButton from "../formalForm/SubmitButton";
 import ProfilePicInput from "../formalForm/ProfilePicInput";
 import LandsPicInput from "../formalForm/LandscapePicInput";
+import TecnologiasInput from "../formalForm/TecnologiasInput";
 
 const client = axios.create({
   baseURL: "http://localhost:3000/",
@@ -40,7 +38,7 @@ function Registro() {
     <div className="forms" id="Registro">
       <NavBar text="Home" link="/"></NavBar>
       <div className="body">
-        <div className="formulario">
+        <div className="formulario regisss">
           <h1>Registro</h1>
           <form
             className="form"

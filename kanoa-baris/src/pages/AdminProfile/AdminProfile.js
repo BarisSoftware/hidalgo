@@ -1,5 +1,4 @@
 import React from "react";
-import EmailInput from "../../formalForm/EmailInput";
 import BaseForm from "../../formElements/BaseForm";
 import InputEmails from "../../formElements/InputEmail";
 import LlavesPublicas from "../../formElements/InputPublicKeys";

@@ -1,6 +1,5 @@
 import React from "react";
-import LogoKanoa from "../imagenes/LogoKanoa.png";
-import NewLogoKanoa from "../imagenes/newLogo.jpeg";
+import NewLogoKanoa from "../imagenes/newLogo.png";
 //import { HeaderHome } from "./HeaderHome";
 import NavBar from "./NavBarFix";
 import "../App.css";
@@ -49,7 +48,7 @@ function Home() {
           <div className="kanoa">
             <h1>KANOA</h1>
             <article className="Kanoalogo">
-              <img src={NewLogoKanoa}></img>
+              <img src={NewLogoKanoa} width="250" height="250"></img>
             </article>
           </div>
           <div className="cont1">
