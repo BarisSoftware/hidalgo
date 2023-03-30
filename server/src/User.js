@@ -77,56 +77,9 @@ class User {
     await this.createProfile();
     await this.getProfile();
     await this.addUser();
-    await this.getIdUsuario().then((results) => {
+    await this.getIdUsuario().then(() => {
       this.registerPublicKey();
     });
-  };
-
-  register = (emailK) => {
-    // metodo para registrar al usuario
-    const hash = this.getPassHash();
-    //console.log('\n\nHASH TYPE: ' + typeof(hash) + '\n\n');
-
-    //      CREAR PERFIL en tabla
-
-    let createProfilequery = `INSERT INTO Perfil_Usuario(fotoPerfilNombre) values('${this.profilePictureTitle}')`;
-    let db = new DataBase();
-    try {
-      console.log("\nProfile Query: " + createProfilequery);
-      db.fquery(createProfilequery);
-
-      try {
-        let getLastProfilequery = `SELECT idPerfil FROM Perfil_Usuario`;
-
-        db.execute2(getLastProfilequery).then((results) => {
-          let values = results[0];
-          let amountofResults = values.length;
-          this.idPerfil = values[amountofResults - 1].idPerfil;
-
-          let query = `INSERT INTO Usuario(userName, nombre, apellido, correo, passHash, idPerfil) VALUES('${this.username}','${this.name}','${this.apellido}', '${this.email}', UNHEX('${hash}'), ${this.idPerfil});`;
-
-          try {
-            console.log("\nQuery insert into Usuarios: " + query);
-            db.fquery(query);
-
-            this.getIdUsuario(emailK);
-            this.registerPublicKey(emailK);
-
-            return true;
-          } catch (error) {
-            console.log("F Up in insert into usuarios: " + error);
-            return false;
-          }
-        });
-      } catch (error) {
-        console.log("F Up in lastProfile: " + error);
-        return false;
-      }
-      return true;
-    } catch (error) {
-      console.log("F Up in create profile: " + error);
-      return false;
-    }
   };
 
   getIdUsuario = async () => {
@@ -168,7 +121,6 @@ class User {
           db.fquery(query);
         }
       }
-
       db.end();
     } catch (error) {
       db.end();
@@ -214,7 +166,6 @@ class User {
 
   read = (id = null, correo = null, nombre = null) => {
     // Modulo para obtener la informacion del usuario
-    let query;
     if ((id = !null)) query = `SELECT * FROM Usuario WHERE id = ${id}`;
     else if ((correo = !null))
       query = `SELECT * FROM Usuario WHERE correo = ${correo}`;
