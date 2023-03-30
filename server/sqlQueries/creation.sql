@@ -12,7 +12,7 @@ CREATE TABLE Perfil_Usuario (
     idPerfil INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     fotoPerfilNombre VARCHAR(80),
     fotoPerfil MEDIUMBLOB,
-    creation varchar(28) not null,
+    creation VARCHAR(28) NOT NULL,
     paisajePerfil MEDIUMBLOB
 );
 
@@ -90,6 +90,35 @@ CREATE TABLE Archivos (
     FOREIGN KEY (idProyecto)
         REFERENCES Proyecto (idProyecto)
         ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Sys_Reqs (
+    idProyecto INT NOT NULL,
+    os INT NOT NULL, 
+    pros VARCHAR(40),
+    spPros INT,
+    vdCard VARCHAR(40),
+    spVdCard INT,
+    net BOOL,
+    spNet INT,
+    disc VARCHAR(40),
+    spDisc INT,
+    FOREIGN KEY (idProyecto)
+        REFERENCES Proyecto (idProyecto)
+        ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Categoria (
+    idProyecto INT NOT NULL,
+    category INT NOT NULL,
+    FOREIGN KEY (idProyecto)
+        REFERENCES Proyecto (idProyecto)
+        ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Cat_Des (
+    category INT NOT NULL,
+    des VARCHAR(45)
 );
 
 use kanoa;
