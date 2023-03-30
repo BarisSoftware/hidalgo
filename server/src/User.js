@@ -10,6 +10,7 @@ class User {
   passHash = "";
   profilePictureTitle = "";
   idPerfil = undefined;
+  creationTime = "";
   publicKeys = [];
   tech = [];
   validated = false;
@@ -26,6 +27,59 @@ class User {
     let sho = `Id: ${this.id}\nNombre: ${this.name} \nEmail: ${this.email}\n
         Validated: ${this.validated}`;
     return sho;
+  };
+
+  createProfile = async () => {
+    let date = new Date();
+    this.creationTime =
+      date.toString().substring(0, 24) + ":" + date.getMilliseconds();
+    let createProfilequery = `INSERT INTO Perfil_Usuario(fotoPerfilNombre, creation) values('${this.profilePictureTitle}', '${this.creationTime}')`;
+    let db = new DataBase();
+    try {
+      await db.execute2(createProfilequery);
+    } catch (error) {
+      console.log("F Up in createPRofile: " + error);
+    }
+    db.end();
+  };
+
+  getProfile = async () => {
+    let db = new DataBase();
+    let getLastProfilequery = `SELECT idPerfil FROM Perfil_Usuario WHERE creation = '${this.creationTime}'`;
+    try {
+      await db
+        .execute2(getLastProfilequery)
+        .then((results) => {
+          let values = results[0];
+          let amountofResults = values.length;
+          this.idPerfil = values[amountofResults - 1].idPerfil;
+        })
+        .catch();
+    } catch (error) {
+      console.log("F Up in getLastProfile: " + error);
+    }
+    db.end();
+  };
+
+  addUser = async () => {
+    let db = new DataBase();
+    let query = `INSERT INTO Usuario(userName, nombre, apellido, correo, passHash, idPerfil) VALUES('${this.username}','${this.name}','${this.apellido}', '${this.email}', UNHEX('${this.passHash}'), ${this.idPerfil});`;
+    try {
+      await db.execute2(query);
+    } catch (error) {
+      console.log("F Up in addUser: " + error);
+    }
+  };
+
+  asyncRegister = async () => {
+    const hash = this.getPassHash();
+    this.passHash = this.getPassHash();
+    await this.createProfile();
+    await this.getProfile();
+    await this.addUser();
+    await this.getIdUsuario().then((results) => {
+      this.registerPublicKey();
+    });
   };
 
   register = (emailK) => {
@@ -75,16 +129,17 @@ class User {
     }
   };
 
-  getIdUsuario = (emailK) => {
-    let query = `SELECT idUsuario FROM Usuario WHERE correo = "${emailK}"`;
+  getIdUsuario = async () => {
+    let query = `SELECT idUsuario FROM Usuario WHERE correo = "${this.email}"`;
     console.log("\nQuery select idUsario: " + query);
     try {
       let db = new DataBase();
-      db.execute2(query).then((result) => {
+      await db.execute2(query).then((result) => {
         try {
           let acu = result[0][0].idUsuario;
           console.log("IdUsers: " + acu);
           this.id = acu;
+          db.end();
           return acu;
           /*console.log("For IdUsW: " + result);
           console.log("For IdUs0: " + Object.keys(result[0][0]));
@@ -97,21 +152,18 @@ class User {
           return false;
         }
       });
-      db.end();
     } catch (error) {
-      db.end();
       console.log("F Up in query getIdUSurio: " + error);
       return false;
     }
   };
 
-  registerPublicKey = (emailK) => {
+  registerPublicKey = () => {
     let db = new DataBase();
-    this.getIdUsuario(emailK);
     try {
       if (this.idPerfil != null || this.idPerfil != undefined) {
         for (let i = 0; i < this.publicKeys.length; i++) {
-          let query = `INSERT INTO Llave_Usuario(idUsuario, llaveUsuario) VALUES(${this.idPerfil}, "${this.publicKeys[i]}")`;
+          let query = `INSERT INTO Llave_Usuario(idUsuario, llaveUsuario) VALUES(${this.id}, "${this.publicKeys[i]}")`;
           console.log("\nRegistering llave: " + query);
           db.fquery(query);
         }

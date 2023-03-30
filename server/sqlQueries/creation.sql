@@ -12,6 +12,7 @@ CREATE TABLE Perfil_Usuario (
     idPerfil INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     fotoPerfilNombre VARCHAR(80),
     fotoPerfil MEDIUMBLOB,
+    creation varchar(28) not null,
     paisajePerfil MEDIUMBLOB
 );
 

@@ -80,7 +80,8 @@ app.post("/regquest", uploadPicture.single("propic"), (req, res) => {
   if (req.body.publickey.length > 0) {
     user.publicKeys = [req.body.publickey];
   }
-  let succes = user.register(correo);
+  let succes = user.asyncRegister();
+  //let succes = user.register(correo);
   if (succes) {
     console.log(`\tRegistrado: \n Nombre: ${nombre}\n Correo: ${correo}`);
     //res.json({ 'result': true })
