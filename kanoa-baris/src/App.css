@@ -267,8 +267,8 @@ h2, h3, h4, h5 {
   flex-wrap: wrap;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
+  height: 100%;
   
-  padding-top: 9.3%;
   width: 100%;
 
 
@@ -341,7 +341,7 @@ h5 {
 }
 
 .page-watch, .page-ipad, .page-mac, .page-homepod, .page-mac-info, page-card {
-  height: 510px;
+  height: 100%;
 }
 
 .iPhone-Pro, .apple, .page-watch, .page-mac, .page-homepod   {
