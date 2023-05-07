@@ -23,7 +23,7 @@ function SubmitButton(props) {
     console.log(response);
   }
 
-  return <input type="submit" value="Ingresar" onClick={getPost}></input>;
+  return <input className="ing" type="submit" value="Ingresar" onClick={getPost}></input>;
 }
 
 export default SubmitButton;

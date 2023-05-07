@@ -3,29 +3,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+
+.App {
+  text-align: center;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
-:root {
-  --body-color: #e4e9f7;
-  --sidebar-color: #fff;
-  --primary-color: #51cdd1;
-  --primary-color-light: #e8fcff;
-  --toggle-color: rgb(143, 143, 143);
-  --text-color: #303030;
-  --border-color: #181818;
-  --span-color: #b1b1b1;
-  --button-color: #00a1b0;
-  --text-color2: #e4e4e4;
-
-  --tran-03: all 0.2s ease;
-  --tran-03: all 0.3s ease;
-  --tran-04: all 0.4s ease;
-  --tran-05: all 0.5s ease;
+body {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(-70deg, #07021a 53%, #2d1570 100%);
+  height: 100vh;
+  color: #fffdfd;
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
 }
 
 @keyframes rotate {
@@ -34,210 +30,346 @@
   }
 }
 
-body {
-  min-height: 100vh;
-  background-color: var(--body-color);
-  transition: var(--tran-05);
-}
 
-::selection {
-  background-color: var(--primary-color);
-  color: #fff;
-}
 
-body.dark {
-  --body-color: #18191a;
-  --sidebar-color: #242526;
-  --primary-color: #797979;
-  --primary-color-light: #5c5c5c;
-  --toggle-color: #fff;
-  --text-color: #ccc;
-  --border-color: #dadada;
-  --button-color: #727272;
-  --text-color2: #e4e4e4;
-}
-
-.solybox span {
-  margin: 0%;
-  border: none;
-  padding: none;
-  width: fit-content;
-  height: fit-content;
-}
 
 /*    HOMEPAGE    */
 
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20%;
-  width: 100%;
-  padding: 30px 50px 30px 50px;
+
+.container{
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+section {
+  height: 100vh;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: linear-gradient(
-      0deg,
-      rgba(80, 80, 80, 0.63),
-      rgba(151, 151, 151, 0.63)
-    ),
-    url("imagenes/header.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  justify-content: center;
+  scroll-snap-align: start;
+
 }
 
-header .logo {
-  color: #ffffff;
-  font-weight: 750;
-  text-decoration: none;
-  font-size: 1.1em;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-  font-family: "Popins", sans-serif;
+.first{
+  background-image: linear-gradient(-70deg, #07021a 53%, #2d1570 100%);
+  align-items: center;
+  justify-content: center;
 }
 
-header ul {
-  display: flex;
+
+#kanoa{
+  font-size: 10em;
+  padding-left: 20%;
+  
+}
+
+#libertad {
+  font-size: 5em;
+}
+
+canvas {
+  display: block;
+}
+
+
+
+.second{
+  background-image: linear-gradient(-70deg, #000000 53%, #000000 100%);
+  color: #000000;
   justify-content: center;
   align-items: center;
 }
 
-header ul li {
-  list-style-type: none;
+.second h1 {
+  font-size: 5em;
+  padding-bottom: 20%;
+  padding-left: 5%;
+  
 }
 
-header ul li a {
-  text-decoration: none;
-  font-family: "Quicksand", sans-serif;
-  color: #ffff;
-}
-.normal {
-  padding: 10px 30px;
-  margin: 10px;
-  border-radius: 20px;
-  font-size: 15px;
-  font-weight: 600;
-  background-color: #000000;
-}
-
-.cta {
-  padding: 10px 30px;
-  margin: 10px;
-  border-radius: 20px;
-  letter-spacing: 2px;
-  font-size: 15px;
-  font-weight: 600;
-  background-color: #00c4cc;
-}
-
-.aboutus {
-  display: grid;
-  grid-template-columns: 0.7fr 0.4fr 0.4fr;
-  grid-template-rows: 1fr 1fr;
-  margin-top: 150px;
-  grid-gap: 30px;
-  margin-right: 15px;
-}
-
-.kanoa {
-  grid-column: 1 / 3;
-  grid-row: 1 / 3;
-  position: absolute;
-  transform: translate(80%, 0%);
-}
-
-.cont1 {
-  grid-column: 2 / 3;
-  grid-row: 1 / 3;
-  background-image: url ("Kanoa.png");
-}
-
-.cont2 {
-  grid-column: 3 / 3;
-  grid-row: 1 / 3;
-}
-
-.cont3 {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-}
-
-.cont4 {
-  grid-column: 3 / 3;
-  grid-row: 2 / 3;
-}
-
-.titulo {
-  text-align: center;
-}
-
-.aboutus h3 {
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-  font-weight: 750;
-  font-size: 1.3em;
-}
-
-p {
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
+.second p{
+  padding-top: 20%;
+  font-size: 2em;
   text-align: justify;
+  padding-right: 5%;
 }
 
-.aboutus h1 {
-  font-family: "Poppins", sans-serif;
-  font-size: 65px;
-  font-weight: 500;
-}
 
-.cont3 ul li {
-  display: flex;
+
+
+
+
+
+.third{
+  background-image: linear-gradient(-70deg, #ffffff 53%, #ffffff 100%);
+  color: #000000;
   justify-content: center;
   align-items: center;
+}
+
+.third h1 {
+  font-size: 5em;
+  padding-left: 10%;
+  padding-bottom: 3%;
+  padding-top: 5%;
+
+  
+}
+
+.third p{
+  font-size: 2em;
+  text-align: justify;
+  padding-left: 5%;
+  padding-right: 60%;
+}
+
+
+
+
+
+.style-link {
+  font-size: 21px;
+}
+
+.style-link:hover {
+  text-decoration: underline;
+}
+
+
+.image-copy {
+  margin-top: 55px;
+  text-align: center;
+}
+
+
+.navbar, .nav-content ul, .container-column, .slider-nav, .flex, .iPhone-Pro a, .iPhone a, .apple a, .page-watch a, .page-ipad a, .page-mac a, .page-homepod a, 
+.page-mac-info a, .page-card a {
+  display: flex;
+  align-items: center;
+}
+
+/*end of global settings*/
+
+
+.nav-content ul { 
+  
+  justify-content: space-around;
+  
+} 
+
+.flex {
+  gap: 35px;
+}
+
+.nav-content ul li a {
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  font-family: "Montserrat", sans-serif;
-  padding-bottom: 10px;
-  font-size: 18px;
+
+} 
+
+.nav-content ul li a:hover {
+  color: #FFFFFF;
+  
 }
 
-.sec2 {
-  display: flex;
-  align-items: center;
+.flex img {
+  width: 25px;
+  margin-bottom: 3px;
+} 
+
+.page-watch img, .page-card img {
+  width: 35px;
+}
+
+svg {
+  width: 20px;
+  color: white;
+}
+
+.flex, iPhone-Pro a, .iPhone a, .apple a, .page-watch a, .page-ipad a, .page-mac a, .page-homepod a, 
+.page-mac-info a, .page-card a {
+  
   justify-content: center;
+  
 }
 
-.somos {
-  width: 70%;
-  height: 180px;
-}
+.flex, .flex svg {
+  color: #2997ff;
+  
+} 
 
-.somos p {
-  font-family: "Montserrat", sans-serif;
+
+
+
+.container-column {
+
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
   font-size: 20px;
-  text-align: justify;
+  padding: 5px;
+  padding-top: 20%;
+  width: 100%;
+
 }
 
-.somos h1 {
-  font-family: "Poppins", sans-serif;
-  font-size: 50px;
-  text-align: center;
-  font-weight: 200;
+h2, h3, h4, h5 {
+  padding-bottom: 15px;
+  text-decoration: none;
+  
+} 
+
+.container-column h2 {
+  font-size: 56px;
+} 
+
+.container-column h3 {
+  font-size: 28px;
+  font-weight: 400;
 }
 
-/* .espacio {
-  height: 100px;
-  background: linear-gradient(
-      0deg,
-      rgba(80, 80, 80, 0.63),
-      rgba(151, 151, 151, 0.63)
-    ),
-    url("imagenes/header.jpg");
-  background-repeat: no-repeat;
+
+.iPhone-Pro {
+  background: url('https://www.apple.com/v/home/ay/images/heroes/iphone-14-pro/hero_iphone14pro__e5xbgo5ffhg2_largetall.jpg') no-repeat center center;
+  
+
+  
+} 
+
+.iPhone {
+  background: url('https://www.apple.com/v/home/ay/images/heroes/iphone-14/hero_iphone14__fjmsqstr1ceq_largetall.jpg') no-repeat center center;
+  
+   } 
+
+
+ 
+
+.iPhone-Pro, .iPhone, .apple {
   background-size: cover;
-  background-position: center center;
-} */
+  width: 100%;
+  height: 692px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+.container-row {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  
+  padding-top: 9.3%;
+  width: 100%;
+
+
+ }
+
+h4 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 21px;
+  font-weight: 400;
+  text-align: justify;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+
+.column-50 {
+  width: calc(50% - 10px);
+ 
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+
+.page-watch {
+  background: black
+    no-repeat center center;
+    background-image: url(imagenes/MetaMask.png);
+    background-position: center 90%;
+  
+  
+   }
+
+.page-ipad {
+  background: url('imagenes/ether.PNG') 
+    no-repeat center center;
+    background-position: center 80%;
+    background-size: 35%, 27%;
+  
+  
+} 
+
+.page-mac {
+  background: url('https://www.apple.com/v/home/ay/images/promos/macbook-pro-14-and-16/promo_mbp__ek7p477bkp6q_large.jpg')
+    no-repeat center center;
+  
+  
+} 
+
+.page-homepod {
+  background: url('https://www.apple.com/v/home/ay/images/promos/homepod/promo_homepod__f7jnolq94m2y_large.jpg')
+    no-repeat center center;
+  
+}
+
+.page-mac-info {
+  background: url('https://www.apple.com/v/home/ay/images/promos/mac-does-that/promo_mac_does_that__ckozfqcs65w2_large.jpg')
+    no-repeat center center;
+  
+} 
+
+.page-card {
+  background: url('https://www.apple.com/v/home/ay/images/promos/apple-card/tile__cauwwcyyn9hy_large.jpg')
+    no-repeat center center;
+  
+  
+}
+
+.page-watch, .page-ipad, .page-mac, .page-homepod, .page-mac-info, page-card {
+  height: 510px;
+}
+
+.iPhone-Pro, .apple, .page-watch, .page-mac, .page-homepod   {
+  color: white;
+} 
+
+.iPhone {
+  color: black;
+} 
+
+.iPhone a, .iPhone a svg .page-mac-info a, .page-card a, .page-ipad a  {
+  color: #2997ff;
+}
+
+
+
+
+
+
+
+
+
+.four{
+  background-image: linear-gradient(-70deg, #07021a 53%, #2d1570 100%);
+}
+
+
+
 
 
 /*  LOGIN   */
@@ -250,14 +382,13 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #00828e;
 }
 
 header .logo {
   color: #ffffff;
-  font-weight: 750;
+  font-weight: 900;
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 0.9em;
   text-transform: uppercase;
   letter-spacing: 0.5em;
   font-family: "Popins", sans-serif;
@@ -280,7 +411,7 @@ header ul li a {
 }
 
 .blueButton {
-  color: white;
+  color: black;
   padding: 10px 30px;
   margin: 10px;
   border: #fff;
@@ -289,15 +420,13 @@ header ul li a {
   border-radius: 25px;
   font-size: 15px;
   font-weight: 600;
-  background-color: #00101c;
-  border-color: #ffffff;
+  background-color: white;
 }
 
 .blackButton {
   color: white;
   padding: 10px 30px;
   margin: 10px;
-  border: #fff;
   border-style: solid;
   border-width: 2px;
   border-radius: 25px;
@@ -305,22 +434,23 @@ header ul li a {
   letter-spacing: 2px;
   font-size: 15px;
   font-weight: 600;
-  background-color: #00c4cc;
+  background-color: #000000;
 }
 
 .formulario {
   position: absolute;
-  top: 55%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 420px;
-  background-color: white;
-  border-radius: 15px;
-  margin: 0 20px;
-  padding: 40px 30px 44px;
-  border-radius: 1.25rem;
-  background: #fff;
+  width: 410px;
+  margin: 0 10px;
+  padding: 40px 30px 40px;
   text-align: center;
+  border-radius: 40px;
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
 }
 
 .regisss {
@@ -332,27 +462,57 @@ header ul li a {
   font-weight: 600;
   margin: 0 0 20px;
   letter-spacing: 2px;
-  color: #091a28;
+  color: #ffffff;
 }
 
 .form {
   width: 100%;
-  margin: 0;
-  display: grid;
-  gap: 16px;
+  padding: 10px 0;
+  font-size: 16px;
+  background: transparent;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+}
+
+.form .pas{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  background: transparent;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
 }
 
 .form input {
   width: 100%;
-  height: 56px;
-  border: 2px solid #b2c9da;
+  height: 56px;  
   font-family: inherit;
   font-size: 16px;
   padding: 0 16px;
 }
 
+.form .ing{
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 20px #03e9f4,
+              0 0 17px #03e9f4,
+              0 0 10px #03e9f4;
+}
+
+
+
+
 .form a {
-  color: #216ce7;
+  color: #03e9f4;
   font-size: 1rem;
   text-align: left;
   text-align: center;
@@ -364,12 +524,13 @@ header ul li a {
   width: 100%;
   height: 50px;
   border: 2.5px solid;
-  background: #297ea6;
+  background: #030100;
   border-radius: 25px;
   font-size: 18px;
   color: #fff;
   cursor: pointer;
   outline: none;
+  
 }
 
 .formal input[type="submit"]:hover {
@@ -393,7 +554,7 @@ header ul li a {
 .form input[type="submit"]:hover {
   background: #0a1a28;
   transition: 0.5s;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .form input[type="radio"] {
@@ -402,9 +563,7 @@ header ul li a {
   margin: 0;
 }
 
-.form h3 {
-  color: #3a80a4;
-}
+
 
 .form input[type="radio"],
 label {
@@ -412,6 +571,7 @@ label {
   vertical-align: center;
 }
 
+/*
 .radiobutton {
   text-align: left;
   font-size: 15px;
@@ -428,19 +588,69 @@ label {
 .Llaves {
   align-items: left;
 }
+*/
+
+
+
+
+
+
+/* REGISTER */
+
+.formulario .regisss{
+  top: 50%;
+}
 
 .form input[type="button"] {
   align-items: left;
   width: 15%;
   height: 50px;
   border: 2.5px solid;
-  background: #3a80a4;
+  background: #ffffff;
   border-radius: 25px;
   font-size: 18px;
-  color: #fff;
+  color: #030000;
   cursor: pointer;
   outline: none;
 }
+
+.form .name{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  background: transparent;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+}
+
+.form .formital{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  background: transparent;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+}
+
+.form .kay{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  background: transparent;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+}
+
+
 
 /*  SIDEBAR */
 
@@ -985,19 +1195,10 @@ bodys {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ecf0f3;
+  background: #1a7ac4;
 }
 
-.formulario{
-  border-radius: 40px;
-  background: #ecf0f3;
-  box-shadow:  21px 21px 32px #9c9ea0,
-               -21px -21px 32px #ffffff;
-}
 
-EmailInputs {
-  border-radius: 23px;
-  background: #ecf0f3;
-  box-shadow:  23px 23px 47px #9c9ea0,
-               -23px -23px 47px #ffffff;
-}
+
+
+

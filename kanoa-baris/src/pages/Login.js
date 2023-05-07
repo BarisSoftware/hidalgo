@@ -37,9 +37,14 @@ function Login() {
           <form className="form" method="post" action="/logquest">
             <EmailInput />
             <PassInput />
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <SubmitButton />
+            <br></br><br></br>
             <BottomLink
-              text="¿No estas registrado? "
+              text="¿No estas registrado?"
               textLink="Crea una cuenta"
               link="/registro"
             />

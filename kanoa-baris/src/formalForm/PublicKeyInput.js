@@ -5,13 +5,15 @@ function PublicKeyInput(props) {
     <div className="formalFormContainer">
       <h3 align="left">Llaves públicas</h3>
       <input
+      className="kay"
         type="text"
         id="publickey"
         name="publickey"
         placeholder="Últimas 10 letras"
         required
       ></input>
-      <input type="button" value="+"></input>
+       <input className="add" type="button" value="+"></input>
+     
     </div>
   );
 }

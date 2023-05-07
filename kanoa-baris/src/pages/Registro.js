@@ -54,13 +54,18 @@ function Registro() {
             <PassConfirmatioInput />
             {/* <TecnologiasInput /> */}
             <PublicKeyInput />
+            <br></br>
+            <br></br>
             <ProfilePicInput />
             {/* <LandsPicInput /> */}
+
             <BottomLink
               text="¿Ya tienes una cuenta?"
               textLink="Ingresa"
               link="/login"
             />
+            <br></br>
+            <br></br>
             <SubmitButton />
           </form>
         </div>
