@@ -45,6 +45,7 @@ function Registro() {
             method="POST"
             action="/regquest"
             encType="multipart/form-data"
+            
           >
             <EmailInput />
             <UserNameInput />
@@ -52,7 +53,17 @@ function Registro() {
             <LastNameInput />
             <PassInput />
             <PassConfirmatioInput />
-            {/* <TecnologiasInput /> */}
+            </form>
+          </div>
+
+          <div className="formulario regisssss">
+          <form
+            className="form"
+            method="POST"
+            action="/regquest"
+            encType="multipart/form-data"
+          >
+
             <PublicKeyInput />
             <br></br>
             <br></br>
@@ -67,8 +78,11 @@ function Registro() {
             <br></br>
             <br></br>
             <SubmitButton />
-          </form>
-        </div>
+            </form>
+
+          </div>
+
+
       </div>
     </div>
   );
