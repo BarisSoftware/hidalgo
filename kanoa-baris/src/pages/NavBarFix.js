@@ -14,7 +14,9 @@ function NavBar (){
           <div class='flex'>
             <img src={LogoBaris} className="LogoBaris"></img>
           </div>
-          <p id="baris">BARIS SOFTWARE DEVELOPMENT</p>
+            <p id="baris">
+              <a href="./" id="baris">BARIS SOFTWARE DEVELOPMENT</a>
+            </p>
           <li>
             <a href='./createProyect'>Crear Proyecto</a>
           </li>
