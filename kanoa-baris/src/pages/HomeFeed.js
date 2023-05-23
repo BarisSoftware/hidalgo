@@ -19,8 +19,7 @@ function HomeFeed(props) {
   return (
     <>
       <SideBar />
-      <Title text="HomeFeed" />
-      <SubTitle text="Mis Proyectos" />
+      <Title text="Mis Proyectos" />
       <BaseContainer
         child={
           <MyProyect

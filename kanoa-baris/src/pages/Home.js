@@ -34,13 +34,13 @@ function Home (){
               <div className="row">
                 <div className="col-md-6 mb-2 undefined">
                   <div className="p-6 IndexStats_index-stats__card__29r6F">
-                    <h2 class="h5 IndexStats_index-stats__card__title__3HNFv">Fast</h2>
-                    <p className="small subdeud">Lorem Ipsum is simply dummy text of
-                     the printing and typesetting industry. Lorem Ipsum has been the
-                      industry's standard dummy text ever since the 1500s</p>
+                    <h2 class="h5 IndexStats_index-stats__card__title__3HNFv">BARIS</h2>
+                    <p className="small subdeud">BARIS es una empresa dedicada al progreso tecnológico
+                     y social a través del desarrollo de sistemas de información rentables, escalables
+                      y mantenibles mediante el seguimiento de estándares de calidad dentro de la industria.</p>
                   <div className="mt-6">
-                  <div class="h5 fw-normal IndexStats_index-stats__live__Q3h4O">3578</div>
-                  <div class="smaller text-uppercase subdued IndexStats_index-stats__ff-mono__2IrIe">Transactions per second</div>
+                  <div class="h5 fw-normal IndexStats_index-stats__live__Q3h4O"></div>
+                  <div class="smaller text-uppercase subdued IndexStats_index-stats__ff-mono__2IrIe"></div>
                   </div>
                   </div>
                 </div>
@@ -51,13 +51,14 @@ function Home (){
               <div className="rows">
                 <div className="cols-md-6 mb-2 undefined">
                   <div className="p-6 IndexStats_index-stats__card__29r6F">
-                    <h2 class="h5 IndexStats_index-stats__card__title__4HNFv">Fast</h2>
-                    <p className="small subdeud">Lorem Ipsum is simply dummy text of
-                     the printing and typesetting industry. Lorem Ipsum has been the
-                      industry's standard dummy text ever since the 1500s</p>
+                    <h2 class="h5 IndexStats_index-stats__card__title__4HNFv">KANOA</h2>
+                    <p className="small subdeud">Somos una aplicación web que permite
+                     almacenar los archivos de un software, así como su descarga,
+                      y además permite donar al proyecto o recibir un pago de acuerdo
+                       al número de descargas hechas desde la aplicación con una cuenta.</p>
                   <div className="mt-6">
-                  <div class="h5 fw-normal IndexStats_index-stats__live__Q3h4O">3578</div>
-                  <div class="smaller text-uppercase subdued IndexStats_index-stats__ff-mono__2IrIe">Transactions per second</div>
+                  <div class="h5 fw-normal IndexStats_index-stats__live__Q3h4O"></div>
+                  <div class="smaller text-uppercase subdued IndexStats_index-stats__ff-mono__2IrIe"></div>
                   </div>
                   </div>
                 </div>
@@ -75,13 +76,14 @@ function Home (){
               <div className="row">
                 <div className="colss-md-6 mb-2 undefined">
                   <div className="p-6 IndexStats_index-stats__card__29r6F">
-                    <h2 class="h5 IndexStats_index-stats__card__title__5HNFv">Fast</h2>
-                    <p className="small subdeud">Lorem Ipsum is simply dummy text of
-                     the printing and typesetting industry. Lorem Ipsum has been the
-                      industry's standard dummy text ever since the 1500s</p>
+                    <h2 class="h5 IndexStats_index-stats__card__title__5HNFv">Ethereum</h2>
+                    <p className="small subdeud">Usamos la red de Ethereum para la
+                     distribución de las recompensas y permitir la donación directa
+                      y el intercambio de recompensas entre usuarios, permitirá al
+                       usuario personalizar su perfil y agregar proyectos y versiones.</p>
                   <div className="mt-6">
-                  <div class="h5 fw-normal IndexStats_index-stats__live__Q3h4O">3578</div>
-                  <div class="smaller text-uppercase subdued IndexStats_index-stats__ff-mono__2IrIe">Transactions per second</div>
+                  <div class="h5 fw-normal IndexStats_index-stats__live__Q3h4O"></div>
+                  <div class="smaller text-uppercase subdued IndexStats_index-stats__ff-mono__2IrIe"></div>
                   </div>
                   </div>
                 </div>
@@ -92,13 +94,15 @@ function Home (){
               <div className="rows">
                 <div className="colsss-md-6 mb-2 undefined">
                   <div className="p-6 IndexStats_index-stats__card__29r6F">
-                    <h2 class="h5 IndexStats_index-stats__card__title__6HNFv">Fast</h2>
-                    <p className="small subdeud">Lorem Ipsum is simply dummy text of
-                     the printing and typesetting industry. Lorem Ipsum has been the
-                      industry's standard dummy text ever since the 1500s</p>
+                    <h2 class="h5 IndexStats_index-stats__card__title__6HNFv">MetaMask</h2>
+                    <p className="small subdeud">MetaMask Es una comunidad global de
+                     desarrolladores que trabaja para hacer del mundo un lugar mejor
+                      con la tecnología blockchain. En nuestro caso, Metamask nos
+                       proporciona acceso a una API que permite administrar las
+                        billeteras de nuestros usuarios.</p>
                   <div className="mt-6">
-                  <div class="h5 fw-normal IndexStats_index-stats__live__Q3h4O">3578</div>
-                  <div class="smaller text-uppercase subdued IndexStats_index-stats__ff-mono__2IrIe">Transactions per second</div>
+                  <div class="h5 fw-normal IndexStats_index-stats__live__Q3h4O"></div>
+                  <div class="smaller text-uppercase subdued IndexStats_index-stats__ff-mono__2IrIe"></div>
                   </div>
                   </div>
                 </div>

@@ -6,8 +6,8 @@ function Transacciones(props) {
     <>
       <SideBar />
       <Title text="Transacciones" />
-      <div className="contenedor">
-        <div className="contenido">
+      <div className="contenedors">
+        <div className="contenidos">
           <div className="col1">
             <h3>Borradores</h3>
             <div className="elem2">
