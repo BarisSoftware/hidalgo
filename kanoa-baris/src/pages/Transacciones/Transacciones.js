@@ -6,6 +6,16 @@ function Transacciones(props) {
     <>
       <SideBar />
       <Title text="Transacciones" />
+
+
+      {/* <div class="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
+        <input type={"text"} placeholder={"Address to"} step={"0.001"}
+        className="my-2 w-full rounded-sm p-2 outline-none bg-transparent
+        text-white border-none text-sm white-glassmorphism" va>
+        </input>
+      </div> */}
+
+
       <div className="contenedors">
         <div className="contenidos">
           <div className="col1">

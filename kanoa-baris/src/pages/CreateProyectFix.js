@@ -18,7 +18,7 @@ function CreateProyect(params) {
       <Title text="Crear Proyecto"></Title>
       <BaseContainer
         child={
-          <form
+          <form className="crep"
             method="POST"
             action="/createProjectreq"
             encType="multipart/form-data"
@@ -28,7 +28,8 @@ function CreateProyect(params) {
             <InputDescripcion></InputDescripcion>
             <LlavesPublicas></LlavesPublicas>
             <InputLicencia></InputLicencia>
-            <InputPersonas
+
+            {/* <InputPersonas
               type="Administradores"
               butid="addA"
               buttype="addA"
@@ -39,7 +40,8 @@ function CreateProyect(params) {
               butid="addC"
               buttype="addC"
               demo={true}
-            ></InputPersonas>
+            ></InputPersonas> */}
+            
             <InputSubmit
               text="Crear Proyecto"
               id="submit"

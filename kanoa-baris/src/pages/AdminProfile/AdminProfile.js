@@ -21,7 +21,7 @@ function AdminProfile(props) {
         child={
           <BaseForm
             child={
-              <>
+              < form className="admins">
                 <InputEmails />
                 <InputUserName />
                 <InputNombre />
@@ -35,7 +35,7 @@ function AdminProfile(props) {
                   <LandsPicInput />
                 </div> */}
                 <InputSubmit />
-              </>
+              </form>
             }
           ></BaseForm>
         }
