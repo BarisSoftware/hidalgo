@@ -36,7 +36,7 @@ function CreateProyect(params) {
             <hr />
             <h3>Avanzado</h3>
             <hr />
-            <InputPersonas
+            {/* <InputPersonas
               type="Administradores"
               butid="addA"
               buttype="addA"
@@ -49,7 +49,7 @@ function CreateProyect(params) {
               buttype="addC"
               setOpen={setTriggerColab}
               demo={true}
-            ></InputPersonas>
+            ></InputPersonas> */}
             <InputCategory />
             <InputOSReqs />
             <InputSubmit

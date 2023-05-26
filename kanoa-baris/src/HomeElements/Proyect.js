@@ -27,16 +27,15 @@ function Proyect(props) {
 
   return (
     <div className="Proyecto">
-      <p>Public Key: {props.publicKey}</p>
       <div className="pp1">
-        <p>Nombre del Proyecto:</p>
+        {/* <p>Nombre del Proyecto:</p> */}
         <br />
         <h3 className="proyectos_">{props.nombre}</h3>
       </div>
       <div className="pp2">
-        <p className="titulo">Descripción del proyecto:</p>
+        <p className="titulo">{props.descripcion}</p>
         <br />
-        <p>{props.descripcion}</p>
+        {/* <p>{props.descripcion}</p> */}
       </div>
       <br />
       <br />
@@ -58,7 +57,7 @@ function Proyect(props) {
       </div>
       <div className="pp4">
         <div className="donar">
-          <img src={ether} alt="ether" />
+          {/* <img src={ether} alt="ether" /> */}
           <span className="donar-span">{props.publickey}</span>
         </div>
       </div>
@@ -88,8 +87,12 @@ function Proyect(props) {
           </a>
         </div>
       </div>
-      <button onClick={() => setTrigger(true)}>Chat de Soporte</button>
-      <button onClick={() => setTriggerBug(true)}>Reportar Bug</button>
+      <button className="proyect-button" onClick={() => setTrigger(true)}>
+        Chat de Soporte
+      </button>
+      <button className="proyect-button" onClick={() => setTriggerBug(true)}>
+        Reportar Bug
+      </button>
       <PopUp trigger={trigger} setClose={setTrigger}>
         <Chat idProyecto={props.idProyecto}></Chat>
       </PopUp>

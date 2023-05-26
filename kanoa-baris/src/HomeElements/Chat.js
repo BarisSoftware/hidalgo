@@ -72,6 +72,7 @@ function Chat(props) {
       <div className="chat-input">
         <form id="chatForm" onSubmit={sendMessageHandler}>
           <input
+            className="neoinput"
             type="text"
             placeholder="Mensaje ..."
             name="mensaje"

@@ -92,8 +92,7 @@ function SimpleStore(props) {
 function Transacciones(props) {
   const contractAddress = "0xB884e3b71fDb6204A3988227D8a9d3C022468a8b";
 
-  const [connectButtonText, setConnectButtonText] =
-    useState("Conectar a Wallet");
+  const [connectButtonText, setConnectButtonText] = useState("Connect Wallet");
   const [errorMessage, setErrorMessage] = useState(null); // se usara para mostrar errores en el ui
   const [defaultAccount, setdefaultAccount] = useState(null); // nuestra adderess
 
@@ -103,13 +102,13 @@ function Transacciones(props) {
   const [signer, setSigner] = useState(null); // con que llave firmamos nuestras acciones
   const [contract, setContract] = useState(null); // supongo que es la direccion del contrato
 
-  const connectWalletHandler = () => {
+  const connectWalletHandler = async () => {
     //conectar la wallet con metamask
     if (window.ethereum != null) {
       //revisar si metamask esta instalado
       // el pasarle el json al request se hace un JSON RPC, remote procedure call, basicamente le decimos y le damos aulgun metodo que queremos ejecutar
       // .request(args); args =  { method: string;  params?: unknown[] | object; } // es una promesa
-      window.ethereum
+      await window.ethereum
         .request({ method: "eth_requestAccounts" })
         .then((result) => {
           accountChangeHandler(result[0]); //result 0 es la wallet
@@ -120,18 +119,18 @@ function Transacciones(props) {
     }
   };
 
-  const accountChangeHandler = (newWallet) => {
-    setdefaultAccount(newWallet);
-    updateEthers();
+  const accountChangeHandler = async (newWallet) => {
+    await setdefaultAccount(newWallet);
+    await updateEthers();
   };
 
-  const updateEthers = () => {
+  const updateEthers = async () => {
     // actualizamos y declaramos todos los valores necesario para interactuar con la blockchain
     // let tempProvider = new ethers.providers.Web3Provider(window.ethereum); // solii=cito que metamask sea mi provider
-    let tempProvider = new ethers.BrowserProvider(window.ethereum);
+    let tempProvider = await new ethers.BrowserProvider(window.ethereum);
     setProvider(tempProvider); // podria actualizarlo y
 
-    let tempSigner = tempProvider.getSigner();
+    let tempSigner = await tempProvider.getSigner();
     setSigner(tempSigner);
 
     let tempContract = new ethers.Contract(
@@ -147,10 +146,10 @@ function Transacciones(props) {
     setCurrentContractVal(value);
   };
 
-  const setUpdateHandler = (event) => {
-    event.preventDefault();
+  const setUpdateHandler = async (event) => {
+    //event.preventDefault();
     let updatedText = document.getElementById("setText").value;
-    contract.store(updatedText);
+    await contract.store(updatedText);
   };
 
   return (
@@ -182,7 +181,7 @@ function Transacciones(props) {
                   <div class="elem3">
                     <label for="Llaves">Cantidad</label>
                     <div class="input">
-                      <input type="number" id="Llaves" name="Llaves" />
+                      <input type="number" id="setText" name="Llaves" />
                     </div>
                   </div>
                   <br />
@@ -196,9 +195,10 @@ function Transacciones(props) {
             <div className="buttonHis">
               <input
                 className="proyect-button"
-                type="submit"
+                type="button"
                 id="CrearTrans"
                 value="Crear transacción"
+                onClick={() => setUpdateHandler()}
               />
             </div>
           </div>

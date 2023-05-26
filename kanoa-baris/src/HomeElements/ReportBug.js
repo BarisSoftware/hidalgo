@@ -36,11 +36,24 @@ function ReportBug() {
     <div className="bug-report" id="bug-report-cont">
       <form>
         <h3>Reporte de Bug</h3>
-        <input type="text" placeholder="title" name="title" id="title" />
-        <input type="text" placeholder="problem" name="problem" id="problem" />
+        <input
+          className="neoinput"
+          type="text"
+          placeholder="title"
+          name="title"
+          id="title"
+        />
+        <input
+          className="neoinput"
+          type="text"
+          placeholder="problem"
+          name="problem"
+          id="problem"
+        />
         <h3>Pasos para producir el problema</h3>
         <div className="bug-steps" id="bug-steps">
           <textarea
+            className="neoinput"
             name="steps"
             id="steps"
             cols="30"
@@ -49,6 +62,7 @@ function ReportBug() {
           ></textarea>
         </div>
         <input
+          className="neoinput"
           type="text"
           placeholder="Resultado Esperado"
           name="expected-result"
@@ -56,6 +70,7 @@ function ReportBug() {
         />
         <input
           type="text"
+          className="neoinput"
           placeholder="Resultado Actual"
           name="actual-result"
           id="actual-result"

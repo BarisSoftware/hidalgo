@@ -966,6 +966,19 @@ select.licencia {
   outline: none;
 }
 
+a.proyect-button {
+  border: 2.5px solid;
+  width: fit-content;
+  height: fit-content;
+  background: var(--primary-color);
+  border-radius: 25px;
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+  outline: none;
+}
+
 .donar-span {
   background-color: var(--span-color);
 }
@@ -1137,7 +1150,7 @@ label {
   font-size: 22px;
 }
 
-input[type="text"] {
+.neoinput {
   text-align: center;
   background: none;
   color: var(--text-color);
@@ -1168,7 +1181,6 @@ input[type="text"] {
   flex-direction: column;
   border-color: var(--text-color);
   border-style: solid;
-  border-top: none;
   border-width: 3px;
   border-radius: 0;
   height: 260px;
