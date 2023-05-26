@@ -7,10 +7,40 @@ class Project {
   nombreOriginalArchivo;
   descripcion;
   idCreador;
-  exists = false;
   licencia;
+  publicKeys = [];
+  firstPublicKey;
   proyectos = []; //lista con todos los proyectos, no es necesaria declararla siempre, solo en readAll
-
+  admins_ids = [];
+  colabs_ids = [];
+  category; // categoria en caso de que el proyecto sea uno solo
+  categories = [
+    "SDK",
+    "IDE",
+    "npm", // js
+    "pip", // python
+    "Científico",
+    "Videojuego",
+    "Editor de Código",
+    "Educativo",
+    "Editor Gráfico",
+    "Oficina",
+    "Otro",
+  ];
+  //https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/System-requirements-for-AutoCAD-2024-including-Specialized-Toolsets.html
+  sys_reqs = {
+    os: "",
+    pros: "",
+    spPros: "",
+    memoryRAM: "",
+    display_resolution: "", //resolucion de pantalla
+    vdCard: "",
+    spVdCard: "",
+    net: "",
+    spNet: "",
+    disc: "",
+    spDisc: "",
+  };
   debug = false;
 
   constructor(nombre = "", descripcion = "", idCreador = 0, licencia = "") {
@@ -21,19 +51,26 @@ class Project {
   }
 
   describe = () => {
-    console.log("Describiendo Poyecto");
-    console.log("Nombre: " + this.nombre);
-    console.log("Descripcion: " + this.descripcion);
-    console.log("idCreador: " + this.idCreador);
-    console.log("licencia: " + this.licencia);
+    let i = 0;
+    for (const att in this) {
+      if (i >= 15) break;
+      i++;
+      if (typeof att == "object") {
+        for (const subAtt in att) {
+          console.log(subAtt + " : " + this[att][subAtt]);
+        }
+      }
+      console.log(att + " : " + this[att]);
+    }
   };
 
-  setAdmin = (idUsuario) => {
-    let query = `INSERT INTO Puestos(idProyecto, idUsuario, puesto) VALUES(${idUsuario}, ${this.id}, 0)`;
+  setAdmin = async (idUsuario) => {
+    let query = `INSERT INTO Puestos(idProyecto, idUsuario, puesto) VALUES(${this.id}, ${idUsuario}, 0)`;
 
     let db = new DataBase();
     try {
-      db.fquery(query);
+      console.log("query setAdmin: " + query);
+      await db.execute2(query);
       return true;
     } catch (error) {
       console.log("F Up in setAdmin: " + error);
@@ -41,32 +78,24 @@ class Project {
   };
 
   create = async () => {
-    let query = `INSERT INTO Proyecto(nombreProyecto, descripcionProyecto, licencia) VALUES('${this.nombre}', '${this.descripcion}', '${this.licencia}');`;
-    console.log("Query: " + query);
+    let query = `INSERT INTO Proyecto(nombreProyecto, descripcionProyecto,archivoName, licencia) VALUES('${this.nombre}', '${this.descripcion}', '${this.nombreArchivo}' , '${this.licencia}');`;
+    console.log("Query create: " + query);
     try {
       let db = new DataBase();
       await db.execute2(query);
-      this.exists = true;
-      await this.read();
+      await this.getProyectId();
+      await this.setAdmin(this.idCreador);
+      await this.registerPublicKey();
+      await this.setCategory(this.category);
+      await this.set_sys_reqs();
+
       try {
-        let diff = `INSERT INTO Puestos(idProyecto, idUsuario, puesto) VALUES(${this.id}, ${this.idCreador}, 0);`;
-        console.log("Query diff: " + diff);
-        db.fquery(diff);
-
-        let idProyecto = await this.getProyectId();
-
         let archiveQuery = `INSERT INTO Archivos(idProyecto, archivoName, archivoOriginalName) VALUES(${this.id}, '${this.nombreArchivo}', '${this.nombreOriginalArchivo}' )`;
-
-        try {
-          db.fquery(archiveQuery);
-          db.end();
-          console.log(" ... finished creating proyect");
-        } catch (error) {
-          console.log("F Up in Archivos: " + error);
-        }
+        await db.execute2(archiveQuery);
+        console.log(" ... finished creating proyect");
         db.end();
       } catch (error) {
-        console.log("Error Puestos: " + error);
+        console.log("Error  Archive: " + error);
       }
     } catch (error) {
       console.log("Error Create Project: " + error);
@@ -78,8 +107,9 @@ class Project {
     console.log("Query getproyectid: " + query);
     let db = new DataBase();
     try {
-      let data = await db.execute2();
+      let data = await db.execute2(query);
       let idProyecto = data[0][0].idProyecto;
+      console.log();
       this.id = idProyecto;
       db.end();
       return idProyecto;
@@ -90,9 +120,109 @@ class Project {
     }
   };
 
-  read = async () => {
-    let query = `SELECT * FROM Proyecto WHERE nombreProyecto = '${this.nombre}';`;
-    console.log("Query: " + query);
+  registerPublicKey = async () => {
+    let db = new DataBase();
+
+    try {
+      if (this.id != null || this.id != undefined) {
+        for (let i = 0; i < this.publicKeys.length; i++) {
+          let query = `INSERT INTO Llave_Proyecto (idProyecto, LlaveProyecto) VALUES(${this.id}, "${this.publicKeys[i]}")`;
+          console.log("Registering llave de proyecto: " + query);
+          console.log("Registering llave de proyecto: " + this.publicKeys[i]);
+          await db.execute2(query);
+        }
+      }
+    } catch (error) {
+      console.log("F Up in insert into llave proyecto: " + error);
+    }
+    db.end();
+  };
+
+  getFirstPublicKey = async (proyectId) => {
+    let db = new DataBase();
+    let query = `SELECT * FROM Llave_Proyecto WHERE idProyecto = ${proyectId}`;
+
+    try {
+      console.log("Query getFirstPublicKey: " + query);
+      await db
+        .execute2(query)
+        .then((result) => {
+          this.firstPublicKey = result[0][0].LlaveProyecto;
+        })
+        .catch((err) => {
+          console.log("F Up in getFirtPublicKey");
+        });
+    } catch (err) {
+      console.log("F Up in getFirtPublicKey");
+    }
+    db.end();
+    return this.firstPublicKey;
+  };
+
+  setCategory = async (category, id = this.id) => {
+    if (
+      category >= this.categories.length ||
+      category == null ||
+      category == undefined
+    ) {
+      category = this.categories.length - 1;
+    }
+
+    let query = `INSERT INTO Categoria(idProyecto, category) VALUES(${id}, "${category}")`;
+    let db = new DataBase();
+    try {
+      console.log("Query setCategory: " + query);
+      await db.execute2(query);
+    } catch (error) {
+      console.log("F Up in setCategory: " + error);
+    }
+    db.end();
+  };
+
+  set_sys_reqs = async () => {
+    let db = new DataBase();
+    let valuesString = "";
+    let last = this.set_sys_reqs[this.set_sys_reqs.length - 1];
+    let i = 0;
+    let value;
+    for (const requirement in this.sys_reqs) {
+      // if (typeof this.sys_reqs[requirement] == "number") {
+      //   valuesString += `${this.sys_reqs[requirement]}, `;
+      // } else {
+      //   valuesString += `"${this.sys_reqs[requirement]}", `;
+      // }
+      value = this.sys_reqs[requirement];
+      valuesString += `"${this.sys_reqs[requirement]}"`;
+      if ((i = !this.set_sys_reqs.length - 1)) valuesString += ", ";
+      i++;
+    }
+    let query = `INSERT INTO Sys_Reqs VALUES ( ${this.id}, ${valuesString})`;
+
+    try {
+      console.log("Query setSysReqs: " + query);
+      await db.execute2(query);
+    } catch (error) {
+      console.log("F Up in setSysReqs: " + error);
+    }
+
+    db.end();
+  };
+
+  read = async (name = "", category = "") => {
+    // read function con busqueda personalizada
+
+    let query = "";
+    if (name != "" && category != "") {
+      query = `SELECT * FROM Proyecto WHERE nombreProyecto = '${name}';`;
+    } else if (name != "") {
+      query = `SELECT * FROM Proyecto WHERE nombreProyecto = '${name}';`;
+    } else if (category == "") {
+      query = `SELECT * FROM Proyecto WHERE nombreProyecto = '${name}';`;
+    } else {
+      query = `SELECT * FROM Proyecto';`;
+    }
+
+    console.log("Query read: " + query);
     try {
       let db = new DataBase();
       await db.execute2(query).then((results) => {
@@ -114,6 +244,9 @@ class Project {
 
   readAll = async () => {
     let query = `SELECT * FROM Proyecto;`;
+
+    await this.getFirstPublicKey();
+
     try {
       let db = new DataBase();
       await db.execute2(query).then((results) => {
@@ -124,6 +257,7 @@ class Project {
 
         this.proyectos = results[0];
       });
+      db.end();
     } catch (error) {
       console.log("Error readAll: " + error);
     }
@@ -158,6 +292,29 @@ class Project {
   delete = () => {};
 
   update = () => {};
+
+  getFileName = async () => {
+    let db = new DataBase();
+
+    let query = `SELECT archivoName FROM Archivos WHERE idProyecto = ${this.id}`;
+    try {
+      console.log("Query getFileNAme: " + query);
+      await db
+        .execute2(query)
+        .then((result) => {
+          this.nombreArchivo = result[0][0].archivoName;
+          console.log("Gotted: " + this.nombreArchivo);
+        })
+        .catch((err) => {
+          console.log("F Up in getFileName: " + err);
+        });
+    } catch (error) {
+      console.log("F Up in getFileName: " + error);
+    }
+
+    db.end();
+    return this.nombreArchivo;
+  };
 }
 
 module.exports = Project;

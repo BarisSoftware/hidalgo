@@ -24,12 +24,12 @@ function Valores(props) {
       <h3>Valores</h3>
       <br></br>
       <ul>
-        <li>Honestidad</li>
-        <li>Respeto</li>
-        <li>Puntualidad</li>
-        <li>Calidad</li>
-        <li>Trabajo en equipo</li>
-        <li>Mejora constante</li>
+        <li key="Honestidad">Honestidad</li>
+        <li key="Respeto">Respeto</li>
+        <li key="Puntualidad">Puntualidad</li>
+        <li key="Calidad">Calidad</li>
+        <li key="Honestidad">Trabajo en equipo</li>
+        <li key="MejoraConstante">Mejora constante</li>
       </ul>
     </>
   );

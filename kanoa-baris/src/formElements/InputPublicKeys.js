@@ -9,6 +9,7 @@ function LlavesPublicas(props) {
           type="text"
           id="publickey"
           name="publickey"
+          value={props.value}
           placeholder="ultimas 10 letras"
         />
       </div>

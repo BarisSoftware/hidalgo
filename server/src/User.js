@@ -14,13 +14,23 @@ class User {
   publicKeys = [];
   tech = [];
   validated = false;
+  messagingProyect = undefined;
+  currentMessages = [];
 
-  constructor(nombre, correo, pass, publicKeys = [], tech = []) {
+  constructor(
+    nombre = "",
+    correo = "",
+    pass = "",
+    id = "",
+    publicKeys = [],
+    tech = []
+  ) {
     (this.name = nombre),
       (this.email = correo),
       (this.pass = pass),
-      (this.publicKeys = publicKeys); // Es necesaria crear una forma de recibir las llaves
-    this.tech = tech; // Es necesaria crear una forma de recibir las tecnologias
+      (this.id = id),
+      (this.publicKeys = publicKeys), // Es necesaria crear una forma de recibir las llaves
+      (this.tech = tech); // Es necesaria crear una forma de recibir las tecnologias
   }
 
   show = () => {
@@ -129,28 +139,36 @@ class User {
   };
 
   authenticate = async () => {
-    let query = `SELECT idUsuario, HEX(passHash), nombre FROM Usuario where correo = '${this.email}'`;
+    let query = `SELECT idUsuario, HEX(passHash), userName, nombre, apellido, correo FROM Usuario where correo = '${this.email}'`;
     let db = new DataBase();
-    const valid = await db.execute2(query).then((results) => {
-      //console.log(results);
-      let hash = this.getPassHash().toLowerCase();
-      let hashDB = results[0][0]["HEX(passHash)"].toLowerCase();
-      console.log(hash + " vs " + hashDB);
-      if (results == null) {
-        console.log("No matches");
-        this.validated = false;
-      } else {
-        if (hash == hashDB) {
-          console.log("Good Auth");
-          this.validated = true;
-          this.id = results[0][0].idUsuario;
-          this.name = results[0][0].nombre;
-        } else {
-          console.log("Bad Auth");
+    const valid = await db
+      .execute2(query)
+      .then((results) => {
+        //console.log(results);
+        let hash = this.getPassHash().toLowerCase();
+        let hashDB = results[0][0]["HEX(passHash)"].toLowerCase();
+        console.log(hash + " vs " + hashDB);
+        if (results == null) {
+          console.log("No matches");
           this.validated = false;
+        } else {
+          if (hash == hashDB) {
+            console.log("Good Auth");
+            this.validated = true;
+            this.id = results[0][0].idUsuario;
+            this.name = results[0][0].nombre;
+          } else {
+            console.log("Bad Auth");
+            this.validated = false;
+          }
         }
-      }
-    });
+      })
+      .catch((error) => {
+        this.name = null;
+        this.email = null;
+        this.id = null;
+        this.validated = false;
+      });
     db.end();
     return {
       name: this.name,
@@ -188,6 +206,56 @@ class User {
     const hasher256 = crypto.createHmac("sha256", this.email);
     const hash = hasher256.update(this.pass).digest("hex");
     return hash;
+  };
+
+  sendMessage = async (mensaje, idProyecto) => {
+    let db = new DataBase();
+    await this.getIdUsuario();
+    let query = `INSERT INTO MENSAJES (idUsuario, idProyecto, mensaje) VALUES (${this.id}, ${idProyecto}, "${mensaje}")`;
+    try {
+      console.log("Query sendMessage: " + query);
+      await db.execute2(query);
+    } catch (error) {
+      console.log("F Up in sendMessage: " + error);
+    }
+  };
+
+  getMessages = async (idProyecto) => {
+    let db = new DataBase();
+    let messages = [];
+    let query = `SELECT * FROM Mensajes WHERE idUsuario = ${this.id} AND idProyecto = ${idProyecto}`;
+    try {
+      console.log("Query getMessages: " + query);
+      await db
+        .execute2(query)
+        .then((result) => {
+          this.currentMessages = result[0];
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log("F Up in sendMessage: " + error);
+    }
+
+    db.end();
+    return this.currentMessages;
+    //console.log("Mensajes: " + Object.keys(messages));
+  };
+
+  reportBug = async (title, problema, steps, resultado, actual) => {
+    let db = new DataBase();
+
+    let query = `INSERT INTO Bugs (idUsuario, titulo, problema, pasos, resultado, actual) VALUES (${this.id}, "${title}", "${problema}", "${steps}", "${resultado}", "${actual}")`;
+
+    try {
+      console.log("Query reportBug: " + query);
+      await db.execute2(query);
+    } catch (error) {
+      console.log("F Up in Bug Report: " + error);
+    }
+
+    db.end();
   };
 }
 

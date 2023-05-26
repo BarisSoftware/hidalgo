@@ -32,6 +32,7 @@ function InputPersonas(props) {
           className="clasic"
           name={props.buttype}
           type="button"
+          onClick={() => props.setOpen(true)}
           value="+"
         ></input>
       </div>

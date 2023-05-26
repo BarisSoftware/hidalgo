@@ -27,9 +27,12 @@ function handleTheme() {
 }
 
 function handleKillSession(props) {
+  const client = axios.create({
+    baseURL: "http://localhost:3000/",
+  });
   console.log("Fkyou");
-  axios
-    .post("http://localhost:2000/killsession")
+  client
+    .get("/killsession")
     .then((result) => {
       console.log(result);
     })
@@ -120,7 +123,7 @@ function BottomContent(props) {
     <div className="bottom-content">
       <div className="content">
         <li className="" id="killSession">
-          <a onClick={handleKillSession}>
+          <a onClick={() => handleKillSession()}>
             <i className="bx bx-log-out icon"></i>
             <span className="text nav-text">Cerrar sesión</span>
           </a>
@@ -145,7 +148,6 @@ function SideBar(props) {
   const [nombre, setNombre] = React.useState("");
   const [correo, setCorreo] = React.useState("");
   const [idUsuario, setIdUsuario] = React.useState(undefined);
-  const [projects, setProjects] = React.useState(undefined);
 
   React.useEffect(() => {
     const checkLogin = async () => {
@@ -163,25 +165,8 @@ function SideBar(props) {
         }
       });
     };
-    checkLogin()
-      .then(() => {
-        console.log(nombre);
-        console.log(correo);
-        console.log(idUsuario);
-      })
-      .then(() => {
-        // bringMine();
-      });
 
-    const bringMine = async () => {
-      await client.post("/myProjectsreq").then((response) => {
-        let pros = [];
-        for (const pro of response) {
-          pros.push(pro);
-        }
-        setProjects(response);
-      });
-    };
+    checkLogin().then(() => {});
   }, []);
 
   return (
