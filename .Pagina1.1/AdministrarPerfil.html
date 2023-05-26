@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Administrar perfil</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="AdministrarPerfil.css" rel="stylesheet" type="text/css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <nav class="sidebar">
+            <header>
+                <div class="image-text">
+                    <span class="image">
+                        <img src="imagenes/avatar3.png">
+                    </span>
+                    <div class="text header-text">
+                        <span class="name">Usuario</span>
+                    </div>
+                </div>
+                <i class='bx bxs-chevron-right toggle'></i>
+            </header> 
+            
+            <div class="menu-bar">
+                <div class="menu">
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                            <a href="homefeed.html">
+                                <i class='bx bx-home icon' ></i>
+                                <span class="text nav-text">Homefeed</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="CrearProyecto.html">
+                                <i class='bx bx-add-to-queue icon'></i>
+                                <span class="text nav-text">Crear proyecto</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="RealizarTransaccion.html">
+                                <i class='bx bx-dollar icon'></i>
+                                <span class="text nav-text">Realizar <br>Transacción</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="AdministrarPerfil.html">
+                                <i class='bx bx-cog icon' ></i>
+                                <span class="text nav-text">Administrar <br>perfil</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-star icon'></i>
+                                <span class="text nav-text">Proyectos<br>populares</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom-content">
+                    <div class="content">
+                        <li class="">
+                            <a href="#">
+                                <i class='bx bx-log-out icon' ></i>
+                                <span class="text nav-text">Cerrar sesión</span>
+                            </a>
+                        </li>
+                        <li class="mode">
+                            <div class="sun-moon">
+                                <i class='bx bx-moon icon moon'></i>
+                                <i class='bx bx-sun icon sun'></i>
+                            </div>
+                            <span class="mode-text text">Dark mode</span>
+                            <div class="toggle-switch">
+                                <span class="switch"></span>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <h1 class="titulo">Administrar perfil</h1>
+        <h4 class="titulo2">Actualizar foto de perfil</h4>
+        <div class="profle-pic-div">
+            <img src="imagenes/avatar3.png" id="imgp">
+            <input type="file" name="file" id="file" accept="image/jpeg, image/png, image/jpg">
+        </div>
+        <div class="contenedor">
+            <div class="contenido">
+                <div class="col1">
+                    <div class="elem1">
+                        <label for="Nombre">Nombre</label>
+                        <div class="input">
+                            <input type="text" id="Nombre" name="Nombre">
+                        </div>
+                    </div><br><br>
+                    <div class="elem3">
+                    <label for="Correo">Correo electrónico</label>
+                        <div class="input">
+                            <input type="email" id="Correo" name="correo">
+                        </div>
+                    </div><br><br>
+                    <div class="elem5">
+                        <label for="pass">Contraseña</label>
+                        <div class="input">
+                            <input type="password" id="pass" name="pass">
+                        </div>
+                    </div><br><br>
+                    <div class="elem7">
+                        <label for="Conpass">Confirmación contraseña</label>
+                        <div class="input">
+                            <input type="password" id="Conpass" name="Conpass">
+                        </div>
+                    </div><br><br>
+                    <div class="elem10">
+                        <div class="sub">
+                            <input type="submit" id="guardar" name="guardar" value="Guardar cambios">
+                        </div>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="elem2">
+                        <label for="emailrec">Correo de recuperación</label>
+                        <div class="input">
+                            <input type="email" id="emailrec" name="emailrec">
+                        </div>
+                    </div><br><br>
+                    <div class="elem4">
+                        <label for="tel">Téléfono</label>
+                        <div class="input">
+                            <input type="tel" id="tel" name="tel">
+                        </div> 
+                    </div><br><br>
+                    <div class="elem6">
+                        <label for="Llaves">Llaves públicas</label>
+                        <div class="input">
+                            <input type="text" id="Llaves" name="Llaves" placeholder="últimas 10 letras">
+                        </div>
+                        <div class="button">
+                            <input type="button" value="+">
+                        </div>
+                    </div><br><br>
+                    <div class="elem8">
+                        <label for="Llaves">Tecnologías familiares</label>
+                        <div class="input">
+                            <input type="text" id="Llaves" name="Llaves" placeholder="Primera, segunda o tercera tec">
+                        </div>
+                        <div class="button">
+                            <input type="button" value="+">
+                        </div>
+                    </div><br><br>
+                    <div class="elem10">
+                        <div class="sub">
+                            <input type="submit" id="eliminar" name="eliminar" value="Eliminar mi cuenta">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="AdministrarPerfil.js"></script>
+</body>
